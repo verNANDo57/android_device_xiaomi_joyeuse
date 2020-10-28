@@ -29,8 +29,9 @@ PRODUCT_DEFAULT_DEV_CERTIFICATE := device/xiaomi/joyeuse/keys/releasekey
 
 # RR-OS Stuff
 TARGET_FACE_UNLOCK_SUPPORT := true
-
 RR_BUILDTYPE := Official
+# RR Wallpapers (optional)
+BUILD_RR_WALLPAPERS:= true
 
 #Gapps
 TARGET_SCREEN_HEIGHT := 2400
