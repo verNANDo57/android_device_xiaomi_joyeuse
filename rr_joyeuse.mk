@@ -53,7 +53,7 @@ TARGET_VENDOR_PRODUCT_NAME := joyeuse
 BUILD_FINGERPRINT := Redmi/joyeuse_global/joyeuse:10/QKQ1.191215.002/V11.0.7.0.QJZMIXM:user/release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="joyeuse-global QKQ1.191215.002/V11.0.7.0.QJZMIXM release-keys" \
+    PRIVATE_BUILD_DESC="joyeuse-global 10 QKQ1.191215.002 V11.0.7.0.QJZMIXM release-keys" \
     PRODUCT_DEVICE=joyeuse \
     PRODUCT_NAME=joyeuse
 
