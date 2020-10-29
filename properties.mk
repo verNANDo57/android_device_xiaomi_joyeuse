@@ -5,7 +5,7 @@ ro.audio.monitorRotation=true
 
 # ADB props
 ro.secure=1 
-ro.debuggable=0
+ro.debuggable=1
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
