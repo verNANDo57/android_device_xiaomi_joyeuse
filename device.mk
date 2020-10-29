@@ -44,6 +44,14 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
+# Init scripts
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/init.device.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.device.rc
+
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
