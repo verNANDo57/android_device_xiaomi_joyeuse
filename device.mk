@@ -48,10 +48,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-# Init scripts
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/etc/init.device.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.device.rc
-
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
