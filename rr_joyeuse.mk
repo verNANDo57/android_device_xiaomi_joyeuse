@@ -49,9 +49,3 @@ PRODUCT_MODEL := Redmi Note 9 Pro
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-TARGET_VENDOR_PRODUCT_NAME := joyeuse
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=joyeuse \
-    PRODUCT_NAME=joyeuse
-
