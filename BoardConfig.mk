@@ -27,12 +27,12 @@
 
 DEVICE_PATH := device/xiaomi/joyeuse
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := joyeuse
-
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_joyeuse
 TARGET_RECOVERY_DEVICE_MODULES := libinit_joyeuse
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := joyeuse
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
