@@ -26,6 +26,10 @@ $(call inherit-product, device/xiaomi/sm6250-common/common.mk)
 
 DEVICE_PATH := device/xiaomi/joyeuse
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # Inherit properties.mk
 $(call inherit-product, $(DEVICE_PATH)/properties.mk)
 
@@ -43,10 +47,6 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
