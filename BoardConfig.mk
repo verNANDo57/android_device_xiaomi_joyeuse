@@ -40,6 +40,11 @@ TARGET_SCREEN_DENSITY := 420
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 
+ODM_MANIFEST_SKUS += \
+    joyeuse
+
+ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/manifest_joyeuse.xml
+
 # Kernel
 TARGET_KERNEL_CONFIG := joyeuse_defconfig
 
