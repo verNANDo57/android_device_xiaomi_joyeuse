@@ -30,7 +30,6 @@ PRODUCT_DEFAULT_DEV_CERTIFICATE := device/xiaomi/joyeuse/keys/releasekey
 # RR-OS Stuff
 TARGET_FACE_UNLOCK_SUPPORT := true
 RR_BUILDTYPE := Official
-
 # RR Wallpapers (optional)
 BUILD_RR_WALLPAPERS:= true
 
@@ -50,9 +49,4 @@ PRODUCT_MODEL := Redmi Note 9 Pro
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 TARGET_VENDOR_PRODUCT_NAME := joyeuse
-
-BUILD_FINGERPRINT :="google/coral/coral:11/RP1A.201005.004/6782484:user/release-keys" 
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="joyeuse-user 10 QKQ1.191215.002/V11.0.5.0.QJZMIXM release-keys"
 
