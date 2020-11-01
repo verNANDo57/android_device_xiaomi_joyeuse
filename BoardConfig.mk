@@ -55,7 +55,7 @@ TARGET_KERNEL_CONFIG := joyeuse_defconfig
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2020-10-01
+VENDOR_SECURITY_PATCH := 2020-11-01
 
 # Inherit the proprietary files
 -include vendor/xiaomi/joyeuse/BoardConfigVendor.mk
