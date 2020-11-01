@@ -3,6 +3,12 @@ persist.vendor.audio.hac.enable=false
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 ro.audio.monitorRotation=true
 
+# ADB props
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.debuggable=1 \
+    ro.secure=1 \
+    ro.adb.secure=0
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.camera.aux.packageblacklist=com.discord \
