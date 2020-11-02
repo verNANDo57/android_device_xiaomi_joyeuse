@@ -15,13 +15,16 @@
 //
 
 cc_library_static {
-    name: "libinit_joyeuse",
+    name: "libinit_miatoll",
     recovery_available: true,
     srcs: [
-        "init_joyeuse.cpp"
+        "init.cpp"
     ],
     include_dirs: [
         "system/core/base/include",
         "system/core/init"
+    ],
+    whole_static_libs: [
+        "libinit_xiaomi_sm6250_common"
     ]
 }
