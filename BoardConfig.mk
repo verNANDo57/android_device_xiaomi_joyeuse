@@ -13,7 +13,7 @@ include device/xiaomi/sm6250-common/BoardConfigCommon.mk
 DEVICE_PATH := device/xiaomi/joyeuse
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := miatoll
+TARGET_BOOTLOADER_BOARD_NAME := atoll
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_miatoll
