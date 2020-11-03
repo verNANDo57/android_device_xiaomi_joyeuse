@@ -34,8 +34,12 @@ PRODUCT_PACKAGES += \
     com.gsma.services.nfc \
     com.nxp.nfc.nq \
     libnqnfc_nci_jni \
+    nfc_nci.nqx.default.hw \
     NQNfcNci \
-    Tag
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
+    Tag \
+    vendor.nxp.hardware.nfc@1.2-service
 
 PRODUCT_PACKAGES += \
     nfc_nci.nqx.default.hw \
