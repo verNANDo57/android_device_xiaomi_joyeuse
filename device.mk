@@ -49,6 +49,9 @@ PRODUCT_PACKAGES += \
     nqnfcee_access.xml \
     nqnfcse_access.xml
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.nfc.port=I2C
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/libnfc-nci.conf \
     $(LOCAL_PATH)/nfc/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/libnfc-nxp_RF.conf \
