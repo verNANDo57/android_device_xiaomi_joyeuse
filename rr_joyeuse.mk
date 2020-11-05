@@ -11,16 +11,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/joyeuse/device.mk)
 
 # Inherit some common RR-OS stuff
-$(call inherit-product, vendor/rr/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 #Sign with private key
 PRODUCT_DEFAULT_DEV_CERTIFICATE := device/xiaomi/joyeuse/keys/releasekey
-
-# RR-OS Stuff
-TARGET_FACE_UNLOCK_SUPPORT := true
-RR_BUILDTYPE := Official
-# RR Wallpapers (optional)
-BUILD_RR_WALLPAPERS:= true
 
 PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := joyeuse
