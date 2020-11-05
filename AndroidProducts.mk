@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/rr_joyeuse.mk
+    $(LOCAL_DIR)/lineage_joyeuse.mk
 
 COMMON_LUNCH_CHOICES := \
-    rr_joyeuse-user \
-    rr_joyeuse-userdebug \
-    rr_joyeuse-eng
+    lineage_joyeuse-user \
+    lineage_joyeuse-userdebug \
+    lineage_joyeuse-eng
