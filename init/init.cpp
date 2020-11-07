@@ -100,7 +100,7 @@ void load_device_properties() {
     } else if (hwname == "joyeuse") { 
     } */
         set_device_props(
-                "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys",
+                "Redmi/joyeuse_global/joyeuse:10/QKQ1.191215.002/V11.0.5.0.QJZMIXM:user/release-keys",
                 "joyeuse_global-user 10 QKQ1.191215.002 V11.0.5.0.QJZMIXM release-keys",
                 "Redmi", "joyeuse", "Redmi Note 9 Pro");
 }
