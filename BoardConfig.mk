@@ -15,10 +15,6 @@ DEVICE_PATH := device/xiaomi/joyeuse
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := atoll
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_miatoll
-TARGET_RECOVERY_DEVICE_MODULES := libinit_miatoll
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
