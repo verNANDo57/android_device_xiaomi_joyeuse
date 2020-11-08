@@ -45,10 +45,6 @@ PRODUCT_PACKAGES += \
     vendor.nxp.hardware.nfc@1.2-service
 
 PRODUCT_PACKAGES += \
-    nfc_nci.nqx.default.hw \
-    vendor.nxp.hardware.nfc@1.2-service
-
-PRODUCT_PACKAGES += \
     nqnfcee_access.xml \
     nqnfcse_access.xml
 
