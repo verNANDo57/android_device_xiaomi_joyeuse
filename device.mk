@@ -10,6 +10,9 @@ $(call inherit-product, device/xiaomi/sm6250-common/common.mk)
 # Inherit proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/joyeuse/joyeuse-vendor.mk)
 
+# Inherit props.mk
+$(call inherit-product, $(LOCAL_PATH)/props.mk)
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
