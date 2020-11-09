@@ -17,7 +17,8 @@ $(call inherit-product, $(LOCAL_PATH)/props.mk)
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
-    vendor/qcom/opensource/commonsys/system/bt/conf
+    vendor/qcom/opensource/commonsys/system/bt/conf \
+    hardware/google/pixel
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
