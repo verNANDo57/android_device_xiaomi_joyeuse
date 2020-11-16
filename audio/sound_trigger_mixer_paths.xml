@@ -82,8 +82,6 @@
     <ctl name="EC Reference Bit Format" value="0"/>
     <ctl name="EC Reference SampleRate" value="0"/>
     <ctl name="LPI Enable" value="0" />
-    <ctl name="ADC1 Volume" value="12" />
-    <ctl name="ADC2 Volume" value="12" />
 
     <path name="listen-voice-wakeup-1">
         <ctl name="LSM1 Mixer VA_CDC_DMA_TX_0" value="1" />
@@ -230,22 +228,15 @@
     </path>
 
     <path name="listen-ape-handset-mic">
-        <ctl name="ADC1 Volume" value="15" />
-        <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="VA DEC0 MUX" value="SWR_MIC" />
-        <ctl name="VA SMIC MUX0" value="ADC0" />
-        <ctl name="ADC1_MIXER Switch" value="1" />
-        <ctl name="VA_DEC0 Volume" value="91" />
-    </path>
-
-    <path name="listen-ape-handset-mic-preproc">
         <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
         <ctl name="VA DEC0 MUX" value="SWR_MIC" />
         <ctl name="VA SMIC MUX0" value="ADC2" />
         <ctl name="ADC2_MIXER Switch" value="1" />
         <ctl name="ADC2 MUX" value="INP3" />
-        <ctl name="ADC2 Volume" value="15" />
-        <ctl name="VA_DEC0 Volume" value="90" />
+    </path>
+
+    <path name="listen-ape-handset-mic-preproc">
+        <path name="listen-ape-handset-mic" />
     </path>
 
     <path name="listen-ape-handset-dmic">
