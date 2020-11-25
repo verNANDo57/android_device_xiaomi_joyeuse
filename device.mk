@@ -15,7 +15,12 @@ $(call inherit-product, $(LOCAL_PATH)/props.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    vendor/nxp/opensource/pn5xx \
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
+    hardware/google/pixel \
+    vendor/qcom/opensource/interfaces \
+    hardware/xiaomi
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -29,9 +34,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.device.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.device.rc
 
 # NFC
-PRODUCT_SOONG_NAMESPACES += \
-    vendor/nxp/opensource/pn5xx
-
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     com.gsma.services.nfc \
