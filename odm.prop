@@ -1,0 +1,6 @@
+# Fingerprint (Spoof)
+ro.odm.build.fingerprint=Redmi/joyeuse_global/joyeuse:10/QKQ1.191215.002/V12.0.1.0.QJZMIXM:user/release-keys
+# ro.odm.build.id=QKQ1.191215.002
+
+# Qcom
+ro.vendor.qti.va_odm.support=1

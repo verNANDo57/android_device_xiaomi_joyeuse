@@ -21,6 +21,9 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_miatoll
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
