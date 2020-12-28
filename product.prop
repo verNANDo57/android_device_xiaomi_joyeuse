@@ -18,4 +18,4 @@ ro.config.low_ram=false
 ro.incremental.enable=1
 
 # Spoof
-ro.build.fingerprint=google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys
+ro.build.fingerprint=Redmi/joyeuse_global/joyeuse:10/QKQ1.191215.002/V12.0.1.0.QJZMIXM:user/release-keys
