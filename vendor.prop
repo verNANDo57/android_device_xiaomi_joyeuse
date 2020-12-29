@@ -1,7 +1,3 @@
-# Fingerprint (Spoof)
-ro.vendor.build.fingerprint=Redmi/joyeuse_global/joyeuse:10/QKQ1.191215.002/V12.0.1.0.QJZMIXM:user/release-keys
-# ro.vendor.build.id=QKQ1.191215.002
-
 # Audio
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
