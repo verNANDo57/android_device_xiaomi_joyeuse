@@ -13,6 +13,9 @@ $(call inherit-product-if-exists, vendor/xiaomi/joyeuse/joyeuse-vendor.mk)
 # Inherit props.mk
 $(call inherit-product, $(LOCAL_PATH)/props.mk)
 
+# Inherit fingerprint.mk
+$(call inherit-product, $(LOCAL_PATH)/fingerprint.mk)
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \

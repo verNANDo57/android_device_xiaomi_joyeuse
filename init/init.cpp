@@ -77,8 +77,6 @@ void load_device_properties() {
                 "Redmi/joyeuse_global/joyeuse:10/QKQ1.191215.002/V12.0.1.0.QJZMIXM:user/release-keys",
                 "joyeuse_global-user 10 QKQ1.191215.002 V12.0.1.0.QJZMIXM release-keys",
                 "Redmi", "joyeuse", "Redmi Note 9 Pro");
-        property_override("ro.build.version.security_patch", "2020-10-05");
-        property_override("ro.vendor.build.security_patch", "2020-10-05");
 }
 
 void vendor_load_properties() {
