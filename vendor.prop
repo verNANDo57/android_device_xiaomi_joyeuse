@@ -10,20 +10,23 @@ audio.offload.video=true
 audio.sys.noisy.broadcast.delay=600
 audio.sys.offload.pstimeout.secs=3
 persist.audio.fluence.speaker=true
+persist.audio.fluence.audiorec=true
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicecomm=true
-persist.audio.fluence.voicerec=false
+persist.audio.fluence.voicerec=true
 persist.vendor.audio.avs.afe_api_version=2
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.tmic.enabled=false
+persist.vendor.audio.fluence.audiorec=true
 persist.vendor.audio.fluence.voicecall=true
-persist.vendor.audio.fluence.voicerec=false
+persist.vendor.audio.fluence.voicecomm=true
+persist.vendor.audio.fluence.voicerec=true
 persist.vendor.audio.ras.enabled=false
 persist.vendor.audio.spv3.enable=true
 persist.vendor.audio.voicecall.speaker.stereo=false
 ro.af.client_heap_size_kbyte=7168
-ro.qc.sdk.audio.fluencetype=none
-ro.vendor.audio.sdk.fluencetype=none
+ro.qc.sdk.audio.fluencetype=fluence
+ro.vendor.audio.sdk.fluencetype=fluence
 ro.vendor.audio.sdk.ssr=false
 ro.vendor.audio.soundfx.type=mi
 ro.vendor.audio.soundfx.usb=true
@@ -104,7 +107,9 @@ vendor.audio.safx.pbe.enabled=false
 vendor.audio.tunnel.encode=false
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
+vendor.audio.use.sw.mpegh.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
+vendor.audio.hal.boot.timeout.ms=20000
 vendor.audio_hal.in_period_size=144
 vendor.audio_hal.period_multiplier=3
 vendor.audio_hal.period_size=192
@@ -139,12 +144,10 @@ persist.vendor.cne.feature=1
 ro.crypto.allow_encrypt_override=true
 ro.crypto.volume.filenames_mode=aes-256-cts
 
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+
 # Display
-debug.sf.early_phase_offset_ns=11600000
-debug.sf.early_app_phase_offset_ns=11600000
-debug.sf.early_gl_phase_offset_ns=3000000
-debug.sf.early_gl_app_phase_offset_ns=15000000
-debug.sf.phase_offset_threshold_for_next_vsync_ns=11600000
 persist.sys.sf.color_saturation=1.0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
@@ -180,7 +183,6 @@ ro.hardware.keystore_desede=true
 
 # Media
 debug.stagefright.ccodec=1
-debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
 drm.service.enabled=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
@@ -191,6 +193,7 @@ media.stagefright.enable-player=true
 media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
+ro.media.recorder-max-base-layer-fps=60
 vendor.mm.enable.qcom_parser=63963135
 
 # PASR
@@ -200,7 +203,7 @@ vendor.power.pasr.enabled=true
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Priv-app permissions
-ro.control_privapp_permissions=enforce
+ro.control_privapp_permissions=log
 
 # Radio
 DEVICE_PROVISIONED=1
@@ -234,6 +237,9 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 # WFD
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
+
+# Wi-Fi
+wifi.aware.interface=wifi-aware0
 
 # ZRAM writeback
 ro.zram.mark_idle_delay_mins=60
