@@ -34,6 +34,9 @@ TARGET_KERNEL_CONFIG := joyeuse_defconfig
 
 SELINUX_IGNORE_NEVERALLOWS := true
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2021-01-01
+
 # HIDL
 ODM_MANIFEST_SKUS += \
     joyeuse
