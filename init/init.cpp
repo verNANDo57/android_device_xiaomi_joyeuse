@@ -34,17 +34,8 @@ std::vector<std::string> ro_props_default_source_order = {
     "product.",
     "system.",
     "vendor.",
+    "system_ext.",
 };
-
-void property_override(char const prop[], char const value[], bool add = true) {
-    prop_info *pi;
-
-    pi = (prop_info *)__system_property_find(prop);
-    if (pi)
-        __system_property_update(pi, value, strlen(value));
-    else if (add)
-        __system_property_add(prop, strlen(prop), value, strlen(value));
-}
 
 void set_ro_build_prop(const std::string &source, const std::string &prop,
         const std::string &value, bool product = false) {
@@ -73,7 +64,7 @@ void set_device_props(const std::string fingerprint, const std::string descripti
 }
 
 void load_device_properties() {
-        set_device_props(
+    set_device_props(
                 "google/redfin/redfin:11/RQ1A.210105.003/7005429:user/release-keys",
                 "joyeuse_global-user 10 QKQ1.191215.002 V12.0.2.0.QJZMIXM release-keys",
                 "Redmi", "joyeuse", "Redmi Note 9 Pro");
