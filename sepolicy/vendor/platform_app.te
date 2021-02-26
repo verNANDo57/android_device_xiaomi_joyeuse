@@ -1,0 +1,15 @@
+# FPS Info
+allow platform_app sysfs_fps:file { getattr open read };
+
+allow platform_app vendor_sysfs_graphics:dir search;
+allow platform_app sysfs_kgsl:dir search;
+allow platform_app sysfs_kgsl:file { getattr open read };
+allow platform_app vendor_sysfs_battery_supply:dir search;
+allow platform_app vendor_sysfs_battery_supply:file { getattr open read }; 
+allow platform_app vendor_sysfs_graphics:file { read open getattr };
+
+allow platform_app vendor_audio_prop:file { read };
+allow platform_app cgroup:file { read };
+
+allow platform_app sysfs_batteryinfo:dir { search };
+allow platform_app sysfs_batteryinfo:file { open };
