@@ -132,7 +132,6 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 DeviceSettings.PREF_FASTCHARGE, 0));
         FileUtils.setValue(DeviceSettings.MSM_TOUCHBOOST_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_MSM_TOUCHBOOST, 0));
-
        // Ambient
         context.startService(new Intent(context, SensorsDozeService.class));
 

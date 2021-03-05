@@ -7,8 +7,6 @@ audio.deep_buffer.media=true
 audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=true
 audio.offload.video=true
-audio.sys.noisy.broadcast.delay=600
-audio.sys.offload.pstimeout.secs=3
 persist.audio.fluence.speaker=true
 persist.audio.fluence.audiorec=true
 persist.audio.fluence.voicecall=true
@@ -24,27 +22,11 @@ persist.vendor.audio.fluence.voicerec=true
 persist.vendor.audio.ras.enabled=false
 persist.vendor.audio.spv3.enable=true
 persist.vendor.audio.voicecall.speaker.stereo=false
-ro.af.client_heap_size_kbyte=7168
 ro.qc.sdk.audio.fluencetype=fluence
 ro.vendor.audio.sdk.fluencetype=fluence
 ro.vendor.audio.sdk.ssr=false
 ro.vendor.audio.soundfx.type=mi
 ro.vendor.audio.soundfx.usb=true
-ro.vendor.audio.soundtrigger.appdefine.cnn.level=31
-ro.vendor.audio.soundtrigger.appdefine.gmm.level=55
-ro.vendor.audio.soundtrigger.appdefine.gmm.user.level=50
-ro.vendor.audio.soundtrigger.appdefine.vop.level=10
-ro.vendor.audio.soundtrigger.lowpower=true
-ro.vendor.audio.soundtrigger.training.level=50
-ro.vendor.audio.soundtrigger.xanzn.cnn.level=70
-ro.vendor.audio.soundtrigger.xanzn.gmm.level=45
-ro.vendor.audio.soundtrigger.xanzn.gmm.user.level=30
-ro.vendor.audio.soundtrigger.xanzn.vop.level=10
-ro.vendor.audio.soundtrigger.xatx.cnn.level=27
-ro.vendor.audio.soundtrigger.xatx.gmm.level=50
-ro.vendor.audio.soundtrigger.xatx.gmm.user.level=40
-ro.vendor.audio.soundtrigger.xatx.vop.level=10
-ro.vendor.audio.soundtrigger=sva
 vendor.audio.adm.buffering.ms=2
 vendor.audio.chk.cal.spk=0
 vendor.audio.chk.cal.us=0
@@ -57,7 +39,7 @@ vendor.audio.feature.anc_headset.enable=true
 vendor.audio.feature.audiozoom.enable=false
 vendor.audio.feature.battery_listener.enable=true
 vendor.audio.feature.compr_cap.enable=false
-vendor.audio.feature.compr_voip.enable=false
+vendor.audio.feature.compr_voip.enable=true
 vendor.audio.feature.compress_in.enable=true
 vendor.audio.feature.compress_meta_data.enable=true
 vendor.audio.feature.concurrent_capture.enable=true
@@ -79,7 +61,7 @@ vendor.audio.feature.hifi_audio.enable=false
 vendor.audio.feature.hwdep_cal.enable=false
 vendor.audio.feature.incall_music.enable=true
 vendor.audio.feature.keep_alive.enable=true
-vendor.audio.feature.kpi_optimize.enable=false
+vendor.audio.feature.kpi_optimize.enable=true
 vendor.audio.feature.maxx_audio.enable=false
 vendor.audio.feature.multi_voice_session.enable=true
 vendor.audio.feature.ras.enable=true
@@ -124,7 +106,10 @@ persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 persist.vendor.btstack.enable.splita2dp=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
+persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
+persist.vendor.qcom.bluetooth.scram.enabled=true
+persist.vendor.qcom.bluetooth.soc=cherokee
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 ro.bluetooth.emb_wp_mode=true
@@ -137,14 +122,8 @@ vendor.qcom.bluetooth.soc=cherokee
 # Camera
 camera.disable_zsl_mode=1
 
-#snapdragon value add features
-ro.qc.sdk.audio.ssr=false
-
 # CNE
 persist.vendor.cne.feature=1
-
-#enable voice path for PCM VoIP by default
-use.voice.path.for.pcm.voip=true
 
 # Crypto
 ro.crypto.allow_encrypt_override=true
@@ -152,40 +131,15 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
-dalvik.vm.heapstartsize=8m
-dalvik.vm.heapsize=512m
-dalvik.vm.heaptargetutilization=0.75
-dalvik.vm.heapminfree=512k
-dalvik.vm.heapmaxfree=8m
 
-#Enable offload audio video playback by default
-av.offload.enable=true
+# Dirac algo tsx 9/12
+persist.dirac.acs.controller=qem
+persist.dirac.acs.storeSettings=1
+persist.dirac.acs.ignore_error=1
 
-#Haptic
-sys.haptic.motor=linear
-sys.haptic.down.weak=0
-sys.haptic.down.normal=2
-sys.haptic.down.strong=5
-sys.haptic.down=5,2
-sys.haptic.tap.normal=3,2
-sys.haptic.tap.light=5,2
-sys.haptic.flick=5,2
-sys.haptic.flick.light=5,2
-sys.haptic.switch=9,2
-sys.haptic.mesh.heavy=8,2
-sys.haptic.mesh.normal=8,2
-sys.haptic.mesh.light=8,1
-sys.haptic.long.press=0,1
-sys.haptic.popup.normal=6,2
-sys.haptic.popup.light=6,1
-sys.haptic.pickup=0,2
-sys.haptic.scroll.edge=5,0
-sys.haptic.trigger.drawer=2,0
-sys.haptic.hold=6,0
-sys.haptic.runin=13
-
-#APEX
-ro.apex.updatable=true
+# Dirac headset effect
+ro.audio.soundfx.dirac=true
+persist.audio.dirac.speaker=true
 
 # Display
 persist.sys.sf.color_saturation=1.0
@@ -211,47 +165,11 @@ vendor.gralloc.disable_ubwc=0
 # FM
 vendor.hw.fm.init=0
 
-#thermal configs path
-sys.thermal.data.path=/data/vendor/thermal/
-
-#Bringup properties
-ro.kernel.qemu.gles=0
-qemu.hw.mainkeys=0
-
-#initialize QCA1530 detection
-sys.qca1530=detect
-
-#hwui properties
-ro.hwui.texture_cache_size=72
-ro.hwui.layer_cache_size=48
-ro.hwui.r_buffer_cache_size=8
-ro.hwui.path_cache_size=32
-ro.hwui.gradient_cache_size=1
-ro.hwui.drop_shadow_cache_size=6
-ro.hwui.texture_cache_flushrate=0.4
-ro.hwui.text_small_cache_width=1024
-ro.hwui.text_small_cache_height=1024
-ro.hwui.text_large_cache_width=2048
-ro.hwui.text_large_cache_height=1024
-
-#Enable stm events
-persist.debug.coresight.config=stm-events
-
-#Simulate sdcard on /data/media
-persist.fuse_sdcard=true
-
-# system property for maximum number of HFP client connections
-bt.max.hfpclient.connections=1
-
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-persist.sys.mcd_config_file=/system/etc/mcd_default.conf
-
 # Keyguard
 keyguard.no_require_sim=true
-
-config.disable_rtt=true
 
 # Keystore
 ro.hardware.keystore_desede=true
@@ -269,14 +187,7 @@ media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.media.recorder-max-base-layer-fps=60
-vendor.mm.enable.qcom_parser=63963135
-mmp.enable.3g2=true
-media.aac_51_output_enabled=true
-persist.mm.enable.prefetch=true
-
-# Graphics
-debug.sf.hw=1
-debug.egl.hw=0
+vendor.mm.enable.qcom_parser=16777215
 
 # PASR
 vendor.power.pasr.enabled=true
@@ -286,18 +197,6 @@ ro.vendor.extension_library=libqti-perfd-client.so
 
 # Priv-app permissions
 ro.control_privapp_permissions=log
-
-rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
-#rild.libargs=-d /dev/smd0
-persist.rild.nitz_plmn=
-persist.rild.nitz_long_ons_0=
-persist.rild.nitz_long_ons_1=
-persist.rild.nitz_long_ons_2=
-persist.rild.nitz_long_ons_3=
-persist.rild.nitz_short_ons_0=
-persist.rild.nitz_short_ons_1=
-persist.rild.nitz_short_ons_2=
-persist.rild.nitz_short_ons_3=
 
 # Radio
 DEVICE_PROVISIONED=1
@@ -316,24 +215,16 @@ persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
 persist.vendor.radio.snapshot_enabled=1
 persist.vendor.radio.snapshot_timer=5
-persist.vendor.radio.manual_nw_rej_ct=1
 ril.subscription.types=NV,RUIM
 ro.telephony.default_network=22,20
 ro.telephony.iwlan_operation_mode=legacy
 ro.vendor.use_data_netmgrd=true
 telephony.lteOnCdmaDevice=1
-qcom.hw.aac.encoder=true
-
-dev.pm.dyn_samplingrate=1
-
-#system props for time-services
-persist.timed.enable=true
 
 # Sensors
 persist.vendor.sensors.odl.adsp=true
-
-#quick charge type detect
-persist.vendor.quick.charge=1
+persist.vendor.sensors.support_direct_channel=false
+persist.vendor.sensors.allow_non_default_discovery=true
 
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
@@ -344,8 +235,3 @@ persist.sys.wfd.virtual=0
 
 # Wi-Fi
 wifi.aware.interface=wifi-aware0
-
-# ZRAM writeback
-ro.zram.mark_idle_delay_mins=60
-ro.zram.first_wb_delay_mins=180
-ro.zram.periodic_wb_delay_hours=24

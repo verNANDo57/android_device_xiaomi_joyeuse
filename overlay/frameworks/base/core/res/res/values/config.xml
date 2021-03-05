@@ -21,27 +21,6 @@
     <!-- The restoring is handled by modem if it is true-->
     <bool name="skip_restoring_network_selection">true</bool>
 
-    <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
-    <bool name="config_wifi_dual_band_support">true</bool>
-
-    <!-- Boolean indicating whether the wifi chipset has background scan support -->
-    <bool name="config_wifi_background_scan_support">true</bool>
-
-    <!-- Wifi driver supports batched scan -->
-    <bool name="config_wifi_batched_scan_supported">true</bool>
-
-    <!-- True if the firmware supports p2p MAC randomization -->
-    <bool name="config_wifi_p2p_mac_randomization_supported">true</bool>
-
-    <!-- True if the firmware supports connected MAC randomization -->
-    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
-
-    <!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
-    <bool name="config_wifi_softap_acs_supported">true</bool>
-
-    <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
-    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
-
     <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
     <bool name="config_cellBroadcastAppLinks">true</bool>
 
@@ -152,12 +131,6 @@
 
     <!-- Telephony qualified networks service package name to bind to by default. -->
     <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
-
-    <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
-    <bool name="config_dynamic_bind_ims">true</bool>
-
-    <!-- ImsService package name to bind to by default, if config_dynamic_bind_ims is true -->
-    <string name="config_ims_package">org.codeaurora.ims</string>
 
     <!-- Config determines whether to update phone object when voice registration
          state changes. Voice radio tech change will always trigger an update of
@@ -519,25 +492,31 @@
     <!-- Slow brightness animation ramp rate in brightness units per second-->
     <integer name="config_brightness_ramp_rate_slow">246</integer>
 
-    <!-- Screen brightness used to dim the screen when the user activity
-         timeout expires.  May be less than the minimum allowed brightness setting
-         that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">2</integer>
-
-    <!-- Default screen brightness setting.
-         Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">67</integer>
-
-    <!-- Minimum screen brightness setting allowed by the power manager.
-         The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">2</integer>
+    <!-- Minimum screen brightness setting allowed by power manager.
+         The user is forbidden from setting the brightness below this level.
+         Equivalent to 1/255. -->
+    <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.0</item>
 
     <!-- Maximum screen brightness allowed by the power manager.
-         The user is forbidden from setting the brightness above this level. -->
-    <integer name="config_screenBrightnessSettingMaximum">255</integer>
+         The user is forbidden from setting the brightness above this level.  -->
+    <item name="config_screenBrightnessSettingMaximumFloat" format="float" type="dimen">1.0</item>
+
+    <!-- Default screen brightness setting
+         Must be in the range specified by minimum and maximum.
+         Equivalent to 67/255 (default for this device)    -->
+    <item name="config_screenBrightnessSettingDefaultFloat" format="float" type="dimen">0.26274509804</item>
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
+
+    <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
+         when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
+         where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
+         and Strength as defined in Authenticators.java -->
+    <string-array name="config_biometric_sensors" translatable="false" >
+        <!-- ID0:Fingerprint:Strong -->
+        <item>0:2:15</item>
+    </string-array>
 
     <!-- Default list of files pinned by the Pinner Service -->
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
@@ -622,9 +601,16 @@
     <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
 
-    <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
-    <bool name="config_zramWriteback">true</bool>
-     
+    <!-- Enable doze alwaysOn Display -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+    
+    <!-- Control whether the always on display mode is enabled by default. This value will be used
+         during initialization when the setting is still null. -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>    
+    
+    <!-- If true, the display will be shifted around in ambient mode. -->
+    <bool name="config_enableBurnInProtection">true</bool>
+
     <!-- Flashlight on power button -->
     <integer name="config_flashlightProximityTimeout">3000</integer>
 
@@ -635,12 +621,39 @@
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveBatteryLed">true</bool>
 
-    <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
-         when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
-         where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
-         and Strength as defined in Authenticators.java -->
-    <string-array name="config_biometric_sensors" translatable="false" >
-        <!-- ID0:Fingerprint:Strong -->
-        <item>0:2:15</item>
+    <!-- The list of components which should be automatically disabled for a specific device. -->
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+        <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
+        <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
     </string-array>
+
+    <!-- Smart charging -->
+    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
+    <string name="config_SmartChargingSuspendValue" translatable="false">1</string>
+    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
+
+    <!-- QS System Info -->
+    <string name="config_cpu_temp_path">/sys/devices/virtual/thermal/thermal_zone0/temp</string>
+    <string name="config_battery_temp_path">/sys/class/power_supply/battery/temp</string>
+    <string name="config_gpu_clock_path">/sys/kernel/gpu/gpu_clock</string>
+    <string name="config_gpu_busy_path">/sys/kernel/gpu/gpu_busy</string>
+
+    <!-- Vibrator pattern for feedback about a long screen/key press -->
+    <integer-array name="config_longPressVibePattern">
+        <item>0</item>
+        <item>7</item>
+        <item>10</item>
+    </integer-array>
+
+    <!-- Vibrator pattern for feedback about touching a virtual key -->
+    <integer-array name="config_virtualKeyVibePattern">
+        <item>0</item>
+        <item>5</item>
+        <item>10</item>
+    </integer-array>
+
+    <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
+    <integer-array name="config_keyboardTapVibePattern">
+        <item>10</item>
+    </integer-array>
 </resources>

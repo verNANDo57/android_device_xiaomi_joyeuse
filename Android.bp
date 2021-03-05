@@ -1,8 +1,5 @@
 soong_namespace {
      imports: [
-        "vendor/nxp/opensource/pn5xx",
-        "vendor/qcom/opensource/interfaces",
-        "hardware/xiaomi",
         "hardware/google/interfaces",
         "hardware/google/pixel",
     ]

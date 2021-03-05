@@ -121,6 +121,7 @@ ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 ro.surface_flinger.max_virtual_display_dimension=4096
 ro.surface_flinger.supports_background_blur=1
 ro.surface_flinger.use_color_management=true
+ro.surface_flinger.wcg_composition_dataspace=143261696
 ro.vendor.display.cabl=0
 ro.vendor.display.sensortype=2
 ro.vendor.display.svi=1
@@ -130,6 +131,9 @@ vendor.display.svi.config_path=/vendor/etc/SVIConfig.xml
 # DPM
 persist.dpm.feature=1
 
+#GBoard
+ro.com.google.ime.kb_pad_port_b=1
+
 # HVDCP
 persist.vendor.cp.taper_term_mv=6500
 persist.vendor.cp.fcc_main_ua=400000
@@ -138,14 +142,6 @@ persist.vendor.cp.fcc_main_ua=400000
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
-
-# IMS
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
-
-#GBoard
-ro.com.google.ime.kb_pad_port_b=1
 
 # Media
 debug.stagefright.ccodec=1
@@ -199,6 +195,3 @@ persist.vendor.sensors.enable.mag_filter=true
 # WFD
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
-
-# SurfaceFlinger brightness tweak
-ro.sf.force_light_brightness=1
