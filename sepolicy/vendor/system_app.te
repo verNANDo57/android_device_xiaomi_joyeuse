@@ -10,6 +10,7 @@ allow system_app vendor_sysfs_graphics:file { getattr open read };
 allow system_app sysfs:file { getattr open write read };
 allow system_app sysfs_vibrator:file rw_file_perms;
 allow system_app sysfs_vibrator:dir search;
+allow system_app sysfs_msm_subsys:dir search;
 
 allow system_app vendor_default_prop:file { getattr open read };
 allow system_app vendor_default_prop:file {map};
