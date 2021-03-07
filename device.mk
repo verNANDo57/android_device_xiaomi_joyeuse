@@ -666,3 +666,8 @@ PRODUCT_PACKAGES += \
    android.system.suspend@1.0-service \
    android.system.suspend@1.0-impl \
    android.system.suspend@1.0
+
+# Dexpreopt SystemUI
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI \
+    TrebuchetQuickStep
