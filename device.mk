@@ -39,7 +39,8 @@ QCOM_SOONG_NAMESPACE := $(LOCAL_PATH)
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
-    hardware/google/pixel
+    hardware/google/pixel \
+    vendor/qcom/opensource/data-ipa-cfg-mgr
 
 # Init scripts
 PRODUCT_COPY_FILES += \
