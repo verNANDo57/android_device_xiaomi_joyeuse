@@ -58,6 +58,8 @@ on early-init
 
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
+    #Disable UFS clock scaling
+    write /sys/bus/platform/devices/1d84000.ufshc/clkscale_enable 0
 
 on init
 
@@ -248,6 +250,12 @@ on boot
     # limit discard size to 128MB in order to avoid long IO latency
     write /sys/block/sda/queue/discard_max_bytes 134217728
 
+    # Enable qcrild and data services
+    enable vendor.qcrild
+    enable vendor.qcrild2
+    enable vendor.dataqti
+    enable vendor.dataadpl
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
@@ -411,11 +419,6 @@ on post-fs-data
     #Create dir for TUI
     mkdir /data/vendor/tui 0700 system drmrpc
 
-    start vendor.qcrild
-    start vendor.qcrild2
-    start vendor.dataqti
-    start vendor.dataadpl
-
 service nqnfcinfo /system/vendor/bin/nqnfcinfo
     class late_start
     group nfc
@@ -493,6 +496,8 @@ on property:persist.vendor.sys.rawdump_copy=0
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
+    # Enable UFS clock scaling back
+    write /sys/bus/platform/devices/1d84000.ufshc/clkscale_enable 1
     #Reset read ahead for dm-0 and dm-1 to 512kb
     write /sys/block/dm-0/queue/read_ahead_kb 512
     write /sys/block/dm-1/queue/read_ahead_kb 512
