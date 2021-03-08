@@ -130,14 +130,11 @@ PRODUCT_PACKAGES += \
     libhdmiedid \
     libhfp \
     libldnhncr \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
     libreverbwrapper \
     libsndmonitor \
     libspkrprot \
     libvisualizer \
-    libvolumelistener
+    audio.hearing_aid.default
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
@@ -386,7 +383,8 @@ PRODUCT_COPY_FILES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl-qti \
+    android.hardware.health@2.1 \
+    android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
 
 # HIDL
