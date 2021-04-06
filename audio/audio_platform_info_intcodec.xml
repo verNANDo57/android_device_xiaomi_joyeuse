@@ -114,18 +114,6 @@
         <device name="SND_DEVICE_OUT_USB_HEADPHONES" acdb_id="10012"/>
         <device name="SND_DEVICE_OUT_HEADPHONES_CE" acdb_id="10012"/>
         <device name="SND_DEVICE_OUT_HEADPHONES_NO_CE" acdb_id="10012"/>
-        <!-- 2020.04.29 longcheer chengfuyong add for voice record mic begin -->
-        <device name="SND_DEVICE_IN_HEADSET_MIC_VOICE_RECORD" acdb_id="10018"/>
-        <device name="SND_DEVICE_IN_USB_HEADSET_MIC_VOICE_RECORD" acdb_id="10018"/>
-        <!-- 2020.04.29 longcheer chengfuyong add for voice record mic end-->
-        <device name="SND_DEVICE_IN_VOICE_SPEAKER_MIC" acdb_id="11"/>
-        <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC_DUO" acdb_id="10013"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_HEADSET_MIC_CTS" acdb_id="10032"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_MIC" acdb_id="143"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" acdb_id="143"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_MIC_AEC" acdb_id="143"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_DMIC_FLUENCE" acdb_id="143"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_MIC_AEC_NS" acdb_id="143"/>
     </acdb_ids>
     <backend_names>
         <device name="SND_DEVICE_OUT_HEADPHONES" backend="headphones" interface="RX_CDC_DMA_RX_0"/>

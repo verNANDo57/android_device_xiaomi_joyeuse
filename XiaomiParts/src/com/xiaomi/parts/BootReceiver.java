@@ -31,6 +31,7 @@ import com.xiaomi.parts.R;
 
 import com.xiaomi.parts.kcal.Utils;
 import com.xiaomi.parts.ambient.SensorsDozeService;
+import com.xiaomi.parts.thermal.ThermalUtils;
 
 import java.io.IOException;
 import java.util.List;
@@ -128,12 +129,13 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
 
         FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_USB_FASTCHARGE, 0));
-        FileUtils.setValue(DeviceSettings.FASTCHARGE_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_FASTCHARGE, 0));
         FileUtils.setValue(DeviceSettings.MSM_TOUCHBOOST_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_MSM_TOUCHBOOST, 0));
        // Ambient
         context.startService(new Intent(context, SensorsDozeService.class));
+
+       // Thermal
+        ThermalUtils.initialize(context);
 
         boolean enabled = sharedPrefs.getBoolean(DeviceSettings.PREF_KEY_FPS_INFO, false);
         if (enabled) {

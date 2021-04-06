@@ -1,3 +1,1 @@
-allow hal_sensors_default vendor_diag_device:chr_file { read write };
-allow hal_sensors_default vendor_diag_device:chr_file open;
 set_prop(hal_sensors_default, vendor_camera_prop)

@@ -1,7 +1,9 @@
 soong_namespace {
      imports: [
-        "hardware/google/interfaces",
-        "hardware/google/pixel",
-        "vendor/qcom/opensource/data-ipa-cfg-mgr",
+        "vendor/nxp/opensource/pn5xx",
+        "vendor/qcom/opensource/commonsys/packages/apps/Bluetooth",
+        "vendor/qcom/opensource/interfaces",
+        "kernel/xiaomi/sm6250",
+        "hardware/xiaomi",
     ]
 }

@@ -1,47 +1,34 @@
-allow system_app vendor_sysfs_battery_supply:dir search;
-allow system_app vendor_sysfs_battery_supply:file rw_file_perms;
-allow system_app sysfs_zram:dir search;
-allow system_app sysfs_zram:file { getattr open read };
-allow system_app wificond:binder call;
-allow system_app sysfs_leds:dir search;
-allow system_app sysfs_graphics:dir search;
-allow system_app sysfs_graphics:file rw_file_perms;
-allow system_app vendor_sysfs_graphics:file { getattr open read };
-allow system_app sysfs:file { getattr open write read };
-allow system_app sysfs_vibrator:file rw_file_perms;
-allow system_app sysfs_vibrator:dir search;
-allow system_app sysfs_msm_subsys:dir search;
+# Battery Health
+r_dir_file(system_app, sysfs_battery_supply);
 
-allow system_app vendor_default_prop:file { getattr open read };
-allow system_app vendor_default_prop:file {map};
+# FPS Info
+allow system_app sysfs_fps:file rw_file_perms;
 
-# zram
-r_dir_file(system_app sysfs_zram);
+# GPU Boost
+set_prop(system_app, boost_prop);
+get_prop(system_app, boost_prop);
+allow system_app boost_prop:property_service set;
 
 # KCAL
 allow system_app kcal_dev:file rw_file_perms;
 allow system_app kcal_dev:dir search;
 
-# Battery Health
-r_dir_file(system_app, sysfs_battery_supply);
-
 # SELinux
 allow system_app selinuxfs:file { read open };
 
-# USB Fastcharge
-allow system_app sysfs_usbcharge:file { open read getattr write };
-
 # Smart Charging
 allow system_app sysfs_scharge:file { getattr open write };
-
-# FPS Info
-allow system_app sysfs_fps:file rw_file_perms;
-
-# Fastcharge
-allow system_app sysfs_fcharge:file { open read getattr write };
 
 # Touchboost
 allow system_app sysfs_touchboost:file { open read getattr write };
 allow system_app vendor_sysfs_msm_perf:dir { search };
 
-allow system_app sysfs:file { read open getattr };
+# USB Fastcharge
+allow system_app sysfs_fcharge:file { open read getattr write };
+
+allow system_app vendor_default_prop:file { getattr open read };
+allow system_app vendor_default_prop:file {map};
+allow system_app vendor_sysfs_graphics:file { getattr open read };
+allow system_app vendor_sysfs_msm_perf:dir { search };
+allow system_app apk_data_file:dir { write };
+allow system_app sysfs_zram:dir { search };

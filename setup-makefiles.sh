@@ -12,7 +12,6 @@ export DEVICE=joyeuse
 export VENDOR=xiaomi
 
 export DEVICE_BRINGUP_YEAR=2020
-
 INITIAL_COPYRIGHT_YEAR=2020
 
 # Load extract_utils and do some sanity checks
@@ -32,7 +31,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true
 
 # Copyright headers and guards
-write_headers "curtana"
+write_headers "joyeuse"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
@@ -54,3 +53,4 @@ if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
     # Finish
     write_footers
 fi
+

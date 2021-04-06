@@ -6,21 +6,17 @@ allow vendor_init {
 }:dir { create search getattr open read setattr ioctl write add_name remove_name rmdir relabelfrom };
 
 allow init adsprpcd_file:file mounton;
-allow init vendor_configs_file:file mounton;
+
+set_prop(vendor_init, vendor_freq_prop)
+set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, camera_prop)
 
 allow vendor_init persist_debug_prop:file { read };
 allow vendor_init default_prop:file { read };
 allow vendor_init default_prop:property_service { set };
 
-set_prop(vendor_init, vendor_freq_prop)
+# Dirac
+allow vendor_init dirac_prop:property_service set;
 
-# Allow vendor_init to set camera_prop
+# Allow vendor_init to set persist_camera_prop
 set_prop(vendor_init, vendor_persist_camera_prop)
-set_prop(vendor_init, vendor_camera_prop)
-set_prop(vendor_init, camera_prop)
-
-allow vendor_init proc_sched_energy_aware:file w_file_perms;
-set_prop(vendor_init, power_prop)
-
-# Allow vendor init to set thermal property
-set_prop(vendor_init, vendor_thermal_prop)

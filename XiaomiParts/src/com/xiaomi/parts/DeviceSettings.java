@@ -54,13 +54,9 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
 
-    public static final String CATEGORY_USB_FASTCHARGE = "usb_fastcharge";
-    public static final String PREF_USB_FASTCHARGE = "usb_charge";
+    public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
+    public static final String PREF_USB_FASTCHARGE = "fastcharge";
     public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
-
-    public static final String CATEGORY_FASTCHARGE = "fastcharge";
-    public static final String PREF_FASTCHARGE = "fast_charge";
-    public static final String FASTCHARGE_PATH = "/sys/class/power_supply/bms/fastcharge_mode";
 
     public static final String PREF_KEY_FPS_INFO = "fps_info";
 
@@ -68,6 +64,9 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String PREF_MSM_TOUCHBOOST = "touchboost";
     public static final String MSM_TOUCHBOOST_PATH = "/sys/module/msm_performance/parameters/touchboost";
+
+    public static final String PREF_GPUBOOST = "gpuboost";
+    public static final String GPUBOOST_SYSTEM_PROPERTY = "persist.xiaomiparts.gpu_profile";
 
     private static final String SELINUX_CATEGORY = "selinux";
     private static final String PREF_SELINUX_MODE = "selinux_mode";
@@ -79,9 +78,10 @@ public class DeviceSettings extends PreferenceFragment implements
     private Preference mKcal;
     private Preference mClearSpeakerPref;
     private Preference mAmbientPref;
-    private SecureSettingSwitchPreference mUSBFastcharge;
     private SecureSettingSwitchPreference mFastcharge;
+    private static SwitchPreference mFpsInfo;
     private SecureSettingSwitchPreference mTouchboost;
+    private SecureSettingListPreference mGPUBOOST;
     private SwitchPreference mSelinuxMode;
     private SwitchPreference mSelinuxPersistence;
     private static TwoStatePreference mSmartChargingSwitch;
@@ -135,27 +135,17 @@ public class DeviceSettings extends PreferenceFragment implements
         }
 
         if (FileUtils.fileWritable(USB_FASTCHARGE_PATH)) {
-            mUSBFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
-            mUSBFastcharge.setEnabled(USBFastcharge.isSupported());
-            mUSBFastcharge.setChecked(USBFastcharge.isCurrentlyEnabled(this.getContext()));
-            mUSBFastcharge.setOnPreferenceChangeListener(new USBFastcharge(getContext()));
-        } else {
-            getPreferenceScreen().removePreference(findPreference(CATEGORY_USB_FASTCHARGE));
-        }
-
-        if (FileUtils.fileWritable(FASTCHARGE_PATH)) {
-            mFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_FASTCHARGE);
+            mFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
             mFastcharge.setEnabled(Fastcharge.isSupported());
             mFastcharge.setChecked(Fastcharge.isCurrentlyEnabled(this.getContext()));
             mFastcharge.setOnPreferenceChangeListener(new Fastcharge(getContext()));
-        }
-//          else {
+//        } else {
 //            getPreferenceScreen().removePreference(findPreference(CATEGORY_FASTCHARGE));
-//        }
+        }
 
-        SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
-        fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
-        fpsInfo.setOnPreferenceChangeListener(this);
+        mFpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
+        mFpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
+        mFpsInfo.setOnPreferenceChangeListener(this);
 
         // SELinux
         Preference selinuxCategory = findPreference(SELINUX_CATEGORY);
@@ -163,8 +153,7 @@ public class DeviceSettings extends PreferenceFragment implements
         mSelinuxMode.setChecked(SELinux.isSELinuxEnforced());
         mSelinuxMode.setOnPreferenceChangeListener(this);
 
-        mSelinuxPersistence =
-        (SwitchPreference) findPreference(PREF_SELINUX_PERSISTENCE);
+        mSelinuxPersistence = (SwitchPreference) findPreference(PREF_SELINUX_PERSISTENCE);
         mSelinuxPersistence.setOnPreferenceChangeListener(this);
         mSelinuxPersistence.setChecked(getContext()
         .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
@@ -181,6 +170,11 @@ public class DeviceSettings extends PreferenceFragment implements
 
         mSeekBarPreference = (SeekBarPreference) findPreference("seek_bar");
         mSeekBarPreference.setEnabled(mSmartChargingSwitch.isChecked());
+
+        mGPUBOOST = (SecureSettingListPreference) findPreference(PREF_GPUBOOST);
+        mGPUBOOST.setValue(FileUtils.getStringProp(GPUBOOST_SYSTEM_PROPERTY, "0"));
+        mGPUBOOST.setSummary(mGPUBOOST.getEntry());
+        mGPUBOOST.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -189,7 +183,7 @@ public class DeviceSettings extends PreferenceFragment implements
         switch (key) {
             case PREF_KEY_FPS_INFO:
                 boolean enabled = (Boolean) value;
-                Intent fpsinfo = new Intent(this.getContext(), com.xiaomi.parts.FPSInfoService.class);
+                Intent fpsinfo = new Intent(this.getContext(), FPSInfoService.class);
                 if (enabled) {
                     this.getContext().startService(fpsinfo);
                 } else {
@@ -208,6 +202,12 @@ public class DeviceSettings extends PreferenceFragment implements
                   return true;
                 }
 
+                break;
+
+            case PREF_GPUBOOST:
+                mGPUBOOST.setValue((String) value);
+                mGPUBOOST.setSummary(mGPUBOOST.getEntry());
+                FileUtils.setStringProp(GPUBOOST_SYSTEM_PROPERTY, (String) value);
                 break;
 
             default:

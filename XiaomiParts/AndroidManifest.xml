@@ -24,8 +24,11 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
-    <uses-sdk android:minSdkVersion="27" />
+    <uses-sdk
+        android:minSdkVersion="29"
+        android:targetSdkVersion="29" />
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
     <protected-broadcast android:name="com.xiaomi.parts.CUST_UPDATE" />
@@ -41,7 +44,7 @@
             android:directBootAware="true"
             android:enabled="true"
             android:exported="false">
-            <intent-filter>
+            <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -54,6 +57,7 @@
             android:exported="false"
             android:icon="@drawable/ic_mi"
             android:label="@string/advanced_settings"
+            android:excludeFromRecents="true"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -122,19 +126,8 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
-
         <service
-            android:name="com.xiaomi.parts.LogTile"
-            android:icon="@drawable/ic_qs_log"
-            android:label="@string/quick_settings_log_tile_label"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-        <service
-            android:name="com.xiaomi.parts.FPSInfoService"
+            android:name=".FPSInfoService"
             android:exported="false">
         </service>
         <service
@@ -150,5 +143,38 @@
         <service android:name="com.xiaomi.parts.SmartChargingService"
                 android:exported="false">
         </service>
+
+        <service android:name=".GpuboostTileService"
+            android:icon="@drawable/ic_gpuboost"
+            android:label="@string/gpuboost_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".thermal.ThermalActivity"
+            android:label="@string/thermal_title"
+            android:theme="@style/CustomOptionsTheme">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/thermal_summary" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="1" />
+        </activity>
+
+        <service
+            android:name=".thermal.ThermalService" 
+            android:permission="ThermalService">
+        </service>
+
     </application>
 </manifest>

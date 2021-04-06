@@ -23,8 +23,6 @@
     <!-- KCal -->
     <string name="device_kcal_title">Calibração de cores da tela</string>
     <string name="kcal_enabled_summary">Calibrar a exibição das cores na tela utilizando o KCAL</string>
-
-    <!-- kcal -->
     <string name="advanced_settings_kcal">Calibração de cores da tela</string>
     <string name="cat_colormanagement">Configurações de cor</string>
     <string name="cat_calibration">Calibração da tela</string>
@@ -70,6 +68,9 @@
     <string name="preset_obsanity">Perfil-24</string>
     <string name="preset_obsanity_ips">Perfil-25</string>
 
+    <!-- SuperUser -->
+    <string name="cannot_get_su">A ação falhou devido à falta de acesso de superusuário</string>
+
     <!-- USB fastcharge -->
     <string name="usb_fastcharge_title">Carregamento rápido USB</string>
     <string name="fastcharge_title">Habilitar carregamento rápido USB</string>
@@ -84,11 +85,6 @@
     <string name="custom_seekbar_default_value">Padrão</string>
     <string name="custom_seekbar_default_value_to_set">Valor padrão: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
     <string name="custom_seekbar_default_value_is_set">O valor padrão definido é</string>
-
-    <!-- Log Tile -->
-    <string name="quick_settings_log_tile_label">LogTile</string>
-    <string name="quick_settings_log_tile_dialog_title">Opções</string>
-    <string name="cannot_get_su">A ação falhou devido à falta de acesso de superusuário</string>
 
     <!-- FPS Info -->
     <string name="fps_info_title">Sobreposição de informações FPS</string>

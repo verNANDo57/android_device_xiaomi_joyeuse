@@ -18,7 +18,7 @@
 
     <PreferenceCategory
         android:key="boost"
-        android:title="@string/boost_title" >
+        android:title="@string/boost_category" >
 
         <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
             android:key="touchboost"
@@ -27,11 +27,20 @@
             android:icon="@drawable/ic_boost"
             android:summary="@string/touchboost_summary" />
 
+        <com.xiaomi.parts.preferences.SecureSettingListPreference
+            android:key="gpuboost"
+            android:dialogTitle="@string/gpuboost_dialogTitle"
+            android:entries="@array/gpuboost_profiles"
+            android:entryValues="@array/gpuboost_values"
+            android:icon="@drawable/ic_gpuboost"
+            android:defaultValue="0"
+            android:title="@string/gpuboost_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="charging"
-        android:title="@string/smart_charging_main_title">
+        android:title="@string/charging_category">
 
         <SwitchPreference
             android:key="smart_charging"
@@ -59,7 +68,7 @@
 
     <PreferenceCategory
         android:key="display"
-        android:title="@string/display_title">
+        android:title="@string/display_category">
 
         <Preference
             android:key="device_kcal"
@@ -107,18 +116,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="fastcharge"
-        android:title="@string/fastcharge_category" >
-
-    <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
-            android:key="fast_charge"
-            android:defaultValue="true"
-            android:title="@string/fastcharge_title"
-            android:summary="@string/fastcharge_summary" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="speaker"
         android:title="@string/speaker_category">
 
@@ -131,6 +128,7 @@
                 android:targetClass="com.xiaomi.parts.speaker.ClearSpeakerActivity"
                 android:targetPackage="com.xiaomi.parts.speaker" />
         </Preference>
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -162,7 +160,7 @@
         android:title="@string/usb_fastcharge_category" >
 
         <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
-            android:key="usb_charge"
+            android:key="fastcharge"
             android:defaultValue="true"
             android:title="@string/usb_fastcharge_title"
             android:icon="@drawable/ic_usb_fastcharge"

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020 The Xiaomi-SM6250 Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="advanced_settings">Настройки Xiaomi</string>
+    <string name="advanced_settings_summary">Дополнительные настройки</string>
+
+    <!-- Display category -->
+    <string name="display_category">Дисплей</string>
+
+    <!-- KCAL -->
+    <string name="device_kcal_title">Калибровка цвета дисплея</string>
+    <string name="kcal_enabled_summary">Откалибруйте цвета дисплея с помощью KCAL</string>
+    <string name="advanced_settings_kcal">Калибровка цвета дисплея</string>
+    <string name="cat_colormanagement">Цвета</string>
+    <string name="cat_calibration">Калибровка дисплея</string>
+
+    <string name="kcal_enabled">Включено</string>
+    <string name="kcal_disabled">Выключено</string>
+    <string name="set_on_boot">Установить при загрузке</string>
+    <string name="color_red">Красный</string>
+    <string name="color_green">Зелёный</string>
+    <string name="color_blue">Синий</string>
+    <string name="color_minimum">Минимум</string>
+    <string name="saturation">Насыщенность</string>
+    <string name="value">Значение</string>
+    <string name="contrast">Контрасность</string>
+    <string name="hue">Оттенок</string>
+    <string name="grayscale">Отображение в оттенках серого</string>
+
+    <!-- KCAL: Presets -->
+    <string name="presets_dialog_title">Выбрать предустановку</string>
+    <string name="preset_default">По умолчанию</string>
+    <string name="preset_version_1">Режим 1</string>
+    <string name="preset_version_2">Режим 2</string>
+    <string name="preset_version_3">Режим 3</string>
+    <string name="preset_triluminous">Трилуминозный</string>
+    <string name="preset_deep_black_white">Глубокий черный и белый</string>
+    <string name="preset_deep_natural">Глубокие натуральные цвета</string>
+    <string name="preset_cool_amoled">Холодные цвета AMOLED</string>
+    <string name="preset_extreme_amoled">AMOLED</string>
+    <string name="preset_warm_amoled">Тёплые цвета AMOLED</string>
+    <string name="preset_hybrid_mamba">Hybrid Mamba</string>
+    <string name="preset_sir_banger">Sir Banger</string>
+    <string name="preset_gerard_extrem_cool">Gerard Extreme Cool</string>
+    <string name="preset_yoyoz808">Yoyoz808</string>
+    <string name="preset_purian">Purian</string>
+    <string name="preset_deep_black_colorful">Глубокий черный красочный</string>
+    <string name="preset_vomer_deep_rich">Vomer Deep Rich</string>
+    <string name="preset_franco">Franco</string>
+    <string name="preset_wrinklefree_cool">WrinkleFree Cool</string>
+    <string name="preset_harley_tech">Harley-Tech</string>
+    <string name="preset_perfection">Perfection</string>
+    <string name="preset_banged_up">Banged up</string>
+    <string name="preset_sim_cooler">SimCooler</string>
+    <string name="preset_obsanity">Obsanity</string>
+    <string name="preset_obsanity_ips">Obsanity IPS</string>
+
+    <!-- SuperUser -->
+    <string name="cannot_get_su">Не удалось получить права суперпользователя</string>
+
+    <!-- KCAL: Reset menu -->
+    <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
+    <string name="kcal_reset">Сбросить</string>
+
+    <!-- USB fastcharge category -->
+    <string name="usb_fastcharge_category">USB быстрая зарядка</string>
+
+    <!-- USB fastcharge -->
+    <string name="usb_fastcharge_title">Включить/Выключить быструю зарядку через USB</string>
+    <string name="usb_fastcharge_summary">Заряжает с напряжением до 900 мА при подключении к компьютеру через порт USB 3.0</string>
+
+    <!-- FPS Info -->
+    <string name="fps_info_title">Информация о FPS</string>
+    <string name="fps_info_summary">Показывает таблицу с текущими кадрами в секунду</string>
+
+    <!-- Ambient gesture haptic feedback -->
+    <string name="ambient_gesture_haptic_feedback">Тактильная отдача</string>
+    <string name="ambient_gesture_haptic_feedback_summary">Вибрация при обнаружении Ambient жеста</string>
+
+    <!-- Ambient Display -->
+    <string name="ambient_doze">Сон</string>
+    <string name="ambient_display_xiaomi">XiaomiDoze</string>
+    <string name="advanced_doze_summary">Активный экран</string>
+    <string name="ambient_display_enable_title">Жесты активного экрана</string>
+    <string name="ambient_display_enable_summary">Пробудить устройство при получении уведомлений</string>
+    <string name="ambient_display_gestures_title">Жесты активного экрана</string>
+    <string name="ambient_display_gestures_summary">Дополнительные жесты для пробуждения устройства</string>
+    <string name="ambient_display_summary">Пробудить устройство при получении уведомлений</string>
+    <string name="ambient_display_summary_on">Экран будет загораться, когда вы получите уведомления</string>
+    <string name="ambient_display_summary_off">Экран не будет загораться, когда вы получите уведомления</string>
+
+    <!-- Doze sensor -->
+    <string name="tilt_sensor_title">Датчик наклона</string>
+    <string name="pickup_sensor_title">Датчик подхвата</string>
+    <string name="proximity_sensor_title">Датчик приближения</string>
+
+    <!-- Hand wave gesture -->
+    <string name="hand_wave_gesture_title">Проведение ладонью над экраном</string>
+    <string name="hand_wave_gesture_summary">Показать уведомления при проведении ладонью над экраном</string>
+    <string name="hand_wave_gesture_flat_title">Определить положение устройства</string>
+    <string name="hand_wave_gesture_flat_summary">Устройство завибрирует только в том случае, если телефон лежит лицевой стороной вверх на плоской поверхности.</string>
+
+    <!-- Pick-up gesture -->
+    <string name="pick_up_gesture_title">Подхвата</string>
+    <string name="pick_up_gesture_summary">Показать уведомления при подхвате устройства</string>
+
+    <!-- Pocket gesture -->
+    <string name="pocket_gesture_title">Карман</string>
+    <string name="pocket_gesture_summary">Импульсные уведомления при извлечении устройства из кармана</string>
+
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">Жесты</string>
+    <string name="proximity_wake_enable_title">Пробуждение устройства при помощи жестов</string>
+    <string name="proximity_wake_enable_summary">Пробудить устройство при проведении рукой над экраном</string>
+
+    <!-- Speaker category -->
+    <string name="speaker_category">Динамик</string>
+
+    <!-- Clear Speaker -->
+    <string name="clear_speaker_title">Прочистка динамика</string>
+    <string name="clear_speaker_summary">Включает 30-секундный звук, чтобы очистить динамик</string>
+    <string name="clear_speaker_description">Запустите эту функцию один или два раза, если вы обнаружите, что ваш динамик слегка засорён пылью. Установите максимальную громкость мультимедиа.Если динамик сильно заблокирован, запустите эту функцию 2-5 раз, встряхивая устройство динамиком вниз.</string>
+
+    <!-- Boost Category -->
+    <string name="boost_category">Ускорение</string>
+
+    <!-- Touchboost -->
+    <string name="touchboost_title">Включить Touchboost</string> 
+    <string name="touchboost_summary">Увеличивает скорость процессора при обнаружении касания для плавной работы</string>
+
+    <!-- GPUBoost -->
+    <string name="gpuboost_title">GPU производительность</string>
+    <string name="gpuboost_dialogTitle">Выберите режим работы GPU</string>
+
+    <string name="gpuboost_high">Высокая производительность</string>
+    <string name="gpuboost_medium">Средняя производительность</string>
+    <string name="gpuboost_low">Низкая производительность</string>
+    <string name="gpuboost_disable">Выключено</string>
+
+    <!-- Selinux category -->
+    <string name="selinux_category">SELinux</string>
+
+    <!-- SELinux toggle -->
+    <string name="selinux_explanation_summary">SELinux - это набор модификаций ядра и инструментов пользовательского пространства. Изменение режима может вызвать нежелательные эффекты. Используйте на свой страх и риск.</string>
+    <string name="selinux_mode_title">SELinux режим</string>
+    <string name="selinux_permissive_summary">Permissive</string>
+    <string name="selinux_enforcing_summary">Enforcing</string>
+    <string name="selinux_persistence_title">Сохраняется при перезагрузках</string>
+    <string name="selinux_persistence_summary">Восстанавливает указанный выше режим sepolicy при каждой загрузке</string>
+    <string name="selinux_permissive_toast_title">Selinux настроен на permissive!</string>
+    <string name="selinux_enforcing_toast_title">Selinux настроен на Enforcing!</string>
+
+    <!-- Charging category -->
+    <string name="charging_category">Зарядка</string>
+
+    <!-- Smart charging -->
+    <string name="smart_charging_title">Умная зарядка</string>
+    <string name="smart_charging_summary">Помогает охладить &amp; , так же защищает устройство от перезарядки</string>
+    <string name="reset_stats_title">Сбросить статистику аккумулятора</string>
+    <string name="reset_stats_summary">Статистика аккумулятора будет сброшена при достижении лимита зарядки.</string>
+
+    <!-- Label for feature switch -->
+    <string name="switch_bar_on">Включено</string>
+
+    <!-- Label for feature switch -->
+    <string name="switch_bar_off">Выключено</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Значение: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">По умолчанию</string>
+    <string name="custom_seekbar_default_value_to_set">По умолчанию: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
+    <string name="custom_seekbar_default_value_is_set">Установлено значение по умолчанию</string>
+
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Тепловые профили</string>
+    <string name="thermal_summary">Регулируйте тепловые профили для каждого приложения, чтобы достичь оптимальной производительности</string>
+    <string name="thermal_default">По умолчанию</string>
+    <string name="thermal_benchmark">Контрольный показатель</string>
+    <string name="thermal_camera">Камера</string>
+    <string name="thermal_dialer">Звонки</string>
+    <string name="thermal_gaming">Игры</string>
+    <string name="thermal_youtube">Youtube</string>
+
+</resources>

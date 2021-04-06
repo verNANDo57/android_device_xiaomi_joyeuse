@@ -15,16 +15,15 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="advanced_settings">XiaomiParts</string>
+    <string name="advanced_settings">Xiaomi Parts</string>
     <string name="advanced_settings_summary">Device specific tweaks</string>
 
-    <string name="display_title">Display</string>
+    <!-- Display category -->
+    <string name="display_category">Display</string>
 
     <!-- KCAL -->
     <string name="device_kcal_title">Display color calibration</string>
     <string name="kcal_enabled_summary">Calibrate display using KCAL</string>
-
-    <!-- kcal -->
     <string name="advanced_settings_kcal">Display color calibration</string>
     <string name="cat_colormanagement">Color settings</string>
     <string name="cat_calibration">Display calibration</string>
@@ -42,8 +41,8 @@
     <string name="hue">Hue</string>
     <string name="grayscale">Grayscale display</string>
 
+    <!-- KCAL: Presets -->
     <string name="presets_dialog_title">Select preset</string>
-    <!-- Presets -->
     <string name="preset_default">Default</string>
     <string name="preset_version_1">Version 1</string>
     <string name="preset_version_2">Version 2</string>
@@ -70,30 +69,19 @@
     <string name="preset_obsanity">Obsanity</string>
     <string name="preset_obsanity_ips">Obsanity IPS</string>
 
-    <!-- Fastcharge -->
-    <string name="fastcharge_category">Fastcharge</string>
-    <string name="fastcharge_title">Enable/Disable Fastcharge</string>
-    <string name="fastcharge_summary">Disable to reduce the heat produced while charging or to extend the lifespan of the battery</string>
+    <!-- SuperUser -->
+    <string name="cannot_get_su">Action failed because of missing superuser access</string>
 
-    <!-- USB fastcharge -->
-    <string name="usb_fastcharge_category">USB fastcharge</string>
-    <string name="usb_fastcharge_title">Enable/Disable USB fastcharge</string>
-    <string name="usb_fastcharge_summary">Charge upto 900mA when connected to a computer via USB 3.0 port</string>
-
-    <!-- menu -->
+    <!-- KCAL: Reset menu -->
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
     <string name="kcal_reset">Reset</string>
 
-    <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">Default</string>
-    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
-    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+    <!-- USB fastcharge category -->
+    <string name="usb_fastcharge_category">USB fastcharge</string>
 
-    <!-- Log Tile -->
-    <string name="quick_settings_log_tile_label">LogTile</string>
-    <string name="quick_settings_log_tile_dialog_title">Options</string>
-    <string name="cannot_get_su">Action failed because of missing superuser access</string>
+    <!-- USB fastcharge -->
+    <string name="usb_fastcharge_title">Enable/Disable USB fastcharge</string>
+    <string name="usb_fastcharge_summary">Charge upto 900mA when connected to a computer via USB 3.0 port</string>
 
     <!-- FPS Info -->
     <string name="fps_info_title">FPS info overlay</string>
@@ -139,13 +127,7 @@
     <string name="proximity_wake_enable_title">Proximity wake</string>
     <string name="proximity_wake_enable_summary">Wake device on hand wave</string>
 
-    <!-- Label for feature switch -->
-    <string name="switch_bar_on">On</string>
-
-    <!-- Label for feature switch -->
-    <string name="switch_bar_off">Off</string>
-
-    <!-- Speaker -->
+    <!-- Speaker category -->
     <string name="speaker_category">Speaker</string>
 
     <!-- Clear Speaker -->
@@ -153,13 +135,26 @@
     <string name="clear_speaker_summary">Play a 30-second audio to clear the speaker</string>
     <string name="clear_speaker_description">Run this feature once or twice if you find that your speaker is lightly blocked by dust. Set media volume to maximum.\n\nIf the speaker is blocked heavily, run this feature 2-5 times while shaking your device with the speaker facing downwards.</string>
 
+    <!-- Boost Category -->
+    <string name="boost_category">Boost</string>
+
     <!-- Touchboost -->
-    <string name="boost_title">Boost</string>
-    <string name="touchboost_title">Enable Touchboost</string>
+    <string name="touchboost_title">Enable Touchboost</string> 
     <string name="touchboost_summary">Boost CPU when touch detected for smooth experience</string>
 
-    <!-- Selinux Switch -->
+    <!-- GPUBoost -->
+    <string name="gpuboost_title">GPU boost</string>
+    <string name="gpuboost_dialogTitle">Select your GPU boost level</string>
+
+    <string name="gpuboost_high">High</string>
+    <string name="gpuboost_medium">Medium</string>
+    <string name="gpuboost_low">Low</string>
+    <string name="gpuboost_disable">Disabled</string>
+
+    <!-- Selinux category -->
     <string name="selinux_category">SELinux</string>
+
+    <!-- SELinux toggle -->
     <string name="selinux_explanation_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk.</string>
     <string name="selinux_mode_title">SELinux mode</string>
     <string name="selinux_permissive_summary">Permissive</string>
@@ -169,11 +164,35 @@
     <string name="selinux_permissive_toast_title">Selinux set to permissive!</string>
     <string name="selinux_enforcing_toast_title">Selinux set to enforcing!</string>
 
-    <!-- Charging -->
-    <string name="smart_charging_main_title">Battery</string>
+    <!-- Charging category -->
+    <string name="charging_category">Charging</string>
+
+    <!-- Smart charging -->
     <string name="smart_charging_title">Smart Charging</string>
     <string name="smart_charging_summary">Helps in cooling down &amp; also protects from over charging the device</string>
     <string name="reset_stats_title">Reset battery stats</string>
     <string name="reset_stats_summary">Battery stats will get reset when charging limit is reached</string>
+
+    <!-- Label for feature switch -->
+    <string name="switch_bar_on">On</string>
+
+    <!-- Label for feature switch -->
+    <string name="switch_bar_off">Off</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Thermal Profiles</string>
+    <string name="thermal_summary">Adjust per-app thermal profiles for optimum performance</string>
+    <string name="thermal_default">Default</string>
+    <string name="thermal_benchmark">Benchmark</string>
+    <string name="thermal_camera">Camera</string>
+    <string name="thermal_dialer">Dialer</string>
+    <string name="thermal_gaming">Gaming</string>
+    <string name="thermal_youtube">Youtube</string>
 
 </resources>

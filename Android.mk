@@ -15,9 +15,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),joyeuse)
-  subdir_makefiles=$(call first-makefiles-under,$(LOCAL_PATH))
-  $(foreach mk,$(subdir_makefiles),$(info including $(mk) ...)$(eval include $(mk)))
+ifneq ($(filter joyeuse,$(TARGET_DEVICE)),)
+include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
@@ -25,11 +24,6 @@ FIRMWARE_MOUNT_POINT := $(TARGET_OUT_VENDOR)/firmware_mnt
 $(FIRMWARE_MOUNT_POINT): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating $(FIRMWARE_MOUNT_POINT)"
 	@mkdir -p $(TARGET_OUT_VENDOR)/firmware_mnt
-
-$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr: $(wildcard $(PRODUCT_VENDOR_KERNEL_HEADERS)/*)
-	rm -rf $@
-	mkdir -p $@/include
-	cp -a $(PRODUCT_VENDOR_KERNEL_HEADERS)/. $@/include
 
 BT_FIRMWARE_MOUNT_POINT := $(TARGET_OUT_VENDOR)/bt_firmware
 $(BT_FIRMWARE_MOUNT_POINT): $(LOCAL_INSTALLED_MODULE)
@@ -119,4 +113,5 @@ $(EGL_64_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@mkdir -p $(dir $@)
 	@rm -rf $@
 	$(hide) ln -sf egl/$(notdir $@) $@
+
 endif
