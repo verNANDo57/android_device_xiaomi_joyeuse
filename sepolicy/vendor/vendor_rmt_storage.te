@@ -1,1 +1,1 @@
-allow vendor_rmt_storage sysfs:file { read };
+allow vendor_rmt_storage sysfs:file { getattr open read };

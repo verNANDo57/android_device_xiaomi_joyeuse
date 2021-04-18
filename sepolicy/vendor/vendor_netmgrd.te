@@ -1,1 +1,1 @@
-allow vendor_netmgrd sysfs:file { read };
+allow vendor_netmgrd sysfs:file { getattr open read };

@@ -1,0 +1,2 @@
+allow vendor_hal_perf_default sysfs_msm_subsys:dir { getattr open read write search };
+allow vendor_hal_perf_default sysfs_msm_subsys:file { getattr open read write unlink };

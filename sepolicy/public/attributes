@@ -1,1 +1,4 @@
 hal_attribute(mlipay)
+
+# MISYS
+hal_attribute_custom(misys)

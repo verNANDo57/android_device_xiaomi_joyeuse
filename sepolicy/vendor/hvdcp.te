@@ -1,0 +1,2 @@
+dontaudit vendor_hvdcp self:capability { dac_override };
+allow vendor_hvdcp sysfs_batteryinfo:file w_file_perms;

@@ -1,0 +1,16 @@
+# Allow hal_thermal_default to read/write to sysfs_thermal
+r_dir_file(hal_thermal_default, sysfs_thermal)
+allow hal_thermal_default sysfs_thermal:file rw_file_perms;
+
+# This is required to access proc stat for fetching CPU usage
+allow hal_thermal_default proc_stat:file { getattr open read };
+allow hal_thermal_default proc_stat:file r_file_perms;
+
+# netlink access
+allow hal_thermal_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+# Allow Thermal hal to communicate with with power HAL
+hal_client_domain(hal_thermal_default, hal_power)
+
+# read thermal_config
+get_prop(hal_thermal_default, vendor_thermal_prop)

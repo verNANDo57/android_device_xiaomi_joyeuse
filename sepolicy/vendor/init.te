@@ -9,6 +9,15 @@ allow init su:process { noatsecure  rlimitinh  siginh  transition };
 allow init sysfs_fcharge:file { write open };
 
 # Allow init to bind mount vendor configs file
-# allow init vendor_configs_file:file mounton;
 allow init vendor_file:file { execute execute_no_trans };
+
+# allow init vendor_configs_file:file mounton;
 allow init vendor_configs_file:file { mounton };
+
+allow init hwservicemanager:binder { call transfer };
+allow init self:qipcrtr_socket create;
+allow init vendor_sysfs_battery_supply:file setattr;
+
+allow init blkio_dev:file { create open read write };
+
+allow init property_socket:sock_file write;

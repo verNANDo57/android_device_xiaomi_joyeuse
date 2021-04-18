@@ -1,0 +1,2 @@
+allow permissioncontroller_app sysfs_msm_subsys:dir { getattr open read write search };
+allow permissioncontroller_app sysfs_msm_subsys:file { getattr open read write map };

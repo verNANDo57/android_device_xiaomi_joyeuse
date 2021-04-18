@@ -1,1 +1,1 @@
-allow vendor_hal_gnss_qti sysfs:file { read };
+allow vendor_hal_gnss_qti sysfs:file { getattr open read };

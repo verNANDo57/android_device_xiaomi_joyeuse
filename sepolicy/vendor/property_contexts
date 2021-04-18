@@ -1,37 +1,56 @@
 # Audio
-audio.sys.noisy.broadcast.delay         u:object_r:vendor_default_prop:s0
-audio.sys.offload.pstimeout.secs        u:object_r:vendor_default_prop:s0
-audio_hal.in_period_size                u:object_r:vendor_default_prop:s0
-audio_hal.period_multiplier             u:object_r:vendor_default_prop:s0
-persist.audio.fluence.voicecomm         u:object_r:vendor_default_prop:s0
+audio.sys.noisy.broadcast.delay         u:object_r:vendor_audio_prop:s0
+audio.sys.offload.pstimeout.secs        u:object_r:vendor_audio_prop:s0
+audio_hal.in_period_size                u:object_r:vendor_audio_prop:s0
+audio_hal.period_multiplier             u:object_r:vendor_audio_prop:s0
+persist.audio.fluence.voicecomm         u:object_r:vendor_audio_prop:s0
 
 # Camera
-cameradaemon.SaveMemAtBoot              u:object_r:vendor_default_prop:s0
-cpp.set.clock                           u:object_r:vendor_default_prop:s0
-disable.cpp.power.collapse              u:object_r:vendor_default_prop:s0
+cameradaemon.SaveMemAtBoot              u:object_r:vendor_camera_prop:s0
+cpp.set.clock                           u:object_r:vendor_camera_prop:s0
+disable.cpp.power.collapse              u:object_r:vendor_camera_prop:s0
 vendor.camera.eis.gyro_name             u:object_r:vendor_camera_prop:s0
-#vendor.camera.hal1.packagelist          u:object_r:vendor_camera_prop:s0
-vidc.enc.dcvs.extra-buff-count          u:object_r:vendor_default_prop:s0
-ro.camera.req.fmq.size                  u:object_r:vendor_ro_camera_prop:s0
-ro.camera.res.fmq.size                  u:object_r:vendor_ro_camera_prop:s0
+vendor.camera.hal1.packagelist          u:object_r:vendor_camera_prop:s0
+ro.camera.req.fmq.size                  u:object_r:vendor_camera_prop:s0
+ro.camera.res.fmq.size                  u:object_r:vendor_camera_prop:s0
+camera.clientname                       u:object_r:vendor_camera_prop:s0
+camera.debug.                           u:object_r:vendor_camera_prop:s0
+camera.facebeauty.version               u:object_r:vendor_camera_prop:s0
+camera.llvd.preview.disable             u:object_r:vendor_camera_prop:s0
+camera.sensor.                          u:object_r:vendor_camera_prop:s0
+camera.test.novtsgsi                    u:object_r:vendor_camera_prop:s0
+persist.camera.                         u:object_r:vendor_camera_prop:s0
+persist.camera.srframenum                         u:object_r:vendor_camera_prop:s0
+persist.camera.aiscene                        u:object_r:vendor_camera_prop:s0
+vidc.enc.dcvs.extra-buff-count          u:object_r:vendor_camera_prop:s0
+camera.gyro.				u:object_r:vendor_camera_prop:s0
+vendor.camera.aux.packageblacklist	u:object_r:vendor_camera_prop:s0
+persist.camera.gyro			u:object_r:vendor_camera_prop:s0
+vendor.camera.boot_complete		u:object_r:vendor_camera_prop:s0
+
+# Camera IDs
+vendor.camera.sensor.rearMacro.fuseID	u:object_r:vendor_camera_prop:s0
+vendor.camera.sensor.rearUltra.fuseID	u:object_r:vendor_camera_prop:s0
+vendor.camera.sensor.rearTele.fuseID	u:object_r:vendor_camera_prop:s0
+vendor.camera.sensor.frontMain.fuseID	u:object_r:vendor_camera_prop:s0
+vendor.camera.sensor.rearMain.fuseID	u:object_r:vendor_camera_prop:s0
 
 #IR
 ro.lirc.dev				u:object_r:lirc_prop:s0
 
 # Fingerprint
-fpc_kpi                                 u:object_r:vendor_default_prop:s0
-gf.debug.dump_data                      u:object_r:vendor_default_prop:s0
+fpc_kpi                                 u:object_r:hal_fingerprint_prop:s0
+gf.debug.dump_data                      u:object_r:hal_fingerprint_prop:s0
 persist.sys.fp.                         u:object_r:hal_fingerprint_prop:s0
 persist.vendor.sys.fp.                  u:object_r:hal_fingerprint_prop:s0
 ro.boot.fp.                             u:object_r:hal_fingerprint_prop:s0
 ro.boot.fpsensor                        u:object_r:hal_fingerprint_prop:s0
 sys.fp.                                 u:object_r:hal_fingerprint_prop:s0
+vendor.sys.fp                          u:object_r:hal_fingerprint_prop:s0
+vendor.sys.fp.				u:object_r:hal_fingerprint_prop:s0
 
 # Manufacture Prop
 ro.product.system.manufacturer          u:object_r:exported2_default_prop:s0
-
-# Dirac
-persist.audio.dirac                             u:object_r:dirac_prop:s0
 
 # GPU Boost
 persist.xiaomiparts.gpu_profile                 u:object_r:boost_prop:s0
@@ -41,7 +60,12 @@ gpu.stats.debug.level                   u:object_r:vendor_default_prop:s0
 
 # Mlipay
 persist.vendor.sys.pay.                 u:object_r:mlipay_prop:s0
-persist.vendor.sys.provision.status     u:object_r:mlipay_prop:s0
+# persist.vendor.sys.provision.status     u:object_r:mlipay_prop:s0
+ro.boot.cpuid                                                 u:object_r:vendor_system_prop:s0
+vendor.sys.rpmb_state                                         u:object_r:vendor_tee_listener_prop:s0
+persist.vendor.sys.pay.ifaa                                   u:object_r:vendor_tee_listener_prop:s0
+persist.vendor.sys.pay.soter                                  u:object_r:vendor_tee_listener_prop:s0
+persist.vendor.sys.provision.status                           u:object_r:vendor_tee_listener_prop:s0
 
 # RIL
 ro.build.software.version               u:object_r:exported_radio_prop:s0
@@ -52,6 +76,14 @@ ro.product.mod_device                   u:object_r:exported_radio_prop:s0
 # Thermal engine
 persist.sys.thermal.                    u:object_r:thermal_engine_prop:s0
 sys.thermal.                            u:object_r:thermal_engine_prop:s0
+vendor.thermal.                         u:object_r:vendor_thermal_prop:s0
+vendor.sys.thermal.			u:object_r:thermal_engine_prop:s0
 
 # Wlan
 persist.vendor.wigig.npt.enable         u:object_r:vendor_default_prop:s0
+
+# Power HAL
+vendor.powerhal.state                           u:object_r:power_prop:s0
+vendor.powerhal.audio                           u:object_r:power_prop:s0
+vendor.powerhal.init                            u:object_r:power_prop:s0
+vendor.powerhal.rendering                       u:object_r:power_prop:s0

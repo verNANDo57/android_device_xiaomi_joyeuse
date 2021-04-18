@@ -1,0 +1,2 @@
+binder_call(gmscore_app, hal_memtrack_default);
+allow gmscore_app blkio_dev:dir search;

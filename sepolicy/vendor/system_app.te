@@ -13,11 +13,20 @@ allow system_app boost_prop:property_service set;
 allow system_app kcal_dev:file rw_file_perms;
 allow system_app kcal_dev:dir search;
 
+# Zram
+r_dir_file(system_app sysfs_zram);
+allow system_app sysfs_zram:dir { search };
+allow system_app sysfs_zram:file { getattr open read };
+
 # SELinux
 allow system_app selinuxfs:file { read open };
 
 # Smart Charging
 allow system_app sysfs_scharge:file { getattr open write };
+
+# Thermal Profiles
+allow system_app sysfs_thermal:dir { getattr read open write create rmdir remove_name add_name search };
+allow system_app sysfs_thermal:file { getattr read open write create };
 
 # Touchboost
 allow system_app sysfs_touchboost:file { open read getattr write };
@@ -26,9 +35,23 @@ allow system_app vendor_sysfs_msm_perf:dir { search };
 # USB Fastcharge
 allow system_app sysfs_fcharge:file { open read getattr write };
 
+allow system_app vendor_sysfs_battery_supply:dir search;
+allow system_app vendor_sysfs_battery_supply:file rw_file_perms;
+
+allow system_app blkio_dev:dir search;
+
+allow system_app wificond:binder call;
+allow system_app sysfs_leds:dir search;
+allow system_app sysfs_graphics:dir search;
+allow system_app sysfs_graphics:file rw_file_perms;
+allow system_app vendor_sysfs_graphics:dir search;
+allow system_app vendor_sysfs_graphics:file rw_file_perms;
+allow system_app vendor_sysfs_graphics:file { getattr open read };
+allow system_app sysfs:file { getattr open write read };
+allow system_app sysfs_vibrator:file rw_file_perms;
+allow system_app sysfs_vibrator:dir search;
+allow system_app hal_mlipay_default:binder call;
+allow system_app sysfs_msm_subsys:dir search;
 allow system_app vendor_default_prop:file { getattr open read };
 allow system_app vendor_default_prop:file {map};
-allow system_app vendor_sysfs_graphics:file { getattr open read };
-allow system_app vendor_sysfs_msm_perf:dir { search };
 allow system_app apk_data_file:dir { write };
-allow system_app sysfs_zram:dir { search };

@@ -65,7 +65,7 @@ void set_device_props(const std::string fingerprint, const std::string descripti
 
 void load_device_properties() {
     set_device_props(
-                "google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys",
+                "google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys",
                 "joyeuse_global-user 10 QKQ1.191215.002 V12.0.2.0.QJZMIXM release-keys",
                 "Redmi", "joyeuse", "Redmi Note 9 Pro");
 }

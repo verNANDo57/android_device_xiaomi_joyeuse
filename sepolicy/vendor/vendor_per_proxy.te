@@ -1,1 +1,1 @@
-allow vendor_per_proxy sysfs:file { read };
+allow vendor_per_proxy sysfs:file { getattr open read };

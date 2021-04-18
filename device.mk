@@ -39,7 +39,8 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
 PRODUCT_PACKAGES += \
-    NoCutoutOverlay
+    NoCutoutOverlay \
+    NoNotchBarOverlay
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -92,13 +93,15 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.r_submix.default \
     libaudio-resampler \
-    libtinycompress
+    libtinycompress \
+    audio.hearing_aid.default
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl:32 \
     android.hardware.audio.effect@6.0-impl:32 \
     android.hardware.soundtrigger@2.2-impl \
     sound_trigger.primary.atoll \
+    android.hardware.broadcastradio@1.0-impl \
     android.hardware.audio@2.0-service
 
 PRODUCT_PACKAGES += \
@@ -116,6 +119,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     $(LOCAL_PATH)/audio/audio_configs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_configs.xml \
     $(LOCAL_PATH)/audio/audio_configs_stock.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_configs_stock.xml \
+    $(LOCAL_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \
@@ -153,11 +157,29 @@ PRODUCT_PACKAGES += \
     qcom.fmradio \
     qcom.fmradio.xml
 
+PRODUCT_BOOT_JARS += qcom.fmradio	
+
 # AVB
 PRODUCT_PACKAGES += \
     q-gsi.avbpubkey \
     r-gsi.avbpubkey \
     s-gsi.avbpubkey
+
+# Vendor libstdc++
+PRODUCT_PACKAGES += \
+    libstdc++.vendor
+
+# Codec2 modules
+PRODUCT_PACKAGES += \
+    com.android.media.swcodec \
+    libsfplugin_ccodec
+
+PRODUCT_PACKAGES += \
+    libqcodec2 \
+    vendor.qti.media.c2@1.0-service \
+    media_codecs_c2.xml \
+    codec2.vendor.ext.policy \
+    codec2.vendor.base.policy
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -208,11 +230,25 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
+    android.hardware.camera.provider@2.4-legacy \
+    android.hardware.camera.provider@2.4-external \
+    android.hardware.camera.provider@2.5 \
+    android.hardware.camera.provider@2.6 \
+    android.hardware.camera.device@1.0 \
+    android.hardware.camera.device@3.2 \
+    android.hardware.camera.device@3.3 \
+    android.hardware.camera.device@3.4 \
+    android.hardware.camera.device@3.5 \
+    android.hardware.camera.device@3.6 \
+    vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0.vendor
 
 PRODUCT_PACKAGES += \
     libdng_sdk.vendor \
     libdng_sdk
+
+PRODUCT_PACKAGES += \
+    libmedia_jni_shim
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -227,6 +263,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.atoll \
     libdisplayconfig.qti \
     libqdMetaData \
+    libqdMetaData.system \
+    libqdMetaData.vendor \
     libtinyxml \
     memtrack.atoll
 
@@ -239,6 +277,29 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.mapper@2.0.vendor
+
+PRODUCT_PACKAGES += \
+    vendor.display.config@1.0 \
+    vendor.display.config@1.1 \
+    vendor.display.config@1.2 \
+    vendor.display.config@1.3 \
+    vendor.display.config@1.4 \
+    vendor.display.config@1.5 \
+    vendor.display.config@1.0.vendor \
+    vendor.display.config@1.1.vendor \
+    vendor.display.config@1.2.vendor \
+    vendor.display.config@1.3.vendor \
+    vendor.display.config@1.4.vendor \
+    vendor.display.config@1.5.vendor \
+    vendor.display.config@1.6.vendor \
+    vendor.display.config@1.7.vendor \
+    vendor.display.config@1.8.vendor \
+    vendor.display.config@1.9.vendor
+
+# External exFat tools
+PRODUCT_PACKAGES += \
+    mkfs.exfat \
+    fsck.exfat
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -259,7 +320,8 @@ PRODUCT_COPY_FILES += \
 
 # Framework detect
 PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect.vendor
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti.vendor
 
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \
@@ -352,6 +414,9 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libcodec2_hidl@1.0.vendor \
+    libcodec2_vndk.vendor \
     libmm-omxcore \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -362,6 +427,9 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
+
+PRODUCT_COPY_FILES += \
+    hardware/qcom-caf/sm8150/media/conf_files/msmnile/codec2.vendor.ext.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext.policy
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -380,8 +448,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
     $(LOCAL_PATH)/media/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
 
+# Net
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0
+
+# Properties
+PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+
 # Minijail
 PRODUCT_PACKAGES += \
+    libminijail \
     libavservices_minijail \
     libavservices_minijail.vendor
 
@@ -507,6 +583,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
+PRODUCT_PACKAGES += vndk_package
+
 # Vulkan
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute.xml \
@@ -539,7 +617,12 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl \
-    libwfdaac_vendor
+    libwfdaac_vendor \
+    libstagefright_enc_common \
+    libaacwrapper \
+    libavservices_minijail_32 \
+    vendor.display.config@2.0 \
+    libdisplayconfig.vendor
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
@@ -562,7 +645,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     XiaomiParts
 
-# Dexpreopt SystemUI
+# Dexpreopt
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     TrebuchetQuickStep
