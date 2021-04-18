@@ -2,3 +2,6 @@
 # dontaudit system_suspend sysfs:file { getattr open read write };
 allow system_suspend sysfs:dir { getattr open read write };
 allow system_suspend sysfs:file { getattr open read write };
+
+allow system_suspend sysfs_battery_supply:dir { getattr open read write };
+allow system_suspend sysfs_battery_supply:file { getattr open read write };
