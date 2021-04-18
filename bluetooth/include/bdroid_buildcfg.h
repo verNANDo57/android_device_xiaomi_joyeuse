@@ -28,5 +28,9 @@
 #define MAX_L2CAP_CHANNELS    32
 #define BLE_VND_INCLUDED   TRUE
 #define GATT_MAX_PHY_CHANNEL  10
+
+// QCOM power management workaround
+#define BT_CLEAN_TURN_ON_DISABLED TRUE
+
 #define AVDT_NUM_SEPS 35
 #endif
