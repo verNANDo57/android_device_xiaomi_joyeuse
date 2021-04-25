@@ -1,0 +1,2 @@
+allow vendor_sysfs_usbpd_device self:dir { getattr open read search };
+allow vendor_sysfs_usbpd_device self:file { getattr open read map };

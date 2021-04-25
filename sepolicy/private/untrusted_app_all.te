@@ -1,0 +1,15 @@
+allow untrusted_app_all privapp_data_file:file { ioctl read getattr lock map execute open watch watch_reads };
+allow untrusted_app_all app_data_file:file { ioctl read getattr lock map execute open watch watch_reads };
+auditallow untrusted_app_all app_data_file:file { execute };
+allow untrusted_app_all system_linker_exec:file { execute_no_trans };
+allow untrusted_app_all privapp_data_file:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow untrusted_app_all app_data_file:lnk_file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow untrusted_app_all app_data_file:sock_file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow untrusted_app_all app_data_file:fifo_file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow untrusted_app_all app_exec_data_file:file { ioctl read getattr lock map unlink execute open watch watch_reads };
+allow untrusted_app_all asec_apk_file:file { ioctl read getattr lock map open watch watch_reads };
+allow untrusted_app_all asec_apk_file:dir { ioctl read getattr lock open watch watch_reads search };
+allow untrusted_app_all asec_public_file:file { execute };
+allow untrusted_app_all shell_data_file:file { ioctl read getattr lock map open watch watch_reads };
+allow untrusted_app_all shell_data_file:dir { ioctl read getattr lock open watch watch_reads search };
+allow untrusted_app_all trace_data_file:file { read getattr };

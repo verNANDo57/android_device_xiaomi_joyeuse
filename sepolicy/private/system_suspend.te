@@ -1,7 +1,20 @@
-# dontaudit system_suspend sysfs:dir { getattr open read write };
-# dontaudit system_suspend sysfs:file { getattr open read write };
-allow system_suspend sysfs:dir { getattr open read write };
-allow system_suspend sysfs:file { getattr open read write };
+# dontaudit system_suspend sysfs:dir { ioctl read getattr lock open watch watch_reads search };
+# dontaudit system_suspend sysfs:file { ioctl read getattr lock map open watch watch_reads };
+allow system_suspend sysfs:dir { ioctl read getattr lock open watch watch_reads search };
+allow system_suspend sysfs:file { ioctl read getattr lock map open watch watch_reads };
+allow system_suspend sysfs:lnk_file { ioctl read getattr lock map open watch watch_reads };
 
-allow system_suspend sysfs_battery_supply:dir { getattr open read write };
-allow system_suspend sysfs_battery_supply:file { getattr open read write };
+allow system_suspend sysfs_rtc:dir { ioctl read getattr lock open watch watch_reads search };
+allow system_suspend sysfs_rtc:file { ioctl read getattr lock map open watch watch_reads };
+allow system_suspend sysfs_rtc:lnk_file { ioctl read getattr lock map open watch watch_reads };
+
+allow system_suspend sysfs_power:file { ioctl read write getattr lock append map open watch watch_reads };
+allow system_suspend sysfs_suspend_stats:dir { ioctl read getattr lock open watch watch_reads search };
+allow system_suspend sysfs_suspend_stats:file { ioctl read getattr lock map open watch watch_reads };
+allow system_suspend sysfs_suspend_stats:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow system_suspend sysfs_wakeup:dir { ioctl read getattr lock open watch watch_reads search };
+allow system_suspend sysfs_wakeup:file { ioctl read getattr lock map open watch watch_reads };
+allow system_suspend sysfs_wakeup:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow system_suspend sysfs_type:dir { search };
+
+

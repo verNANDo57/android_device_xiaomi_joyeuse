@@ -1,0 +1,32 @@
+# OTA with encrypted f2fs
+allow uncrypt self:capability sys_admin;
+allow uncrypt self:capability { dac_override dac_read_search };
+allow uncrypt self:cap_userns { dac_override dac_read_search };
+allow uncrypt cache_file:dir { search };
+allow uncrypt cache_recovery_file:dir { ioctl read write getattr lock open watch watch_reads add_name remove_name search };
+allow uncrypt cache_recovery_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow uncrypt ota_package_file:dir { ioctl read getattr lock open watch watch_reads search };
+allow uncrypt ota_package_file:file { ioctl read write getattr lock append map open watch watch_reads };
+allow uncrypt uncrypt_socket:sock_file { write };
+allow uncrypt uncrypt:unix_stream_socket { connectto };
+allow uncrypt property_socket:sock_file { write };
+allow uncrypt init:unix_stream_socket { connectto };
+allow uncrypt powerctl_prop:property_service { set };
+allow uncrypt powerctl_prop:file { read getattr map open };
+allow uncrypt self:capability { sys_rawio };
+allow uncrypt self:cap_userns { sys_rawio };
+allow uncrypt misc_block_device:blk_file { write lock append map open };
+allow uncrypt block_device:dir { ioctl read getattr lock open watch watch_reads search };
+allow uncrypt userdata_block_device:blk_file { write lock append map open };
+allow uncrypt rootfs:dir { ioctl read getattr lock open watch watch_reads search };
+allow uncrypt rootfs:file { ioctl read getattr lock map open watch watch_reads };
+allow uncrypt rootfs:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow uncrypt proc_cmdline:file { ioctl read getattr lock map open watch watch_reads };
+allow uncrypt sysfs_dt_firmware_android:dir { ioctl read getattr lock open watch watch_reads search };
+allow uncrypt sysfs_dt_firmware_android:file { ioctl read getattr lock map open watch watch_reads };
+allow uncrypt sysfs_dt_firmware_android:lnk_file { ioctl read getattr lock map open watch watch_reads };
+
+dontaudit uncrypt gsi_metadata_file:dir { search };
+dontaudit uncrypt metadata_file:dir { search };
+
+allow uncrypt uncrypt_exec:file { read getattr map execute open entrypoint };

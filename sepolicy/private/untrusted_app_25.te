@@ -1,0 +1,13 @@
+allow untrusted_app_25 proc_misc:file { ioctl read getattr lock map open watch watch_reads };
+allow untrusted_app_25 proc_tty_drivers:file { ioctl read getattr lock map open watch watch_reads };
+allow untrusted_app_25 apk_data_file:file { execmod };
+allow untrusted_app_25 app_data_file:file { execmod };
+allow untrusted_app_25 asec_public_file:file { execmod };
+allow untrusted_app_25 app_data_file:file { execute_no_trans };
+auditallow untrusted_app_25 app_data_file:file { execute execute_no_trans };
+allow untrusted_app_25 dex2oat_exec:file { ioctl read getattr lock map execute open watch watch_reads execute_no_trans };
+allow untrusted_app_25 ashmem_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+auditallow untrusted_app_25 ashmem_device:chr_file { open };
+allow untrusted_app_25 mnt_sdcard_file:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow untrusted_app_25 self:netlink_route_socket { bind nlmsg_readpriv };
+allow untrusted_app_25 appdomain_tmpfs:file { read write getattr map execute };

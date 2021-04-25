@@ -1,0 +1,25 @@
+allow fsck tmpfs:chr_file { ioctl read write };
+allow fsck devpts:chr_file { ioctl read write getattr };
+allow fsck vold:fd { use };
+allow fsck vold:fifo_file { read write getattr };
+allow fsck block_device:dir { search };
+allow fsck userdata_block_device:blk_file { ioctl read write getattr lock append map open watch watch_reads };
+allow fsck cache_block_device:blk_file { ioctl read write getattr lock append map open watch watch_reads };
+allow fsck dm_device:blk_file { ioctl read write getattr lock append map open watch watch_reads };
+allow fsck dev_type:blk_file { getattr };
+allow fsck proc_mounts:file { ioctl read getattr lock map open watch watch_reads };
+allow fsck proc_swaps:file { ioctl read getattr lock map open watch watch_reads };
+allow fsck rootfs:dir { ioctl read getattr lock open watch watch_reads search };
+
+allow fsck fsck_exec:file { read getattr map execute open entrypoint };
+allow fsck metadata_block_device:blk_file { ioctl read write getattr lock append map open watch watch_reads };
+allow fsck fsck_exec:file { read getattr map execute open entrypoint };
+allow fsck vold:process { sigchld };
+
+neverallow fsck vold_device:blk_file { ioctl read write create setattr lock relabelfrom append unlink link rename open watch watch_mount watch_sb watch_with_perm watch_reads };
+neverallow fsck root_block_device:blk_file { ioctl read write create setattr lock relabelfrom append unlink link rename open watch watch_mount watch_sb watch_with_perm watch_reads };
+neverallow fsck frp_block_device:blk_file { ioctl read write create setattr lock relabelfrom append unlink link rename open watch watch_mount watch_sb watch_with_perm watch_reads };
+neverallow fsck system_block_device:blk_file { ioctl read write create setattr lock relabelfrom append unlink link rename open watch watch_mount watch_sb watch_with_perm watch_reads };
+neverallow fsck recovery_block_device:blk_file { ioctl read write create setattr lock relabelfrom append unlink link rename open watch watch_mount watch_sb watch_with_perm watch_reads };
+neverallow fsck boot_block_device:blk_file { ioctl read write create setattr lock relabelfrom append unlink link rename open watch watch_mount watch_sb watch_with_perm watch_reads };
+neverallow fsck swap_block_device:blk_file { ioctl read write create setattr lock relabelfrom append unlink link rename open watch watch_mount watch_sb watch_with_perm watch_reads };

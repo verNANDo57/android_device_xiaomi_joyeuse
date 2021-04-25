@@ -1,0 +1,17 @@
+allow charger self:capability2 { wake_alarm };
+allow charger vendor_sysfs_battery_supply:dir { ioctl read getattr lock open watch watch_reads search };
+allow charger vendor_sysfs_battery_supply:file { ioctl read getattr lock map open watch watch_reads };
+allow charger vendor_sysfs_battery_supply:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow charger vendor_sysfs_usb_supply:dir { ioctl read getattr lock open watch watch_reads search };
+allow charger vendor_sysfs_usb_supply:file { ioctl read getattr lock map open watch watch_reads };
+allow charger vendor_sysfs_usb_supply:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow charger vendor_sysfs_graphics:dir { ioctl read getattr lock open watch watch_reads search };
+allow charger vendor_sysfs_graphics:file { ioctl read getattr lock map open watch watch_reads };
+allow charger vendor_sysfs_graphics:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow charger vendor_sysfs_battery_supply:file { write lock append map open };
+allow charger vendor_sysfs_graphics:file { write lock append map open };
+allow charger vendor_sysfs_usb_supply:file { write lock append map open };
+allow charger vendor_sysfs_graphics:dir { ioctl read getattr lock open watch watch_reads search };
+allow charger vendor_sysfs_graphics:file { ioctl read write getattr lock append map open watch watch_reads };
+dontaudit charger device:dir { ioctl read getattr lock open watch watch_reads search };
+dontaudit charger self:capability { sys_admin };

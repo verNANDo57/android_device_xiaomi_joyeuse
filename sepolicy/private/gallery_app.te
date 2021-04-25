@@ -1,2 +1,2 @@
-allow gallery_app sysfs_msm_subsys:dir { getattr open read write search };
-allow gallery_app sysfs_msm_subsys:file { getattr open read write map };
+allow gallery_app sysfs:dir { getattr open read write search };
+allow gallery_app sysfs:file { getattr open read write map };

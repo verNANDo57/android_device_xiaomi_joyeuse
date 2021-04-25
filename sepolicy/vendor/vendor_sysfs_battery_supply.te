@@ -1,1 +1,2 @@
-allow vendor_sysfs_battery_supply vendor_sysfs_battery_supply:dir { open read };
+allow vendor_sysfs_battery_supply self:dir { getattr open read search };
+allow vendor_sysfs_battery_supply self:file { getattr open read map };

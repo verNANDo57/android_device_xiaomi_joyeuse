@@ -1,0 +1,2 @@
+allow vendor_sysfs_usb_supply self:dir { getattr open read search };
+allow vendor_sysfs_usb_supply self:file { getattr open read map };

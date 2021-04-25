@@ -1,0 +1,25 @@
+type vendor_permissioncontroller_app, domain, coredomain;
+
+app_domain(vendor_permissioncontroller_app)
+
+allow vendor_permissioncontroller_app app_api_service:service_manager find;
+allow vendor_permissioncontroller_app system_api_service:service_manager find;
+
+# Allow interaction with gpuservice
+binder_call(vendor_permissioncontroller_app, gpuservice)
+allow vendor_permissioncontroller_app radio_service:service_manager find;
+
+# Allow the app to request and collect incident reports.
+# (Also requires DUMP and PACKAGE_USAGE_STATS permissions)
+allow vendor_permissioncontroller_app incident_service:service_manager find;
+binder_call(vendor_permissioncontroller_app, incidentd)
+allow vendor_permissioncontroller_app incidentd:fifo_file { read write };
+
+allow vendor_permissioncontroller_app vendor_hal_perf_hwservice:hwservice_manager { find };
+allow vendor_permissioncontroller_app vendor_hal_perf_default:binder { call transfer };
+allow vendor_permissioncontroller_app vendor_hal_perf_default:fd { use };
+allow vendor_permissioncontroller_app vendor_hal_qspmhal_hwservice:hwservice_manager { find };
+allow vendor_permissioncontroller_app vendor_hal_qspmhal_default:binder { call transfer };
+allow vendor_permissioncontroller_app vendor_hal_qspmhal_default:fd { use };
+allow vendor_permissioncontroller_app sysfs_msm_subsys:file { getattr open read map };
+allow vendor_permissioncontroller_app sysfs_msm_subsys:dir { getattr open read search };

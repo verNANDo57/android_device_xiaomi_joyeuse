@@ -21,5 +21,8 @@ allow untrusted_app_25 proc:dir { getattr read write open search };
 allow untrusted_app_25 system_bootstrap_lib_file:file { getattr read write open map };
 allow untrusted_app_25 system_bootstrap_lib_file:dir { getattr read write open search };
 
+allow untrusted_app_25 rootfs:file { getattr read write open map };
+allow untrusted_app_25 rootfs:dir { getattr read write open search };
+
 allow untrusted_app_25 hal_memtrack_default:binder { call };
 

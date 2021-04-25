@@ -1,0 +1,42 @@
+type vendor_system_suspend, domain, coredomain, system_suspend_server;
+# type system_suspend_control_service, service_manager_type;
+type vendor_system_suspend_exec, system_file_type, exec_type, file_type;
+
+init_daemon_domain(vendor_system_suspend)
+
+# To serve ISuspendControlService.aidl.
+binder_use(vendor_system_suspend)
+add_service(vendor_system_suspend, system_suspend_control_service)
+
+# Access to /sys/power/{ wakeup_count, state } suspend interface.
+allow vendor_system_suspend sysfs_power:file rw_file_perms;
+
+# Access to wakeup and suspend stats.
+r_dir_file(vendor_system_suspend, sysfs_suspend_stats)
+r_dir_file(vendor_system_suspend, sysfs_wakeup)
+# To resolve arbitrary sysfs paths from /sys/class/wakeup/* symlinks.
+allow vendor_system_suspend sysfs_type:dir search;
+
+# Denials
+allow vendor_system_suspend vendor_sysfs_battery_supply:dir { ioctl read getattr lock open watch watch_reads search };
+allow vendor_system_suspend vendor_sysfs_battery_supply:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_system_suspend vendor_sysfs_battery_supply:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_system_suspend vendor_sysfs_usbpd_device:dir { ioctl read getattr lock open watch watch_reads search };
+allow vendor_system_suspend vendor_sysfs_usbpd_device:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_system_suspend vendor_sysfs_usbpd_device:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_system_suspend vendor_sysfs_usb_supply:dir { ioctl read getattr lock open watch watch_reads search };
+allow vendor_system_suspend vendor_sysfs_usb_supply:file { ioctl read getattr lock map open watch watch_reads };
+allow vendor_system_suspend vendor_sysfs_usb_supply:lnk_file { ioctl read getattr lock map open watch watch_reads };
+
+# neverallow {
+#     domain
+#     -atrace # tracing
+#     -dumpstate # bug reports
+#     -vendor_system_suspend # implements system_suspend_control_service
+#     -system_server # configures system_suspend via ISuspendControlService
+#     -traceur_app # tracing
+# } system_suspend_control_service:service_manager find;
+
+# For adding `dumpsys vendor_syspend_control` output to bugreport
+allow vendor_system_suspend dumpstate:fd use;
+allow vendor_system_suspend dumpstate:fifo_file write;
