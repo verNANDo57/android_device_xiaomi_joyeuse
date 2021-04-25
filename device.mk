@@ -414,6 +414,7 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    libplatformconfig \
     libc2dcolorconvert \
     libcodec2_hidl@1.0.vendor \
     libcodec2_vndk.vendor \
@@ -504,7 +505,8 @@ PRODUCT_BOOT_JARS += \
 # RIL
 PRODUCT_PACKAGES += \
     libjson \
-    librmnetctl
+    librmnetctl \
+    libxml2
 
 # Sensors
 PRODUCT_PACKAGES += \
