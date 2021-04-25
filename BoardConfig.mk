@@ -71,8 +71,8 @@ TARGET_LD_SHIM_LIBS := \
     system/lib/libcameraservice.so|libmedia_jni_shim.so
 
 # Charger Mode
-# We don't need this, cuz we already have defined ro.charger.enable_suspend=true in product,prop
-# BOARD_CHARGER_ENABLE_SUSPEND := true
+# We don't need this, cuz we already have defined ro.charger.enable_suspend=true in product,prop, but ok
+BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # ConfigStore
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000

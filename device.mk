@@ -631,6 +631,12 @@ PRODUCT_BOOT_JARS += \
 # PRODUCT_PACKAGES += \
 #     vendor.lineage.trust@1.0-service
 
+# Suspend
+PRODUCT_PACKAGES += \
+    android.system.suspend@1.0 \
+    android.system.suspend@1.0-service \
+    android.system.suspend@1.0-impl
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-impl \
