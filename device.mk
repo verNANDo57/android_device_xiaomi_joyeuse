@@ -67,11 +67,16 @@ PRODUCT_PACKAGES += \
     SecureElement
 
 # Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0-impl \
+    android.hardware.thermal@2.0-service \
+    thermal.atoll
+
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/thermal/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-camera.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-camera.conf \
     $(LOCAL_PATH)/thermal/thermal-engine-map.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-map-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map-joyeuse.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-normal-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-normal-joyeuse.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-camera-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-camera-joyeuse.conf
+    $(LOCAL_PATH)/thermal/thermal-engine-normal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-normal.conf
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
@@ -368,10 +373,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
     $(LOCAL_PATH)/rootdir/etc/init.xiaomiparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomiparts.rc \
     $(LOCAL_PATH)/rootdir/etc/init.logger.service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.logger.service.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.thermal-engine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.thermal-engine.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.nfc-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nfc-service.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.msm.usb.configfs.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.msm.usb.configfs.rc \
     $(LOCAL_PATH)/rootdir/etc/init.device.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.device.rc
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/bin/init.mi.usb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.mi.usb.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qti.dcvs.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.dcvs.sh \
     $(LOCAL_PATH)/rootdir/bin/init.qcom.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.post_boot.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qcom.usb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.usb.sh \
     $(LOCAL_PATH)/rootdir/bin/init.qcom.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.sh \
     $(LOCAL_PATH)/rootdir/bin/init.qti.chg_policy.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.chg_policy.sh \
     $(LOCAL_PATH)/rootdir/bin/init.qcom.early_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.early_boot.sh \
@@ -638,12 +649,6 @@ PRODUCT_PACKAGES += \
     android.system.suspend@1.0 \
     android.system.suspend@1.0-service \
     android.system.suspend@1.0-impl
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-impl \
-    android.hardware.thermal@2.0-service \
-    thermal.atoll
 
 # Doze
 PRODUCT_PACKAGES += \
