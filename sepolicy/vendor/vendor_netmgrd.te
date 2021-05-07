@@ -1,1 +1,6 @@
+typeattribute vendor_netmgrd vendor_executes_system_violators;
+
+set_prop(vendor_netmgrd, vendor_xlat_prop)
+
 allow vendor_netmgrd sysfs:file { getattr open read };
+allow vendor_netmgrd system_file:file { execute execute_no_trans getattr open read };

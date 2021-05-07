@@ -26,6 +26,8 @@ allow platform_app exported_camera_prop:file { getattr open read };
 allow platform_app privapp_data_file:file { getattr open read map execute };
 allow platform_app sysfs_msm_subsys:file { getattr open read map };
 allow platform_app sysfs_msm_subsys:dir { getattr open read map search };
+allow platform_app system_app_data_file:dir getattr;
+allow platform_app app_data_file:file rx_file_perms;
 
 # Face Unlock
 allow platform_app vendor_sensors_prop:file { getattr open read map };

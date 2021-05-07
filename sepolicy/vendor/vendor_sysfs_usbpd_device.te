@@ -1,2 +1,2 @@
-allow vendor_sysfs_usbpd_device self:dir { getattr open read search };
-allow vendor_sysfs_usbpd_device self:file { getattr open read map };
+allow vendor_sysfs_usbpd_device vendor_sysfs_usbpd_device:dir { ioctl read getattr lock open watch watch_reads search };
+allow vendor_sysfs_usbpd_device vendor_sysfs_usbpd_device:file { ioctl read getattr lock map open watch watch_reads };

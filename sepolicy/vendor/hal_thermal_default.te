@@ -1,5 +1,6 @@
 # Allow hal_thermal_default to read/write to sysfs_thermal
 r_dir_file(hal_thermal_default, sysfs_thermal)
+allow hal_thermal_default sysfs_thermal:dir r_dir_perms;
 allow hal_thermal_default sysfs_thermal:file rw_file_perms;
 
 # This is required to access proc stat for fetching CPU usage

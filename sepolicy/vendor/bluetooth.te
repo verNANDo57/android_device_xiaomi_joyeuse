@@ -1,1 +1,4 @@
+#allow bluetooth to access perf hal
+#hal_client_domain(bluetooth, hal_perf);
+
 allow bluetooth incremental_prop:file { getattr open read };

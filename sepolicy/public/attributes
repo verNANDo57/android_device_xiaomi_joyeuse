@@ -1,4 +1,8 @@
+# MLIPAY
 hal_attribute(mlipay)
 
 # MISYS
 hal_attribute_custom(misys)
+
+# MTDSERVICE
+hal_attribute_custom(mtdservice)

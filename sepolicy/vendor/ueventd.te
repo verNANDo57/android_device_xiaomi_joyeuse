@@ -1,5 +1,11 @@
+typeattribute ueventd data_between_core_and_vendor_violators;
+
 allow ueventd self:capability sys_nice;
 allow vendor_qti_init_shell sysfs_wakeup:file setattr;
+allow ueventd fpc_sysfs:file rw_file_perms;
+allow ueventd vendor_wifi_vendor_data_file:dir r_dir_perms;
+allow ueventd vendor_wifi_vendor_data_file:file r_file_perms;
+allow ueventd debugfs:dir r_dir_perms;
 
 # KCAL
 allow ueventd kcal_dev:dir r_dir_perms;

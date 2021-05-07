@@ -5,6 +5,11 @@ audio_hal.in_period_size                u:object_r:vendor_audio_prop:s0
 audio_hal.period_multiplier             u:object_r:vendor_audio_prop:s0
 persist.audio.fluence.voicecomm         u:object_r:vendor_audio_prop:s0
 
+# Bluetooth
+persist.vendor.bt.			u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.btstack.		        u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bluetooth.a2dp.		u:object_r:vendor_bluetooth_prop:s0
+
 # Camera
 cameradaemon.SaveMemAtBoot              u:object_r:vendor_camera_prop:s0
 cpp.set.clock                           u:object_r:vendor_camera_prop:s0
@@ -46,6 +51,12 @@ ro.vendor.se.type u:object_r:exported_default_prop:s0
 ro.lirc.dev				u:object_r:lirc_prop:s0
 
 # Fingerprint fpsensor_prop
+persist.net.doxlat              u:object_r:vendor_xlat_prop:s0
+persist.vendor.camera.dbglog    u:object_r:camera_prop:s0
+vendor.thermal.config           u:object_r:vendor_thermal_prop:s0
+wifi.active.interface           u:object_r:wifi_prop:s0
+
+# Fingerprint
 fpc_kpi                                 u:object_r:hal_fingerprint_prop:s0
 gf.debug.dump_data                      u:object_r:hal_fingerprint_prop:s0
 persist.sys.fp.                         u:object_r:hal_fingerprint_prop:s0
@@ -53,7 +64,8 @@ persist.vendor.sys.fp.                  u:object_r:hal_fingerprint_prop:s0
 ro.boot.fp.                             u:object_r:hal_fingerprint_prop:s0
 ro.boot.fpsensor                        u:object_r:hal_fingerprint_prop:s0
 sys.fp.                                 u:object_r:hal_fingerprint_prop:s0
-vendor.sys.fp                          u:object_r:hal_fingerprint_prop:s0
+vendor.sys.fp.				u:object_r:hal_fingerprint_prop:s0
+vendor.sys.fp				u:object_r:hal_fingerprint_prop:s0
 persist.vendor.sys.fp.info          u:object_r:hal_fingerprint_prop:s0
 persist.vendor.sys.fp.vendor        u:object_r:hal_fingerprint_prop:s0
 persist.vendor.sys.fp.module        u:object_r:hal_fingerprint_prop:s0
@@ -61,14 +73,14 @@ persist.vendor.sys.fp.uid           u:object_r:hal_fingerprint_prop:s0
 ro.hardware.fp.sideCap       u:object_r:hal_fingerprint_prop:s0
 vendor.fps_hal.            u:object_r:hal_fingerprint_prop:s0
 
+# GPU
+gpu.stats.debug.level                   u:object_r:vendor_gpu_prop:s0
+
 # Manufacture Prop
 ro.product.system.manufacturer          u:object_r:exported2_default_prop:s0
 
 # GPU Boost
 persist.xiaomiparts.gpu_profile                 u:object_r:boost_prop:s0
-
-# Media
-gpu.stats.debug.level                   u:object_r:vendor_default_prop:s0
 
 # Mlipay
 persist.vendor.sys.pay.                 u:object_r:mlipay_prop:s0
@@ -92,7 +104,7 @@ vendor.thermal.                         u:object_r:vendor_thermal_prop:s0
 vendor.sys.thermal.			u:object_r:thermal_engine_prop:s0
 
 # Wlan
-persist.vendor.wigig.npt.enable         u:object_r:vendor_default_prop:s0
+persist.vendor.wigig.npt.enable         u:object_r:vendor_wigig_prop:s0
 
 # Power HAL
 vendor.powerhal.state                           u:object_r:power_prop:s0

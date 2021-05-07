@@ -1,0 +1,3 @@
+#============= poweroffalarm_app ==============
+# Settings app writes to /dev/stune/foreground/tasks.
+allow vendor_poweroffalarm_app cgroup:file rw_file_perms;

@@ -1,3 +1,5 @@
+allow kernel kernel:capability { kill };
+
 # KCAL
 allow kernel kcal_dev:dir relabelto;
 allow kernel kcal_dev:file relabelto;

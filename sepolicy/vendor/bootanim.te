@@ -1,1 +1,2 @@
 allow bootanim userspace_reboot_exported_prop:file { getattr map open read };
+get_prop(bootanim, userspace_reboot_exported_prop)
