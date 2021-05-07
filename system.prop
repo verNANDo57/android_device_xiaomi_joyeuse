@@ -109,6 +109,9 @@ persist.vendor.cne.feature=1
 # Dalvik
 dalvik.vm.dexopt.secondary=true
 
+#Set side fingerprint
+ro.hardware.fp.sideCap=true
+
 # Display
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1
