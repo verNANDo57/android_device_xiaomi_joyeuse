@@ -135,9 +135,49 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 
-#BOARD_VENDOR_KERNEL_MODULES += \
-#    $(DEVICE_PATH)/kernel-modules/rmnet_perf.ko \
-#    $(DEVICE_PATH)/kernel-modules/rmnet_shs.ko
+BOARD_VENDOR_KERNEL_MODULES += \
+   $(DEVICE_PATH)/kernel-modules/rmnet_perf.ko \
+   $(DEVICE_PATH)/kernel-modules/rmnet_shs.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_adsp_loader.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_apr.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_bolero_cdc.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_hdmi.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_machine_atoll.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_mbhc.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_native.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_pinctrl_lpi.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_platform.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_q6.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_q6_notifier.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_q6_pdr.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_rx_macro.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_snd_event.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_stub.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_swr.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_swr_ctrl.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_tas2562.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_tx_macro.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_usf.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_va_macro.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_wcd9xxx.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_wcd937x.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_wcd937x_slave.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_wcd938x.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_wcd938x_slave.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_wcd_core.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_wsa881x.ko \
+   $(DEVICE_PATH)/kernel-modules/audio_wsa_macro.ko \
+   $(DEVICE_PATH)/kernel-modules/br_netfilter.ko \
+   $(DEVICE_PATH)/kernel-modules/exfat.ko \
+   $(DEVICE_PATH)/kernel-modules/gspca_main.ko \
+   $(DEVICE_PATH)/kernel-modules/lcd.ko \
+   $(DEVICE_PATH)/kernel-modules/llcc_perfmon.ko \
+   $(DEVICE_PATH)/kernel-modules/mpq-adapter.ko \
+   $(DEVICE_PATH)/kernel-modules/mpq-dmx-hw-plugin.ko \
+   $(DEVICE_PATH)/kernel-modules/msm_11ad_proxy.ko \
+   $(DEVICE_PATH)/kernel-modules/qca_cld3_wlan.ko \
+   $(DEVICE_PATH)/kernel-modules/rdbg.ko \
+   $(DEVICE_PATH)/kernel-modules/wil6210.ko
 
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
