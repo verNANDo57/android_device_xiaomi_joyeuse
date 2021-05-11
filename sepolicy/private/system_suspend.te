@@ -1,5 +1,8 @@
 allow system_suspend system_server:binder { call transfer };
 allow system_suspend system_server:fd { use };
+allow system_suspend system_suspend_exec:file { read getattr map execute open entrypoint };
+allow system_suspend servicemanager:binder { call transfer };
+allow system_suspend system_suspend_control_service:service_manager { add find };
 
 allow system_suspend sysfs:dir { ioctl read getattr lock open watch watch_reads search };
 allow system_suspend sysfs:file { ioctl read getattr lock map open watch watch_reads };
@@ -17,5 +20,3 @@ allow system_suspend sysfs_wakeup:dir { ioctl read getattr lock open watch watch
 allow system_suspend sysfs_wakeup:file { ioctl read getattr lock map open watch watch_reads };
 allow system_suspend sysfs_wakeup:lnk_file { ioctl read getattr lock map open watch watch_reads };
 allow system_suspend sysfs_type:dir { search };
-
-
