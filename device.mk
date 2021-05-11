@@ -304,6 +304,11 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.8.vendor \
     vendor.display.config@1.9.vendor
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/display/hdr_config.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_config.cfg \
+    $(LOCAL_PATH)/display/dsi_ft8756_huaxing_vid_display_mi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dsi_ft8756_huaxing_vid_display_mi.xml \
+    $(LOCAL_PATH)/display/dsi_nt36675_tianma_vid_display_mi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dsi_nt36675_tianma_vid_display_mi.xml
+
 # External exFat tools
 PRODUCT_PACKAGES += \
     mkfs.exfat \
