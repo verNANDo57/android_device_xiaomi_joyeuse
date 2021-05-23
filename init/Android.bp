@@ -33,7 +33,7 @@ cc_library_static {
 }
 
 cc_library_static {
-    name: "libinit_miatoll",
+    name: "libinit_joyeuse",
     recovery_available: true,
     srcs: [
         "init.cpp"
