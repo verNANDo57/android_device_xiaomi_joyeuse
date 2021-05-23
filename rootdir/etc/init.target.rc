@@ -95,11 +95,6 @@ on late-fs
 
 on post-fs-data
     mkdir /data/vendor/touchpad 0775 system system
-    mkdir /data/tombstones 0771 system system
-    mkdir /tombstones/modem 0771 system system
-    mkdir /tombstones/lpass 0771 system system
-    mkdir /tombstones/wcnss 0771 system system
-    mkdir /tombstones/dsps 0771 system system
     mkdir /persist/qti_fp 0700 system system
     mkdir /data/vendor/nnhal 0700 system system
     mkdir /data/vendor/mac_addr 0771 system system
