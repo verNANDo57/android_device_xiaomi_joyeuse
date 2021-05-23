@@ -27,8 +27,11 @@
 #
 
 on enable-low-power
-    # Apply settings for atoll
 
+    # Enable EAS
+    write /proc/sys/kernel/sched_energy_aware 1
+
+    # Apply settings for atoll
     # Setting b.L scheduler parameters
     # default sched up and down migrate values are 95 and 85
     write /proc/sys/kernel/sched_downmigrate 65
