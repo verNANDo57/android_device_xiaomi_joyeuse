@@ -135,44 +135,6 @@
     <string name="clear_speaker_summary">Включает 30-секундный звук, чтобы очистить динамик</string>
     <string name="clear_speaker_description">Запустите эту функцию один или два раза, если вы обнаружите, что ваш динамик слегка засорён пылью. Установите максимальную громкость мультимедиа.Если динамик сильно заблокирован, запустите эту функцию 2-5 раз, встряхивая устройство динамиком вниз.</string>
 
-    <!-- Boost Category -->
-    <string name="boost_category">Ускорение</string>
-
-    <!-- Touchboost -->
-    <string name="touchboost_title">Включить Touchboost</string> 
-    <string name="touchboost_summary">Увеличивает скорость процессора при обнаружении касания для плавной работы</string>
-
-    <!-- GPUBoost -->
-    <string name="gpuboost_title">GPU производительность</string>
-    <string name="gpuboost_dialogTitle">Выберите режим работы GPU</string>
-
-    <string name="gpuboost_high">Высокая производительность</string>
-    <string name="gpuboost_medium">Средняя производительность</string>
-    <string name="gpuboost_low">Низкая производительность</string>
-    <string name="gpuboost_disable">Выключено</string>
-
-    <!-- Selinux category -->
-    <string name="selinux_category">SELinux</string>
-
-    <!-- SELinux toggle -->
-    <string name="selinux_explanation_summary">SELinux - это набор модификаций ядра и инструментов пользовательского пространства. Изменение режима может вызвать нежелательные эффекты. Используйте на свой страх и риск.</string>
-    <string name="selinux_mode_title">SELinux режим</string>
-    <string name="selinux_permissive_summary">Permissive</string>
-    <string name="selinux_enforcing_summary">Enforcing</string>
-    <string name="selinux_persistence_title">Сохраняется при перезагрузках</string>
-    <string name="selinux_persistence_summary">Восстанавливает указанный выше режим sepolicy при каждой загрузке</string>
-    <string name="selinux_permissive_toast_title">Selinux настроен на permissive!</string>
-    <string name="selinux_enforcing_toast_title">Selinux настроен на Enforcing!</string>
-
-    <!-- Charging category -->
-    <string name="charging_category">Зарядка</string>
-
-    <!-- Smart charging -->
-    <string name="smart_charging_title">Умная зарядка</string>
-    <string name="smart_charging_summary">Помогает охладить &amp; , так же защищает устройство от перезарядки</string>
-    <string name="reset_stats_title">Сбросить статистику аккумулятора</string>
-    <string name="reset_stats_summary">Статистика аккумулятора будет сброшена при достижении лимита зарядки.</string>
-
     <!-- Label for feature switch -->
     <string name="switch_bar_on">Включено</string>
 
