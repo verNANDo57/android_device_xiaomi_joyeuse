@@ -57,7 +57,7 @@ vendor.audio.feature.anc_headset.enable=true
 vendor.audio.feature.audiozoom.enable=false
 vendor.audio.feature.battery_listener.enable=true
 vendor.audio.feature.compr_cap.enable=false
-vendor.audio.feature.compr_voip.enable=false
+vendor.audio.feature.compr_voip.enable=true
 vendor.audio.feature.compress_in.enable=true
 vendor.audio.feature.compress_meta_data.enable=true
 vendor.audio.feature.concurrent_capture.enable=true
@@ -144,9 +144,6 @@ bt.max.hfpclient.connections=1
 
 # Camera
 camera.disable_zsl_mode=1
-
-# Camera Aux Package list
-vendor.camera.aux.packagelist=org.lineageos.snap,com.google.android.GoogleCamera,com.android.camera
 
 # CNE
 persist.vendor.cne.feature=1
