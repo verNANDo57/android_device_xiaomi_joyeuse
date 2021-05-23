@@ -4,19 +4,14 @@ allow system_suspend system_suspend_exec:file { read getattr map execute open en
 allow system_suspend servicemanager:binder { call transfer };
 allow system_suspend system_suspend_control_service:service_manager { add find };
 
-allow system_suspend sysfs:dir { ioctl read getattr lock open watch watch_reads search };
-allow system_suspend sysfs:file { ioctl read getattr lock map open watch watch_reads };
-allow system_suspend sysfs:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow system_suspend sysfs:dir { open read };
+allow system_suspend sysfs:file { getattr };
 
-allow system_suspend sysfs_rtc:dir { ioctl read getattr lock open watch watch_reads search };
-allow system_suspend sysfs_rtc:file { ioctl read getattr lock map open watch watch_reads };
-allow system_suspend sysfs_rtc:lnk_file { ioctl read getattr lock map open watch watch_reads };
-
-allow system_suspend sysfs_power:file { ioctl read write getattr lock append map open watch watch_reads };
-allow system_suspend sysfs_suspend_stats:dir { ioctl read getattr lock open watch watch_reads search };
-allow system_suspend sysfs_suspend_stats:file { ioctl read getattr lock map open watch watch_reads };
-allow system_suspend sysfs_suspend_stats:lnk_file { ioctl read getattr lock map open watch watch_reads };
-allow system_suspend sysfs_wakeup:dir { ioctl read getattr lock open watch watch_reads search };
-allow system_suspend sysfs_wakeup:file { ioctl read getattr lock map open watch watch_reads };
-allow system_suspend sysfs_wakeup:lnk_file { ioctl read getattr lock map open watch watch_reads };
+allow system_suspend sysfs_power:file { read write getattr lock append map open watch watch_reads };
+allow system_suspend sysfs_suspend_stats:dir { read getattr lock open watch watch_reads search };
+allow system_suspend sysfs_suspend_stats:file { read getattr lock map open watch watch_reads };
+allow system_suspend sysfs_suspend_stats:lnk_file { read getattr lock map open watch watch_reads };
+allow system_suspend sysfs_wakeup:dir { read getattr lock open watch watch_reads search };
+allow system_suspend sysfs_wakeup:file { read getattr lock map open watch watch_reads };
+allow system_suspend sysfs_wakeup:lnk_file { read getattr lock map open watch watch_reads };
 allow system_suspend sysfs_type:dir { search };

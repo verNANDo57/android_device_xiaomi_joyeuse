@@ -13,3 +13,62 @@ allow untrusted_app_all asec_public_file:file { execute };
 allow untrusted_app_all shell_data_file:file { ioctl read getattr lock map open watch watch_reads };
 allow untrusted_app_all shell_data_file:dir { ioctl read getattr lock open watch watch_reads search };
 allow untrusted_app_all trace_data_file:file { read getattr };
+
+allow untrusted_app_all apk_tmp_file:file { read getattr };
+allow untrusted_app_all apk_private_tmp_file:file { read getattr };
+allow untrusted_app_all system_app_data_file:file { read write getattr };
+allow untrusted_app_all media_rw_data_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
+allow untrusted_app_all media_rw_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow untrusted_app_all mnt_media_rw_file:dir { search };
+allow untrusted_app_all servicemanager:service_manager { list };
+allow untrusted_app_all audioserver_service:service_manager { find };
+allow untrusted_app_all cameraserver_service:service_manager { find };
+allow untrusted_app_all drmserver_service:service_manager { find };
+allow untrusted_app_all mediaserver_service:service_manager { find };
+allow untrusted_app_all mediaextractor_service:service_manager { find };
+allow untrusted_app_all mediametrics_service:service_manager { find };
+allow untrusted_app_all mediadrmserver_service:service_manager { find };
+allow untrusted_app_all nfc_service:service_manager { find };
+allow untrusted_app_all radio_service:service_manager { find };
+allow untrusted_app_all app_api_service:service_manager { find };
+allow untrusted_app_all vr_manager_service:service_manager { find };
+allow untrusted_app_all gpu_service:service_manager { find };
+allow untrusted_app_all gpuservice:binder { call transfer };
+
+allow untrusted_app_all gpuservice:fd { use };
+allow untrusted_app_all self:process { ptrace };
+allow untrusted_app_all runas_app:unix_stream_socket { connectto };
+allow untrusted_app_all runas_app:process { sigchld };
+allow untrusted_app_all sysfs_hwrandom:dir { search };
+allow untrusted_app_all sysfs_hwrandom:file { ioctl read getattr lock map open watch watch_reads };
+allow untrusted_app_all preloads_media_file:dir { ioctl read getattr lock open watch watch_reads search };
+allow untrusted_app_all preloads_media_file:file { ioctl read getattr lock map open watch watch_reads };
+allow untrusted_app_all preloads_data_file:dir { search };
+allow untrusted_app_all vendor_app_file:dir { read getattr open search };
+allow untrusted_app_all vendor_app_file:file { ioctl read getattr lock map execute open watch watch_reads };
+allow untrusted_app_all vendor_app_file:lnk_file { read getattr open };
+allow untrusted_app_all traced:fd { use };
+allow untrusted_app_all traced_tmpfs:file { read write getattr map };
+allow untrusted_app_all traced_producer_socket:sock_file { write };
+allow untrusted_app_all traced:unix_stream_socket { connectto };
+
+allow untrusted_app_all heapprofd_exec:file { ioctl read getattr lock map execute open watch watch_reads execute_no_trans };
+
+allow untrusted_app_all traced_perf_socket:sock_file { write };
+allow untrusted_app_all traced_perf:unix_stream_socket { connectto };
+
+allow untrusted_app_all system_server:udp_socket { read write getattr connect getopt setopt recvfrom sendto };
+allow untrusted_app_all rs_exec:file { read getattr map execute open };
+allow untrusted_app_all rs:process { transition };
+
+dontaudit untrusted_app_all rs:process { noatsecure };
+allow untrusted_app_all rs:process { siginh rlimitinh };
+
+dontaudit untrusted_app_all net_dns_prop:file { read };
+dontaudit untrusted_app_all proc_stat:file { read };
+dontaudit untrusted_app_all proc_vmstat:file { read };
+dontaudit untrusted_app_all proc_uptime:file { read };
+
+allow untrusted_app_all untrusted_app_all_devpts:chr_file { ioctl read write getattr open };
+
+allow untrusted_app_all simpleperf:process { signal };

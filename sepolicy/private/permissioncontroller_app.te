@@ -1,9 +1,4 @@
-allow permissioncontroller_app sysfs:dir { getattr open read write search };
-allow permissioncontroller_app sysfs:file { getattr open read write map };
-
 allow permissioncontroller_app appdomain_tmpfs:file { read write getattr map execute };
-allow permissioncontroller_app incidentd:fd { use };
-allow permissioncontroller_app incidentd:fifo_file { read write };
 allow permissioncontroller_app gpuservice:binder { call transfer };
 allow permissioncontroller_app gpuservice:fd { use };
 allow permissioncontroller_app gpu_service:service_manager { find };
@@ -25,4 +20,5 @@ allow permissioncontroller_app telecom_service:service_manager { find };
 allow permissioncontroller_app trust_service:service_manager { find };
 allow permissioncontroller_app incident_service:service_manager { find };
 allow permissioncontroller_app incidentd:binder { call transfer };
-allow permissioncontroller_app tethering_service:service_manager { find };
+allow permissioncontroller_app incidentd:fd { use };
+allow permissioncontroller_app incidentd:fifo_file { read write };

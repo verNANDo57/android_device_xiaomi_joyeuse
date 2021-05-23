@@ -1,2 +1,3 @@
-allow healthd sysfs:file { getattr open read };
-r_dir_file(healthd, sysfs_batteryinfo)
+allow healthd sysfs:file { getattr };
+allow healthd sysfs_batteryinfo:dir { open getattr read search };
+allow healthd sysfs_batteryinfo:{ file lnk_file } { getattr open read lock };

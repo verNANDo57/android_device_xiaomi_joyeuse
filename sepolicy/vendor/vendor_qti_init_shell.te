@@ -1,10 +1,10 @@
 dontaudit vendor_qti_init_shell self:capability dac_override;
 
-allow vendor_qti_init_shell proc_touchpanel:dir { r_dir_perms setattr };
+allow vendor_qti_init_shell proc_touchpanel:dir { open getattr read search lock setattr };
 allow vendor_qti_init_shell proc_touchpanel:file { getattr setattr };
 
 typeattribute vendor_qti_init_shell data_between_core_and_vendor_violators;
-allow vendor_qti_init_shell bluetooth_data_file:file r_file_perms;
+allow vendor_qti_init_shell bluetooth_data_file:file { getattr open read lock };
 
 # Allow access to swapiness
 allow vendor_qti_init_shell proc_swap:file { open write };
@@ -19,5 +19,5 @@ allow vendor_qti_init_shell self:socket create;
 allow vendor_qti_init_shell sysfs:file { write setattr };
 
 # slub debug options
-allow vendor_qti_init_shell vendor_sysfs_slab_zshandle_storeuser:file w_file_perms;
-allow vendor_qti_init_shell vendor_sysfs_slab_zspage_storeuser:file w_file_perms;
+allow vendor_qti_init_shell vendor_sysfs_slab_zshandle_storeuser:file { open append write lock };
+allow vendor_qti_init_shell vendor_sysfs_slab_zspage_storeuser:file { open append write lock };

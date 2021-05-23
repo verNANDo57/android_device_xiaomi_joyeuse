@@ -121,15 +121,9 @@
 /sys/devices/platform/kcal_ctrl.0(/.*)?                      u:object_r:kcal_dev:s0
 /sys/bus/platform/drivers/kcal_ctrl(/.*)?                    u:object_r:kcal_dev:s0
 
-# Smart Charging
-/sys/class/power_supply/battery/charging_enabled                    u:object_r:sysfs_scharge:s0
-
 # Gloves Mode
 /sys/class/tp_glove/device(/.*)?		u:object_r:proc_touchpanel:s0
 /sys/devices/virtual/tp_glove(/.*)?		u:object_r:proc_touchpanel:s0
-
-# Touchboost
-/sys/module/msm_performance/parameters/touchboost		            u:object_r:sysfs_touchboost:s0
 
 # Thermal
 /vendor/bin/hw/android\.hardware\.thermal@2\.0-service      u:object_r:hal_thermal_default_exec:s0

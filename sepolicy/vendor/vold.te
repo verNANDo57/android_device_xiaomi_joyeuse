@@ -1,4 +1,4 @@
-allow vold proc_touchpanel:dir r_dir_perms;
+allow vold proc_touchpanel:dir { open getattr read search lock };
 
 # For setting read_ahead_kb
 allow vold vendor_sysfs_mmc_host:file create_file_perms;

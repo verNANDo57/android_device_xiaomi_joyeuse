@@ -1,9 +1,9 @@
 # KCAL
-allow system_server kcal_dev:file rw_file_perms;
-allow system_server kcal_dev:dir r_dir_perms;
+allow system_server kcal_dev:file { getattr open read lock append write };
+allow system_server kcal_dev:dir { open getattr read search };
 
 # Smart charger
-allow system_server sysfs_battery_supply:file { getattr open read ioctl lock map watch watch_reads append write };
+allow system_server sysfs_battery_supply:file rw_file_perms;
 
 # Allow system_server to set camera_prop
 get_prop(system_server, vendor_camera_prop)
@@ -20,5 +20,3 @@ allow system_server userspace_reboot_config_prop:file { getattr map open read };
 get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, userspace_reboot_exported_prop)
 get_prop(system_server, vendor_display_notch_prop)
-
-allow system_server default_android_service:service_manager add;

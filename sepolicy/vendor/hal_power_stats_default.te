@@ -1,28 +1,22 @@
-allow hal_power_stats_default sysfs_msm_wlan:dir search; # Needed to traverse to wlan stats file
-get_prop(hal_power_stats_default, exported_wifi_prop) # Needed to detect wifi on/off
-r_dir_file(hal_power_stats_default, sysfs_iio_devices) # Needed to traverse odpm files
-r_dir_file(hal_power_stats_default, sysfs_power_stats) # Needed to traverse platform low power stats
-r_dir_file(hal_power_stats_default, sysfs_msm_subsys) # Needed to traverse subsystem low power stats
-
 # Needed to traverse to wlan stats file
 allow hal_power_stats_default sysfs_msm_wlan:dir search;
 
-allow hal_power_stats_default vendor_sysfs_kgsl:file {
-  r_file_perms
-  getattr
-};
+allow hal_power_stats_default vendor_sysfs_kgsl:file { getattr open read lock };
 
 # Needed to detect wifi on/off
 get_prop(hal_power_stats_default, exported_wifi_prop)
 
 # Needed to traverse odpm files
-r_dir_file(hal_power_stats_default, sysfs_iio_devices)
+allow hal_power_stats_default sysfs_iio_devices:dir { open getattr read search };
+allow hal_power_stats_default sysfs_iio_devices:{ file lnk_file } { getattr open read lock };
 
 # Needed to traverse platform low power stats
-r_dir_file(hal_power_stats_default, sysfs_power_stats)
+allow hal_power_stats_default sysfs_power_stats:dir { open getattr read search };
+allow hal_power_stats_default sysfs_power_stats:{ file lnk_file } { getattr open read lock };
 
 # Needed to traverse subsystem low power stats
-r_dir_file(hal_power_stats_default, sysfs_msm_subsys)
+allow hal_power_stats_default sysfs_msm_subsys:dir { open getattr read search };
+allow hal_power_stats_default sysfs_msm_subsys:{ file lnk_file } { getattr open read lock };
 
 # The following folders are incidentally accessed by hal_power_stats_default and are not needed.
 dontaudit hal_power_stats_default sysfs_power_stats_ignore:dir r_dir_perms;

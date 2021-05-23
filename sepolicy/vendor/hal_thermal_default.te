@@ -1,11 +1,10 @@
 # Allow hal_thermal_default to read/write to sysfs_thermal
-r_dir_file(hal_thermal_default, sysfs_thermal)
-allow hal_thermal_default sysfs_thermal:dir r_dir_perms;
-allow hal_thermal_default sysfs_thermal:file rw_file_perms;
+allow hal_thermal_default sysfs_thermal:dir { open getattr read search };
+allow hal_thermal_default sysfs_thermal:file { getattr open read lock append write };
+allow hal_thermal_default sysfs_thermal:lnk_file { getattr open read lock };
 
 # This is required to access proc stat for fetching CPU usage
-allow hal_thermal_default proc_stat:file { getattr open read };
-allow hal_thermal_default proc_stat:file r_file_perms;
+allow hal_thermal_default proc_stat:file { getattr open read lock };
 
 # netlink access
 allow hal_thermal_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;

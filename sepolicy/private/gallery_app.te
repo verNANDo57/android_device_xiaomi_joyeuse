@@ -1,2 +1,0 @@
-allow gallery_app sysfs:dir { getattr open read write search };
-allow gallery_app sysfs:file { getattr open read write map };

@@ -1,10 +1,6 @@
 # FPS Info
 allow platform_app sysfs_fps:file { getattr open read };
 
-# GPU Boost
-allow platform_app sysfs_kgsl:dir { search };
-allow platform_app sysfs_kgsl:file { getattr open read };
-
 # System
 allow platform_app vendor_sysfs_battery_supply:dir search;
 allow platform_app vendor_sysfs_battery_supply:file { getattr open read }; 
@@ -17,19 +13,13 @@ allow platform_app adsprpcd_file:dir { getattr search };
 allow platform_app vendor_sysfs_graphics:dir search;
 allow platform_app vendor_sysfs_graphics:file { read open getattr };
 allow platform_app sysfs_batteryinfo:dir { search };
-allow platform_app sysfs_batteryinfo:file { open };
 allow platform_app adbd_prop:file { getattr map open read };
 allow platform_app apexd_prop:file { getattr map open read };
 allow platform_app blkio_dev:dir search;
-allow platform_app default_android_service:service_manager { find };
 allow platform_app exported_camera_prop:file { getattr open read };
 allow platform_app privapp_data_file:file { getattr open read map execute };
 allow platform_app sysfs_msm_subsys:file { getattr open read map };
 allow platform_app sysfs_msm_subsys:dir { getattr open read map search };
 allow platform_app system_app_data_file:dir getattr;
-allow platform_app app_data_file:file rx_file_perms;
-
-# Face Unlock
-allow platform_app vendor_sensors_prop:file { getattr open read map };
-allow platform_app vendor_sensors_prop:dir { getattr open read map search };
+allow platform_app app_data_file:file { getattr open read lock execute execute_no_trans };
 

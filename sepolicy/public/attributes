@@ -1,5 +1,5 @@
 # MLIPAY
-hal_attribute(mlipay)
+hal_attribute_custom(mlipay)
 
 # MISYS
 hal_attribute_custom(misys)

@@ -3,9 +3,6 @@ typeattribute vendor_wcnss_service data_between_core_and_vendor_violators;
 allow vendor_wcnss_service sysfs:file { getattr open read };
 dontaudit vendor_wcnss_service serialno_prop:file { getattr open };
 
-set_prop(vendor_wcnss_service, wifi_prop);
-set_prop(vendor_wcnss_service, vendor_default_prop);
-
 allow vendor_wcnss_service wifi_data_file:dir search;
 allow vendor_wcnss_service property_socket:sock_file write;
 allow vendor_wcnss_service init:unix_stream_socket connectto;

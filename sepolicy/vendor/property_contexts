@@ -79,9 +79,6 @@ gpu.stats.debug.level                   u:object_r:vendor_gpu_prop:s0
 # Manufacture Prop
 ro.product.system.manufacturer          u:object_r:exported2_default_prop:s0
 
-# GPU Boost
-persist.xiaomiparts.gpu_profile                 u:object_r:boost_prop:s0
-
 # Mlipay
 persist.vendor.sys.pay.                 u:object_r:mlipay_prop:s0
 # persist.vendor.sys.provision.status     u:object_r:mlipay_prop:s0

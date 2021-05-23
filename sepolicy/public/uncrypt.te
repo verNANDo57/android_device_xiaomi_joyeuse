@@ -1,5 +1,7 @@
 # OTA with encrypted f2fs
 allow uncrypt self:capability sys_admin;
+
+allow uncrypt uncrypt_exec:file { read getattr map execute open entrypoint };
 allow uncrypt self:capability { dac_override dac_read_search };
 allow uncrypt self:cap_userns { dac_override dac_read_search };
 allow uncrypt cache_file:dir { search };
@@ -25,8 +27,5 @@ allow uncrypt proc_cmdline:file { ioctl read getattr lock map open watch watch_r
 allow uncrypt sysfs_dt_firmware_android:dir { ioctl read getattr lock open watch watch_reads search };
 allow uncrypt sysfs_dt_firmware_android:file { ioctl read getattr lock map open watch watch_reads };
 allow uncrypt sysfs_dt_firmware_android:lnk_file { ioctl read getattr lock map open watch watch_reads };
-
 dontaudit uncrypt gsi_metadata_file:dir { search };
 dontaudit uncrypt metadata_file:dir { search };
-
-allow uncrypt uncrypt_exec:file { read getattr map execute open entrypoint };

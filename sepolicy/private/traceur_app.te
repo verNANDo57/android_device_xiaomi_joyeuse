@@ -1,3 +1,16 @@
+allow traceur_app servicemanager:service_manager { list };
+allow traceur_app hwservicemanager:hwservice_manager { list };
+allow traceur_app property_socket:sock_file { write };
+allow traceur_app init:unix_stream_socket { connectto };
+allow traceur_app traced_enabled_prop:property_service { set };
+allow traceur_app traced_enabled_prop:file { read getattr map open };
+allow traceur_app property_socket:sock_file { write };
+allow traceur_app init:unix_stream_socket { connectto };
+allow traceur_app debug_prop:property_service { set };
+allow traceur_app debug_prop:file { read getattr map open };
+
+allow traceur_app appdomain_tmpfs:file { read write getattr map execute };
+
 allow traceur_app debugfs_tracing:file { ioctl read write getattr lock append map open watch watch_reads };
 allow traceur_app debugfs_tracing_debug:dir { ioctl read getattr lock open watch watch_reads search };
 allow traceur_app trace_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
@@ -6,5 +19,5 @@ allow traceur_app atrace_exec:file { ioctl read getattr lock map execute open wa
 allow traceur_app perfetto_exec:file { ioctl read getattr lock map execute open watch watch_reads execute_no_trans };
 allow traceur_app traced_consumer_socket:sock_file { write };
 allow traceur_app traced:unix_stream_socket { connectto };
+
 dontaudit traceur_app debugfs_tracing_debug:file { audit_access };
-allow traceur_app appdomain_tmpfs:file { read write getattr map execute };

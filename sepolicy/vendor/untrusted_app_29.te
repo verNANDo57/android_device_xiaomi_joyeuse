@@ -1,27 +1,5 @@
+allow untrusted_app_29 hal_memtrack_default:binder { call };
+
 # allow apps to read battery status
 r_dir_file(untrusted_app_29, sysfs_battery_supply)
 r_dir_file(untrusted_app_29, sysfs_usb_supply)
-
-allow untrusted_app_29 theme_prop:file { getattr read write open map };
-allow untrusted_app_29 sysfs_msm_subsys:file { getattr read write open map };
-allow untrusted_app_29 sysfs_msm_subsys:dir { getattr read write open search };
-
-allow untrusted_app_29 proc_zoneinfo:file { getattr read write open map };
-allow untrusted_app_29 proc_zoneinfo:dir { getattr read write open search };
-
-allow untrusted_app_29 virtual_ab_prop:file { getattr read write open map };
-allow untrusted_app_29 virtual_ab_prop:dir { getattr read write open search };
-
-allow untrusted_app_29 proc_tty_drivers:file { getattr read write open map };
-allow untrusted_app_29 proc_tty_drivers:dir { getattr read write open search };
-
-allow untrusted_app_29 proc:file { getattr read write open map };
-allow untrusted_app_29 proc:dir { getattr read write open search };
-
-allow untrusted_app_29 system_bootstrap_lib_file:file { getattr read write open map };
-allow untrusted_app_29 system_bootstrap_lib_file:dir { getattr read write open search };
-
-allow untrusted_app_29 rootfs:file { getattr read write open map };
-allow untrusted_app_29 rootfs:dir { getattr read write open search };
-
-allow untrusted_app_29 hal_memtrack_default:binder { call };
