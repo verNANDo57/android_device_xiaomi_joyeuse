@@ -65,7 +65,6 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
-USE_DEVICE_SPECIFIC_CAMERA := true
 
 TARGET_LD_SHIM_LIBS := \
     system/lib/libcameraservice.so|libmedia_jni_shim.so
@@ -93,17 +92,6 @@ USE_DEX2OAT_DEBUG := false
 
 # CNE and DPM FIX ME
 # BOARD_USES_QCNE := true
-
-# Dex
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    WITH_DEXPREOPT := true
-    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-    WITH_DEXPREOPT_DEBUG_INFO := false
-    DONT_DEXPREOPT_PREBUILTS := true
-    USE_DEX2OAT_DEBUG := false
-  endif
-endif
 
 # Display
 TARGET_SCREEN_DENSITY := 440
