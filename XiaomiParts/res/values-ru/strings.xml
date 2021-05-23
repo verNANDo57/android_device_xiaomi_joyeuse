@@ -76,13 +76,6 @@
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
     <string name="kcal_reset">Сбросить</string>
 
-    <!-- USB fastcharge category -->
-    <string name="usb_fastcharge_category">USB быстрая зарядка</string>
-
-    <!-- USB fastcharge -->
-    <string name="usb_fastcharge_title">Включить/Выключить быструю зарядку через USB</string>
-    <string name="usb_fastcharge_summary">Заряжает с напряжением до 900 мА при подключении к компьютеру через порт USB 3.0</string>
-
     <!-- FPS Info -->
     <string name="fps_info_title">Информация о FPS</string>
     <string name="fps_info_summary">Показывает таблицу с текущими кадрами в секунду</string>

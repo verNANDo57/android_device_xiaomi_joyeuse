@@ -43,10 +43,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
 
-    public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
-    public static final String PREF_USB_FASTCHARGE = "fastcharge";
-    public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
-
     public static final String PREF_KEY_FPS_INFO = "fps_info";
 
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
@@ -54,7 +50,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private Preference mKcal;
     private Preference mClearSpeakerPref;
     private Preference mAmbientPref;
-    private SecureSettingSwitchPreference mFastcharge;
     private static SwitchPreference mFpsInfo;
 
     private static Context mContext;
@@ -94,14 +89,6 @@ public class DeviceSettings extends PreferenceFragment implements
             return true;
         });
 
-        if (FileUtils.fileWritable(USB_FASTCHARGE_PATH)) {
-            mFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
-            mFastcharge.setChecked(FileUtils.getFileValueAsBoolean(USB_FASTCHARGE_PATH, true));
-            mFastcharge.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(CATEGORY_FASTCHARGE));
-        }
-
         mFpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
         mFpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
         mFpsInfo.setOnPreferenceChangeListener(this);
@@ -111,10 +98,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
         switch (key) {
-
-            case PREF_USB_FASTCHARGE:
-                FileUtils.setValue(USB_FASTCHARGE_PATH, (boolean) value);
-                break;
 
             case PREF_KEY_FPS_INFO:
                 boolean enabled = (Boolean) value;
