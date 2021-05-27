@@ -655,6 +655,3 @@ PRODUCT_PACKAGES += \
 
 # Dexpreopt
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI \
-    TrebuchetQuickStep
