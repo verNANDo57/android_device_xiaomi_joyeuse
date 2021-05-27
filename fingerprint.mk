@@ -1,5 +1,5 @@
 # Fingerprint (Spoof)
-BUILD_FINGERPRINT := Redmi/joyeuse_global/joyeuse:10/QKQ1.191215.002/V12.0.3.0.QJZMIXM:user/release-keys
+BUILD_FINGERPRINT := Redmi/joyeuse_global/joyeuse:11/RKQ1.200826.002/V12.0.1.0.RJZMIXM:user/release-keys
 
 # Description
-PRIVATE_BUILD_DESC="joyeuse_global-user 10 QKQ1.191215.002 V12.0.3.0.QJZMIXM release-keys"
+PRIVATE_BUILD_DESC="joyeuse_global-user 11 RKQ1.200826.002 V12.0.1.0.RJZMIXM release-keys"
