@@ -38,3 +38,5 @@ allow system_app sysfs_msm_subsys:dir search;
 allow system_app vendor_default_prop:file { getattr open read };
 allow system_app vendor_default_prop:file { map };
 allow system_app apk_data_file:dir { write };
+
+dontaudit system_app system_suspend_control_service:service_manager { find };

@@ -7,3 +7,5 @@ allow system_app storaged:binder { call };
 allow system_app selinuxfs:file open;
 allow system_app selinuxfs:file read;
 allow system_app system_suspend:binder call;
+
+dontaudit system_app system_suspend_control_service:service_manager { find };
