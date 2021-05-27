@@ -64,7 +64,9 @@ TARGET_NO_BOOTLOADER := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 # Camera
+USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
+TARGET_USES_QTI_CAMERA2CLIENT := true
 
 TARGET_LD_SHIM_LIBS := \
     system/lib/libcameraservice.so|libmedia_jni_shim.so
@@ -90,7 +92,7 @@ WITH_DEXPREOPT_DEBUG_INFO := false
 DONT_DEXPREOPT_PREBUILTS := true
 USE_DEX2OAT_DEBUG := false
 
-# CNE and DPM FIX ME
+# CNE and DPM (FIX ME)
 # BOARD_USES_QCNE := true
 
 # Display
