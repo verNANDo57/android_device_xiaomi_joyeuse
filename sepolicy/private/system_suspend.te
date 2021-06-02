@@ -4,8 +4,9 @@ allow system_suspend system_suspend_exec:file { read getattr map execute open en
 allow system_suspend servicemanager:binder { call transfer };
 allow system_suspend system_suspend_control_service:service_manager { add find };
 
-allow system_suspend sysfs:dir { open read };
 allow system_suspend sysfs:file { getattr };
+allow system_suspend sysfs:dir { read open };
+allow system_suspend sysfs:lnk_file { ioctl read getattr lock map open watch watch_reads };
 
 allow system_suspend sysfs_rtc:dir { ioctl read getattr lock open watch watch_reads search };
 allow system_suspend sysfs_rtc:file { ioctl read getattr lock map open watch watch_reads };

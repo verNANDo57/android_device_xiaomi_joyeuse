@@ -10,11 +10,6 @@ persist.vendor.bt.			u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.btstack.		        u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bluetooth.a2dp.		u:object_r:vendor_bluetooth_prop:s0
 
-#Video
-vendor.media.target.version                  u:object_r:vendor_video_prop:s0
-vendor.video.disable.ubwc                    u:object_r:vendor_video_prop:s0
-vendor.media.target_variant                  u:object_r:vendor_video_prop:s0
-
 # Camera
 cameradaemon.SaveMemAtBoot              u:object_r:vendor_camera_prop:s0
 cpp.set.clock                           u:object_r:vendor_camera_prop:s0
