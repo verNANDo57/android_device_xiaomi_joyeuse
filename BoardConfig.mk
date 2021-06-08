@@ -308,6 +308,11 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
+# I have to enable this flag, cuz I'm not able to fix system_suspend related issues WITHOUT this flag.
+# I WANT TO BELIEVE that system_suspend will be fixed in SDK 31
+# All neverallows are here ----> /sepolicy/private/system_suspend.te
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag

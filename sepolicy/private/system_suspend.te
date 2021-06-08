@@ -1,16 +1,25 @@
+#============= system_suspend ==============
+# All neverallows you look for are here, inside of this sepolicy file
+#============= system_suspend ==============
+
 allow system_suspend system_server:binder { call transfer };
 allow system_suspend system_server:fd { use };
 allow system_suspend system_suspend_exec:file { read getattr map execute open entrypoint };
 allow system_suspend servicemanager:binder { call transfer };
 allow system_suspend system_suspend_control_service:service_manager { add find };
 
-allow system_suspend sysfs:file { getattr };
-allow system_suspend sysfs:dir { read open };
+# To access arbitrary sysfs paths from /sys/class/wakeup/* symlinks.
+allow system_suspend sysfs:dir { ioctl read getattr lock open watch watch_reads search };
+allow system_suspend sysfs:file { ioctl read getattr lock map open watch watch_reads }; # <-------- HERE
 allow system_suspend sysfs:lnk_file { ioctl read getattr lock map open watch watch_reads };
 
 allow system_suspend sysfs_rtc:dir { ioctl read getattr lock open watch watch_reads search };
 allow system_suspend sysfs_rtc:file { ioctl read getattr lock map open watch watch_reads };
 allow system_suspend sysfs_rtc:lnk_file { ioctl read getattr lock map open watch watch_reads };
+
+allow system_suspend sysfs_vibrator:dir { ioctl read getattr lock open watch watch_reads search };
+allow system_suspend sysfs_vibrator:file { ioctl read getattr lock map open watch watch_reads }; # <-------- AND HERE
+allow system_suspend sysfs_vibrator:lnk_file { ioctl read getattr lock map open watch watch_reads };
 
 allow system_suspend sysfs_power:file { ioctl read write getattr lock append map open watch watch_reads };
 allow system_suspend sysfs_suspend_stats:dir { ioctl read getattr lock open watch watch_reads search };
