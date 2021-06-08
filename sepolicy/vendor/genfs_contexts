@@ -141,9 +141,8 @@ genfscon sysfs /devices/virtual/misc/msm_wmapro/wakeup                          
 # ProcFS
 genfscon proc /sys/vm/swappiness                                      u:object_r:proc_swap:s0
 
-# USB force fastcharge
-genfscon sysfs /kernel/fast_charge/force_fast_charge                                  u:object_r:sysfs_fcharge:s0
-
 # Touchpanel
 genfscon sysfs /touchpanel                                      u:object_r:sysfs_touchpanel:s0
 
+# USB force fastcharge
+genfscon sysfs /kernel/fast_charge/force_fast_charge                                     u:object_r:sysfs_fcharge:s0

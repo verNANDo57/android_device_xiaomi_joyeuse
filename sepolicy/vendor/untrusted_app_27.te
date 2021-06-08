@@ -3,3 +3,5 @@ allow untrusted_app_27 hal_memtrack_default:binder { call };
 # allow apps to read battery status
 r_dir_file(untrusted_app_27, sysfs_battery_supply)
 r_dir_file(untrusted_app_27, sysfs_usb_supply)
+
+allow untrusted_app_27 sysfs_msm_subsys:dir { search };
