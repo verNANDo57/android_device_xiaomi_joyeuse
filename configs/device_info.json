@@ -1,0 +1,13 @@
+{
+  "basic": {
+    "cpu": "Snapdragon 720G",
+    "battery": "5020mAh",
+    "camera": "64MP+8MP+5MP+2MP",
+    "screen": "6.67″ IPS LCD",
+    "resolution": "2400×1080"
+  },
+  "camera": {
+    "front_camera": "16MP",
+    "rear_camera": "64MP+8MP+5MP+2MP"
+  }
+}

@@ -158,6 +158,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
     $(LOCAL_PATH)/configs/component-overrides_qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
 
+# Device info
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/device_info.json:$(TARGET_COPY_OUT_VENDOR)/etc/device_info.json
+
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
