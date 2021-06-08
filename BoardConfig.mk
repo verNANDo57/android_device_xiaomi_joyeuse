@@ -68,8 +68,15 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
 TARGET_USES_QTI_CAMERA2CLIENT := true
 
-TARGET_LD_SHIM_LIBS := \
-    system/lib/libcameraservice.so|libmedia_jni_shim.so
+# Shims
+TARGET_LD_SHIM_LIBS += \
+    system/lib/libcameraservice.so|libmedia_jni_shim.so \
+	 system/lib64/libandroid_runtime.so|libshim_extra.so \
+    system/lib/libandroid_runtime.so|libshim_extra.so \
+    system/lib/libhwui.so|libshim_extra.so \
+    system/lib64/libhwui.so|libshim_extra.so \
+    system/lib/libcamera2ndk.so|libshim_extra.so \
+    system/lib64/libcamera2ndk.so|libshim_extra.so
 
 # Charger Mode
 # We don't need this, cuz we already have defined ro.charger.enable_suspend=true in product,prop, but ok

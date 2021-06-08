@@ -260,7 +260,12 @@ PRODUCT_PACKAGES += \
     libdng_sdk
 
 PRODUCT_PACKAGES += \
-    libmedia_jni_shim
+	libcamera2ndk \
+   libcamera2ndk_vendor
+
+PRODUCT_PACKAGES += \
+    libmedia_jni_shim \
+    libshim_extra
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
