@@ -82,7 +82,6 @@ persist.bluetooth.avrcpversion=avrcp16
 persist.vendor.btstack.avrcp.pos_time=1000
 persist.bluetooth.enabledelayreports=true
 vendor.bt.pts.pbap=true
-persist.vendor.bt.a2dp.aac_whitelist=false
 persist.vendor.bt.a2dp.addr_check_enabled_for_aac=true
 persist.audio.lowlatency.rec=true
 audio.safx.pbe.enabled=false
