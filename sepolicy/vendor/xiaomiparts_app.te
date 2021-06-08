@@ -1,0 +1,24 @@
+typeattribute xiaomiparts_app domain;
+
+allow xiaomiparts_app sysfs_msm_subsys:file { getattr open read map };
+allow xiaomiparts_app sysfs_msm_subsys:dir { getattr open read map search };
+
+# Clear Speaker
+allow xiaomiparts_app audioserver_service:service_manager { find };
+allow xiaomiparts_app mediaserver_service:service_manager { find };
+
+# FPS Info
+allow xiaomiparts_app sysfs_fps:file { getattr open read lock append write };
+allow xiaomiparts_app sysfs_graphics:dir search;
+allow xiaomiparts_app sysfs_graphics:file { getattr open read };
+allow xiaomiparts_app vendor_sysfs_graphics:dir search;
+allow xiaomiparts_app vendor_sysfs_graphics:file { getattr open read };
+
+# KCAL
+allow xiaomiparts_app kcal_dev:file { getattr open read lock append write };
+allow xiaomiparts_app kcal_dev:dir { search };
+
+# Thermal Profiles
+# Allow XiaomiParts to write to sysfs_thermal
+allow xiaomiparts_app sysfs_thermal:dir { getattr read open search };
+allow xiaomiparts_app sysfs_thermal:file { getattr read open write create append lock map };

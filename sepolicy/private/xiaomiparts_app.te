@@ -1,4 +1,4 @@
-type xiaomiparts_app, domain;
+typeattribute xiaomiparts_app domain;
 
 app_domain(xiaomiparts_app)
 
@@ -6,14 +6,16 @@ app_domain(xiaomiparts_app)
 allow xiaomiparts_app app_api_service:service_manager find;
 
 # Allow reading and writing shared prefs
-allow xiaomiparts_app system_app_data_file:dir create_dir_perms;
-allow xiaomiparts_app system_app_data_file:{ file lnk_file } create_file_perms;
+allow xiaomiparts_app system_app_data_file:dir { search remove_name add_name };
+allow xiaomiparts_app system_app_data_file:{ dir file lnk_file } { create rename setattr unlink getattr open read ioctl lock map watch watch_reads append write };
 
 # Allow binder communication with gpuservice
 binder_call(xiaomiparts_app, gpuservice)
 
 # Allow XiaomiParts to read and write to cgroup
-allow xiaomiparts_app cgroup:file rw_file_perms;
+allow xiaomiparts_app cgroup:file { getattr open read ioctl lock map watch watch_reads append write };
 
+# Thermal Profiles
 # Allow XiaomiParts to write to sysfs_thermal
-allow xiaomiparts_app sysfs_thermal:file w_file_perms;
+allow xiaomiparts_app sysfs_thermal:dir { getattr read open search };
+allow xiaomiparts_app sysfs_thermal:file { getattr read open write create append lock map };
