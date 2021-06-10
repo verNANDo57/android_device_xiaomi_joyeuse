@@ -211,9 +211,11 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0.vendor \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.bluetooth.audio@2.0 \
-    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
-    vendor.qti.hardware.bluetooth_audio@2.0-impl \
-    vendor.qti.hardware.bluetooth_audio@2.0 \
+    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.1-impl \
+    vendor.qti.hardware.bluetooth_audio@2.1 \
+    libbluetooth_audio_session \
     audio.bluetooth.default
 
 PRODUCT_COPY_FILES += \
@@ -260,7 +262,7 @@ PRODUCT_PACKAGES += \
     libdng_sdk
 
 PRODUCT_PACKAGES += \
-	libcamera2ndk \
+   libcamera2ndk \
    libcamera2ndk_vendor
 
 PRODUCT_PACKAGES += \
@@ -438,9 +440,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_sm6250
 
-# LiveDisplay
+# Color managment
+PRODUCT_USE_LINEAGE_COLOR_MANAGMENT = true
+
+# ANT+
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
+    com.dsi.ant@1.0.vendor
 
 # Media
 PRODUCT_PACKAGES += \
@@ -501,7 +506,8 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.xiaomi_sm6250
+    android.hardware.power@1.3-service.xiaomi_sm6250 \
+    vendor.qti.hardware.perf@2.2.vendor
 
 # RCS
 PRODUCT_PACKAGES += \
