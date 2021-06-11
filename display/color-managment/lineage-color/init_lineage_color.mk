@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := $(call my-dir)
-
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm \
-    vendor.lineage.livedisplay@2.0_manifest
+    vendor.lineage.livedisplay@2.0-service-sdm
+
+PRODUCT_PACKAGES += \
+    manifest_vendor.lineage.livedisplay@2.0

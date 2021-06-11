@@ -27,6 +27,9 @@ $(call inherit-product, $(DEVICE_PATH)/props.mk)
 # Inherit fingerprint.mk
 $(call inherit-product, $(DEVICE_PATH)/fingerprint.mk)
 
+# Setup color-managment method (IMPORTANT)
+$(call inherit-product, $(DEVICE_PATH)/display/color-managment/color-managment.mk)
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
@@ -441,9 +444,6 @@ PRODUCT_COPY_FILES += \
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_sm6250
-
-# Color managment
-PRODUCT_USE_LINEAGE_COLOR_MANAGMENT = true
 
 # ANT+
 PRODUCT_PACKAGES += \
