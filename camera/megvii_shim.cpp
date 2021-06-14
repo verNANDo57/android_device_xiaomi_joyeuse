@@ -17,17 +17,5 @@
 namespace android {
    extern "C" void mg_facepp() {
 			// Required empty constructor
-	}
-
-   extern "C" void _ZN12megvii_cloud6facepp11FPP_GetRectEP11_MG_FPP_APIiiP14MG_DETECT_RECT() {
-			// Required empty constructor
-	}
-
-   extern "C" void _ZN12megvii_cloud6facepp15FPP_GetLandmarkEP11_MG_FPP_APIiiiP8MG_POINT() {
-			// Required empty constructor
-	}
-
-   extern "C" void _ZN12megvii_cloud6facepp19FPP_GetFaceLandmarkEP11_MG_FPP_APIiiiP8MG_POINT() {
-			// Required empty constructor
-	}
+   }
 }
