@@ -6,6 +6,7 @@ ro.charger.enable_suspend=true
 debug.sf.hw=0
 debug.egl.hw=0
 debug.gralloc.enable_fb_ubwc=1
+vendor.display.disable_rotator_downscale=1
 
 # LMKD
 ro.config.low_ram.threshold_gb=6
