@@ -242,9 +242,10 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     CameraGo
 
-PRODUCT_PACKAGES += \
-    libc++demangle_vendor \
-    libshim_megvii
+# Megvii shim [In a non-working state]
+# PRODUCT_PACKAGES += \
+#     libc++demangle_vendor \
+#     libshim_megvii
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \

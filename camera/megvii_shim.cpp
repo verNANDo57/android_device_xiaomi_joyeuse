@@ -16,6 +16,6 @@
 
 namespace android {
    extern "C" void mg_facepp() {
-			// Required empty constructor
+		// Required empty constructor
    }
 }
