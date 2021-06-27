@@ -27,8 +27,11 @@ $(call inherit-product, $(DEVICE_PATH)/props.mk)
 # Inherit fingerprint.mk
 $(call inherit-product, $(DEVICE_PATH)/fingerprint.mk)
 
-# Setup color-managment method (IMPORTANT)
+# Inherit color-managment.mk
 $(call inherit-product, $(DEVICE_PATH)/display/color-managment/color-managment.mk)
+
+# Inherit setup-vibrator.mk
+$(call inherit-product, $(DEVICE_PATH)/vibrator/setup-vibrator.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -601,10 +604,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
-
-# Vibrator
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service
 
 # VNDK
 PRODUCT_PACKAGES += \
