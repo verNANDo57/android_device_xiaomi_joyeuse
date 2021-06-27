@@ -6,4 +6,4 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.xiaomi_joyeuse
 
 PRODUCT_COPY_FILES += \
-    $(CURRENT_LOCATION)/vibrator/etc/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+    $(CURRENT_LOCATION)/etc/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
