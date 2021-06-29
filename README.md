@@ -32,6 +32,8 @@ The Redmi Note 9 Pro (codenamed _"joyeuse"_) is a mid-range smartphone from Xiao
 | Latest System Security Patch | 2021-04-01 |
 | Latest Vendor Security Patch | 2021-04-01 |
 
+## Notes
+Pick this commit before building: https://github.com/verNANDo57/android_system_sepolicy/commit/2bbd950dae38d758da910ca98899b9cd14715364
 
 ## Copyright
 
