@@ -4,6 +4,7 @@ allow system_server kcal_dev:dir { open getattr read search };
 
 # Smart charger
 allow system_server sysfs_battery_supply:file rw_file_perms;
+allow system_server vendor_sysfs_battery_supply:file r_file_perms;
 
 # Allow system_server to set camera_prop
 get_prop(system_server, vendor_camera_prop)
