@@ -301,6 +301,9 @@ ro.vendor.vibrator.hal.long.frequency.shift=10
 ro.vendor.vibrator.hal.steady.shape=1
 ro.vendor.vibrator.hal.lptrigger=0
 
+# USB
+vendor.usb.diag.func.name=diag
+
 # WFD
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
