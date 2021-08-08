@@ -170,10 +170,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/device_info.json:$(TARGET_COPY_OUT_VENDOR)/etc/device_info.json
 
-# Dummpy qti-perfd client
-PRODUCT_PACKAGES += \
-    libqti-perfd-client
-
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
