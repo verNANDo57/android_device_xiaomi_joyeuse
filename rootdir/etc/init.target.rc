@@ -31,7 +31,7 @@ on early-init
     # Disable EAS
     write /proc/sys/kernel/sched_energy_aware 0
     # Execute kernel-modules
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_q6_pdr audio_q6_notifier audio_snd_event audio_apr audio_adsp_loader audio_q6 audio_native audio_usf  audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_stub audio_wcd_core audio_wsa881x audio_bolero_cdc audio_wsa_macro audio_va_macro audio_rx_macro audio_tx_macro audio_wcd937x audio_wcd937x_slave audio_wcd938x audio_wcd938x_slave audio_tas2562 audio_machine_atoll
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_adsp_loader audio_apr audio_bolero_cdc audio_hdmi audio_machine_atoll audio_mbhc audio_native audio_pinctrl_lpi audio_platform audio_q6 audio_q6_notifier audio_q6_pdr audio_rx_macro audio_snd_event audio_stub audio_swr audio_swr_ctrl audio_tas2562 audio_tx_macro audio_usf audio_va_macro audio_wcd9xxx audio_wcd937x audio_wcd937x_slave audio_wcd938x audio_wcd938x_slave audio_wcd_core audio_wsa881x audio_wsa_macro br_netfilter exfat gspca_main lcd llcc_perfmon mpq-adapter mpq-dmx-hw-plugin msm_11ad_proxy qca_cld3_wlan rdbg wil6210
 
 on init
     # write /dev/stune/foreground/schedtune.sched_boost_no_override 1

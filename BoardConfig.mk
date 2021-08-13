@@ -134,8 +134,6 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 
 BOARD_VENDOR_KERNEL_MODULES += \
-   $(DEVICE_PATH)/kernel-modules/rmnet_perf.ko \
-   $(DEVICE_PATH)/kernel-modules/rmnet_shs.ko \
    $(DEVICE_PATH)/kernel-modules/audio_adsp_loader.ko \
    $(DEVICE_PATH)/kernel-modules/audio_apr.ko \
    $(DEVICE_PATH)/kernel-modules/audio_bolero_cdc.ko \
