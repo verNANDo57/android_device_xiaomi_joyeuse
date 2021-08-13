@@ -186,10 +186,11 @@ TARGET_KERNEL_ARCH := arm64
 #TARGET_NEW_GCC_COMPILE := true
 
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := proton
+# TARGET_KERNEL_CLANG_VERSION := proton
 TARGET_KERNEL_CONFIG := cust_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6250
-KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton/bin
+# KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton/bin
+# TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 KERNEL_SUPPORTS_LLVM_TOOLS := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
