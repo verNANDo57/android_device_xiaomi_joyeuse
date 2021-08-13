@@ -1,1 +1,4 @@
 allow priv_app blkio_dev:dir search;
+
+# DisplayFeature
+get_prop(priv_app, vendor_displayfeature_prop);
