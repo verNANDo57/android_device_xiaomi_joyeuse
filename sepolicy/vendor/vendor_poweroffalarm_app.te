@@ -1,0 +1,5 @@
+#============= vendor_poweroffalarm_app ==============
+# Settings app writes to /dev/stune/foreground/tasks.
+allow vendor_poweroffalarm_app cgroup:file { getattr open read lock append write };
+allow vendor_poweroffalarm_app mnt_vendor_file:dir create_dir_perms;
+allow vendor_poweroffalarm_app mnt_vendor_file:{ file lnk_file } create_file_perms;

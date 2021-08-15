@@ -1,3 +1,8 @@
+# ============= hal_nfc_default ==============
+allow hal_nfc_default default_android_hwservice:hwservice_manager { find };
+allow hal_nfc_default hal_nxpnfc_hwservice:hwservice_manager { find };
+allow hal_nfc_default hal_nxpese_hwservice:hwservice_manager { find };
+
 allow hal_nfc_default vendor_nfc_nq_prop:file { read getattr map open };
 allow hal_nfc_default firmware_file:dir { read getattr lock open watch watch_reads search };
 allow hal_nfc_default firmware_file:file { read getattr lock map open watch watch_reads };
