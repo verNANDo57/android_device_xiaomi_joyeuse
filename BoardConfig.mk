@@ -70,7 +70,6 @@ TARGET_USES_QTI_CAMERA2CLIENT := true
 
 # Shims
 TARGET_LD_SHIM_LIBS += \
-    system/lib/libcameraservice.so|libmedia_jni_shim.so \
     system/lib64/libandroid_runtime.so|libshim_extra.so \
     system/lib/libandroid_runtime.so|libshim_extra.so \
     system/lib/libhwui.so|libshim_extra.so \
@@ -182,8 +181,8 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 KERNEL_LD := LD=ld.lld
 TARGET_KERNEL_ARCH := arm64
 
-#GCC
-#TARGET_NEW_GCC_COMPILE := true
+# GCC
+# TARGET_NEW_GCC_COMPILE := true
 
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := proton
