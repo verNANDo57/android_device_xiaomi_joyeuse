@@ -70,6 +70,7 @@ TARGET_USES_QTI_CAMERA2CLIENT := true
 
 # Shims
 TARGET_LD_SHIM_LIBS += \
+    system/lib/libcameraservice.so|libmedia_jni_shim.so \
     system/lib64/libandroid_runtime.so|libshim_extra.so \
     system/lib/libandroid_runtime.so|libshim_extra.so \
     system/lib/libhwui.so|libshim_extra.so \

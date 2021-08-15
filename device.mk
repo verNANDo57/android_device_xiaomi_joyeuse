@@ -279,6 +279,7 @@ PRODUCT_PACKAGES += \
    libcamera2ndk_vendor
 
 PRODUCT_PACKAGES += \
+    libmedia_jni_shim \
     libshim_extra
 
 PRODUCT_COPY_FILES += \
