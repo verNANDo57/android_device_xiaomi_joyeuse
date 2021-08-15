@@ -5,3 +5,5 @@ r_dir_file(untrusted_app_25, sysfs_battery_supply)
 r_dir_file(untrusted_app_25, sysfs_usb_supply)
 
 allow untrusted_app_25 sysfs_msm_subsys:dir { search };
+
+allow untrusted_app_25 self:udp_socket { ioctl };
