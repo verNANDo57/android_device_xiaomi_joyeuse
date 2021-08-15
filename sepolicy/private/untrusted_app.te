@@ -1,2 +1,4 @@
 allow untrusted_app appdomain_tmpfs:file { read write getattr map execute };
-allow untrusted_app proc_zoneinfo:file { read };
+dontaudit untrusted_app proc_zoneinfo:file { read };
+allow untrusted_app self:udp_socket { ioctl };
+dontaudit untrusted_app proc_net:file { read };

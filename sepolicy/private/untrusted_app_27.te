@@ -9,4 +9,6 @@ allow untrusted_app_27 ashmem_device:chr_file { ioctl read write getattr lock ap
 auditallow untrusted_app_27 ashmem_device:chr_file { open };
 allow untrusted_app_27 mnt_sdcard_file:lnk_file { ioctl read getattr lock map open watch watch_reads };
 allow untrusted_app_27 self:netlink_route_socket { bind nlmsg_readpriv };
-allow untrusted_app_27 proc_zoneinfo:file { read };
+dontaudit untrusted_app_27 proc_zoneinfo:file { read };
+allow untrusted_app_27 self:udp_socket { ioctl };
+dontaudit untrusted_app_27 proc_net:file { read };

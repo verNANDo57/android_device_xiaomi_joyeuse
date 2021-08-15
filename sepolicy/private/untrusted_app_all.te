@@ -68,8 +68,11 @@ dontaudit untrusted_app_all net_dns_prop:file { read };
 dontaudit untrusted_app_all proc_stat:file { read };
 dontaudit untrusted_app_all proc_vmstat:file { read };
 dontaudit untrusted_app_all proc_uptime:file { read };
-allow untrusted_app_all proc_zoneinfo:file { read };
+dontaudit untrusted_app_all proc_zoneinfo:file { read };
 
 allow untrusted_app_all untrusted_app_all_devpts:chr_file { ioctl read write getattr open };
 
 allow untrusted_app_all simpleperf:process { signal };
+
+allow untrusted_app_all self:udp_socket { ioctl };
+dontaudit untrusted_app_all proc_net:file { read };
