@@ -249,26 +249,9 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     CameraGo
 
-# Megvii shim [In a non-working state]
-# PRODUCT_PACKAGES += \
-#     libc++demangle_vendor \
-#     libshim_megvii
-
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service_64 \
-    android.hardware.camera.provider@2.4-legacy \
-    android.hardware.camera.provider@2.4-external \
-    android.hardware.camera.provider@2.5 \
-    android.hardware.camera.provider@2.6 \
-    android.hardware.camera.device@1.0 \
-    android.hardware.camera.device@3.2 \
-    android.hardware.camera.device@3.3 \
-    android.hardware.camera.device@3.4 \
-    android.hardware.camera.device@3.5 \
-    android.hardware.camera.device@3.6 \
-    vendor.qti.hardware.camera.device@1.0 \
-    vendor.qti.hardware.camera.device@1.0.vendor
+    android.hardware.camera.provider@2.4-service_64
 
 PRODUCT_PACKAGES += \
     libdng_sdk.vendor \
@@ -279,7 +262,6 @@ PRODUCT_PACKAGES += \
    libcamera2ndk_vendor
 
 PRODUCT_PACKAGES += \
-    libmedia_jni_shim \
     libshim_extra
 
 PRODUCT_COPY_FILES += \
