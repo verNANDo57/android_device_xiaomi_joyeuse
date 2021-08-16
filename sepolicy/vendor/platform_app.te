@@ -3,6 +3,7 @@ allow platform_app sysfs_fps:file { getattr open read };
 
 # DisplayFeature
 get_prop(platform_app, vendor_displayfeature_prop);
+allow platform_app default_android_service:service_manager { find };
 
 # System
 allow platform_app vendor_sysfs_battery_supply:dir search;
