@@ -322,11 +322,13 @@ PRODUCT_PACKAGES += \
 
 # Dumpstate
 PRODUCT_PACKAGES += \
+	android.hardware.dumpstate@1.0 \
 	android.hardware.dumpstate@1.1
 
-# Libnativehelper
-PRODUCT_HOST_PACKAGES += \
-	libnativehelper
+# Atrace
+PRODUCT_PACKAGES += \
+	android.hardware.atrace@1.0 \
+	android.hardware.atrace@1.0-service
 
 # DRM
 PRODUCT_PACKAGES += \
