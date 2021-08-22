@@ -1,6 +1,4 @@
 #============= system_suspend ==============
-# All neverallows you look for are here
-#============= system_suspend ==============
 
 allow system_suspend system_server:binder { call transfer };
 allow system_suspend system_server:fd { use };

@@ -223,11 +223,9 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0.vendor \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.bluetooth.audio@2.0 \
-    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.bluetooth_audio@2.1-impl \
     vendor.qti.hardware.bluetooth_audio@2.1 \
-    libbluetooth_audio_session \
     audio.bluetooth.default
 
 PRODUCT_COPY_FILES += \
@@ -252,17 +250,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64
-
-PRODUCT_PACKAGES += \
-    libdng_sdk.vendor \
-    libdng_sdk
-
-PRODUCT_PACKAGES += \
-   libcamera2ndk \
-   libcamera2ndk_vendor
-
-PRODUCT_PACKAGES += \
-    libshim_extra
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
