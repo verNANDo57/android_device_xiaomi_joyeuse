@@ -310,4 +310,7 @@ on property:sys.boot_completed=1
     write /sys/block/dm-3/queue/read_ahead_kb 128
 
     # Start vibrator_calibration
-	 start vibrator_calibration
+    start vibrator_calibration
+
+    # Restrict permissions to socket file to hide Magisk & co.
+    chmod 440 /proc/net/unix
