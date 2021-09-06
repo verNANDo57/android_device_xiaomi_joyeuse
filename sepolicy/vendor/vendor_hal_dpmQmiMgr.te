@@ -1,0 +1,1 @@
+allow vendor_hal_dpmQmiMgr sysfs:file rw_file_perms;
