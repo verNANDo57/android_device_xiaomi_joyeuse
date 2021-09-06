@@ -3,6 +3,7 @@ hal_client_domain(system_app, hal_mlipay)
 # MISYS
 hal_client_domain(system_app, hal_misys)
 
+allow system_app sysfs_zram:file { open read getattr };
 allow system_app storaged:binder { call };
 allow system_app selinuxfs:file open;
 allow system_app selinuxfs:file read;

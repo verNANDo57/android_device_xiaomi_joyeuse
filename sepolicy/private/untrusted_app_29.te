@@ -1,5 +1,7 @@
-allow untrusted_app_29 appdomain_tmpfs:file { read write getattr map execute };
-allow untrusted_app_29 self:netlink_route_socket { bind nlmsg_readpriv };
+dontaudit untrusted_app_29 net_dns_prop:file { read };
+dontaudit untrusted_app_29 proc_stat:file { read };
+dontaudit untrusted_app_29 proc_vmstat:file { read };
+dontaudit untrusted_app_29 proc_uptime:file { read };
 dontaudit untrusted_app_29 proc_zoneinfo:file { read };
 allow untrusted_app_29 self:udp_socket { ioctl };
 dontaudit untrusted_app_29 proc_net:file { read };

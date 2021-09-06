@@ -1,4 +1,3 @@
-allow charger self:capability2 { wake_alarm };
 allow charger vendor_sysfs_battery_supply:dir { ioctl read getattr lock open watch watch_reads search };
 allow charger vendor_sysfs_battery_supply:file { ioctl read getattr lock map open watch watch_reads };
 allow charger vendor_sysfs_battery_supply:lnk_file { ioctl read getattr lock map open watch watch_reads };
