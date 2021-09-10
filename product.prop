@@ -7,7 +7,3 @@ ro.config.low_ram.threshold_gb=6
 # Incremental FS
 ro.incremental.enable=1
 
-# IORap
-ro.iorapd.enable=false
-iorapd.perfetto.enable=false
-iorapd.readahead.enable=false
