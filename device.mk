@@ -28,7 +28,7 @@ $(call inherit-product, $(DEVICE_PATH)/props.mk)
 $(call inherit-product, $(DEVICE_PATH)/fingerprint.mk)
 
 # Inherit color-management.mk
-$(call inherit-product, $(DEVICE_PATH)/display/color-managment/color-management.mk)
+$(call inherit-product, $(DEVICE_PATH)/display/color-management/color-management.mk)
 
 # Inherit setup-vibrator.mk
 $(call inherit-product, $(DEVICE_PATH)/vibrator/setup-vibrator.mk)
