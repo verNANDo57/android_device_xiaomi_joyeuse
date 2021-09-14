@@ -1,6 +1,6 @@
 # =========== Color Managment =========== #
 
-CURRENT_LOCATION := device/xiaomi/joyeuse/display/color-managment
+CURRENT_LOCATION := device/xiaomi/joyeuse/display/color-management
 
 # Set boolean value here
 # Depends on rom you try to build
