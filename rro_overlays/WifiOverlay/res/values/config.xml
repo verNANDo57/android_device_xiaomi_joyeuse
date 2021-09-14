@@ -24,24 +24,6 @@
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
-    <!-- Integer indicating maximum hardware supported client number of soft ap -->
-    <bool name="config_vendorWifi11axReadySupport">true</bool>
-
-    <!-- boolean indicating whether or not to reset channel configuration during cloud configuration restore -->
-    <bool name="config_vendor_wifi_softap_owe_supported">true</bool>
-
-    <!-- Wifi driver Automatic channel selection (ACS) for softap to include DFS channels -->
-    <bool name="config_wifiSoftapAcsIncludeDfs">true</bool>
-
-    <!-- Wifi driver supports 6GHz band for softap -->
-    <bool name="config_wifiSoftap6ghzSupported">true</bool>
-
-    <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
-    <bool name="config_wifi_softap_sae_supported">true</bool>
-
-    <!-- Wifi driver supports batched scan -->
-    <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
-
     <!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
     <bool translatable="false" name="config_wifi_softap_acs_supported">true</bool>
 
