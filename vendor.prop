@@ -114,9 +114,6 @@ ro.vendor.bluetooth.wipower=false
 vendor.bluetooth.soc=cherokee
 vendor.qcom.bluetooth.soc=cherokee
 
-# system property for maximum number of HFP client connections
-bt.max.hfpclient.connections=1
-
 # Camera
 camera.disable_zsl_mode=1
 
@@ -159,7 +156,7 @@ vendor.display.disable_inline_rotator=1
 vendor.display.disable_rotator_downscale=1
 vendor.display.disable_scaler=0
 vendor.display.disable_ui_3d_tonemap=1
-vendor.display.enable_default_color_mode=1
+vendor.display.enable_default_color_mode=0
 vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
 vendor.display.qdcm.mode_combine=1
@@ -260,6 +257,27 @@ ro.vendor.vibrator.hal.long.voltage=161
 ro.vendor.vibrator.hal.long.frequency.shift=10
 ro.vendor.vibrator.hal.steady.shape=1
 ro.vendor.vibrator.hal.lptrigger=0
+sys.haptic.motor=linear
+sys.haptic.down.weak=0
+sys.haptic.down.normal=2
+sys.haptic.down.strong=5
+sys.haptic.down=5,2
+sys.haptic.tap.normal=3,2
+sys.haptic.tap.light=5,2
+sys.haptic.flick=5,2
+sys.haptic.flick.light=5,2
+sys.haptic.switch=9,2
+sys.haptic.mesh.heavy=8,2
+sys.haptic.mesh.normal=8,2
+sys.haptic.mesh.light=8,1
+sys.haptic.long.press=0,1
+sys.haptic.popup.normal=6,2
+sys.haptic.popup.light=6,1
+sys.haptic.pickup=0,2
+sys.haptic.scroll.edge=5,0
+sys.haptic.trigger.drawer=2,0
+sys.haptic.hold=6,0
+sys.haptic.runin=13
 
 # USB
 vendor.usb.diag.func.name=diag
