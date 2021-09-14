@@ -45,6 +45,9 @@
 /dev/socket/fpce(/.*)?                          u:object_r:fpce_socket:s0
 /sys/devices/(platform)?/soc/soc:fpc1020(/.*)?  u:object_r:fpc_sysfs:s0
 
+# Per-boot files
+/data/per_boot(/.*)?                                                    u:object_r:per_boot_file:s0
+
 # Ir
 /dev/lirc[0-9]*					u:object_r:lirc_device:s0
 

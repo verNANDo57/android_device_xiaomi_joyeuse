@@ -4,10 +4,11 @@ allow hal_camera_default mnt_vendor_file:file { getattr map open read };
 allow hal_camera_default proc_stat:file { getattr map open read };
 allow hal_camera_default default_prop:file { getattr map };
 allow hal_camera_default vendor_default_prop:file { getattr open read map };
-allow hal_camera_default vendor_xdsp_device:chr_file { read };
+allow hal_camera_default vendor_xdsp_device:chr_file r_file_perms;
 allow hal_camera_default vendor_sysfs_kgsl:file { getattr map open read };
 allow hal_camera_default adbd_prop:file { getattr map };
 allow hal_camera_default apexd_prop:file { getattr map };
+allow hal_camera_default public_adsprpcd_file:file r_file_perms;
 
 # Allow hal_camera_default to read to mnt/vendor/persist/camera
 r_dir_file(hal_camera_default, camera_persist_file)

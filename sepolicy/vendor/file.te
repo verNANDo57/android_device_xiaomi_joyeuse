@@ -37,6 +37,9 @@ type sysfs_power_stats, sysfs_type, fs_type;
 type sysfs_power_stats_ignore, sysfs_type, fs_type;
 type sysfs_scsi_devices_0000, sysfs_type, fs_type;
 
+# Per-boot files
+type per_boot_file, file_type, data_file_type, core_data_file_type;
+
 # Rild
 type rild_file, file_type, vendor_file_type;
 

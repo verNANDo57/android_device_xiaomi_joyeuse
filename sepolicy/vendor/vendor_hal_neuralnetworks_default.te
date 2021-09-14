@@ -1,1 +1,4 @@
 allow vendor_hal_neuralnetworks_default vendor_default_prop:file { open read };
+
+r_dir_file(vendor_hal_neuralnetworks_default, public_adsprpcd_file)
+get_prop(vendor_hal_neuralnetworks_default, vendor_adsprpc_prop)
