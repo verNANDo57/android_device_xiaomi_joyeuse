@@ -117,7 +117,6 @@
         <item>"1,1"</item>
         <item>"0,1"</item>
         <item>"7,1"</item>
-        <item>"9,1"</item>
     </string-array>
 
     <!-- If true, and there is a cutout on the main built in display, the cutout will be masked
