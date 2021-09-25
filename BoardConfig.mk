@@ -280,9 +280,6 @@ TARGET_USES_MKE2FS := true
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
-# RenderScript
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
@@ -303,8 +300,8 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
-# I have to enable this flag, cuz I'm not able to fix system_suspend related issues WITHOUT this flag.
-# I WANT TO BELIEVE that system_suspend will be fixed in SDK 31
+# We have to enable this flag, cuz we are not able to fix system_suspend related issues WITHOUT this flag.
+# I WANT TO BELIEVE system_suspend will be fixed in SDK 31
 # All neverallows are here ----> /sepolicy/private/system_suspend.te
 SELINUX_IGNORE_NEVERALLOWS := true
 
