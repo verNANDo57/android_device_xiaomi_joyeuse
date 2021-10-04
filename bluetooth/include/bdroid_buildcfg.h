@@ -29,12 +29,7 @@
 
 // Vendor extensions
 #define BLE_VND_INCLUDED TRUE
-
 #define GATT_MAX_PHY_CHANNEL  10
-
-// Wide-band speech support
-#define BTM_WBS_INCLUDED TRUE
-#define BTIF_HF_WBS_PREFERRED TRUE
 
 // QCOM power management workaround
 #define BT_CLEAN_TURN_ON_DISABLED TRUE
