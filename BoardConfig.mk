@@ -258,6 +258,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Platform
 TARGET_BOARD_PLATFORM := atoll
+BOARD_VENDOR := xiaomi
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
