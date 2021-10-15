@@ -654,6 +654,3 @@ PRODUCT_PACKAGES += \
 # XiaomiParts
 PRODUCT_PACKAGES += \
     XiaomiParts
-
-# Dexpreopt
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
