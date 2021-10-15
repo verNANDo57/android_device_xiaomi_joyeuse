@@ -325,15 +325,10 @@ PRODUCT_PACKAGES += \
     mkfs.exfat \
     fsck.exfat
 
-# Dumpstate
-PRODUCT_PACKAGES += \
-	android.hardware.dumpstate@1.0 \
-	android.hardware.dumpstate@1.1
-
 # Atrace
 PRODUCT_PACKAGES += \
-	android.hardware.atrace@1.0 \
-	android.hardware.atrace@1.0-service
+    android.hardware.atrace@1.0 \
+    android.hardware.atrace@1.0-service
 
 # DRM
 PRODUCT_PACKAGES += \
