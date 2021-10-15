@@ -349,7 +349,9 @@ PRODUCT_COPY_FILES += \
 
 # Framework detect
 PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
 
 # Freeform Multiwindow
