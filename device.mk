@@ -496,8 +496,8 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # Minijail
 PRODUCT_PACKAGES += \
-    libminijail \
     libavservices_minijail \
+    libavservices_minijail_vendor \
     libavservices_minijail.vendor
 
 # Network
