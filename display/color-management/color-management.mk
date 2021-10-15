@@ -1,3 +1,8 @@
+#
+# Copyright (C) 2021 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
 # =========== Color Managment =========== #
 
 CURRENT_LOCATION := device/xiaomi/joyeuse/display/color-management
