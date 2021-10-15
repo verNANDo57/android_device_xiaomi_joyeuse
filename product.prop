@@ -1,8 +1,1 @@
-# Charger
-ro.charger.enable_suspend=true
-
-# LMKD
-ro.config.low_ram.threshold_gb=6
-
-# Incremental FS
-ro.incremental.enable=1
+# Dummy product prop file

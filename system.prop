@@ -1,9 +1,5 @@
-# Apex
-ro.apex.updatable=true
-
-# ART
-dalvik.vm.dex2oat-filter=everything
-dalvik.vm.image-dex2oat-filter=everything
+# Charger
+ro.charger.enable_suspend=true
 
 # Audio
 audio.deep_buffer.media=true
@@ -14,7 +10,7 @@ persist.audio.fluence.speaker=true
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 ro.af.client_heap_size_kbyte=7168
-ro.config.vc_call_vol_steps=6
+ro.config.vc_call_vol_steps=11
 ro.qc.sdk.audio.fluencetype=none
 
 # Bluetooth
@@ -62,12 +58,11 @@ ro.hardware.fp.sideCap=true
 ro.com.google.ime.kb_pad_port_b=1
 
 # Display
-debug.sf.disable_backpressure=1
-debug.sf.enable_hwc_vds=1
-debug.sf.latch_unsignaled=1
-ro.opengles.version=196610
-ro.vendor.display.cabl=0
-ro.vendor.display.sensortype=2
+persist.lcd.cabc_mode=1
+persist.lcd.hbm_mode=0
+
+# Initialize QCA1530 detection
+sys.qca1530=detect
 
 # HWUI
 ro.hwui.texture_cache_size=72
@@ -107,7 +102,12 @@ media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.media.recorder-max-base-layer-fps=60
-vendor.mm.enable.qcom_parser=131071983
+media.aac_51_output_enabled=true
+mm.enable.smoothstreaming=true
+vendor.mm.enable.qcom_parser=16777199
+persist.mm.enable.prefetch=true
+mmp.enable.3g2=true
+qcom.hw.aac.encoder=true
 
 # Netflix custom property
 ro.netflix.bsp_rev=Q6250-19132-1
@@ -117,6 +117,9 @@ ro.vendor.qti.sys.fw.bservice_enable=true
 
 # Qcom
 ro.vendor.qti.va_aosp.support=1
+
+# Time Service
+persist.timed.enable=true
 
 # Radio
 DEVICE_PROVISIONED=1
@@ -153,3 +156,6 @@ persist.sys.wfd.virtual=0
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180
 ro.zram.periodic_wb_delay_hours=24
+
+# LMKD
+ro.config.low_ram.threshold_gb=6
