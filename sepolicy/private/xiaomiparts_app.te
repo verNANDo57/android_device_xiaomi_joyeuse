@@ -19,3 +19,6 @@ allow xiaomiparts_app cgroup:file { getattr open read ioctl lock map watch watch
 # Allow XiaomiParts to write to sysfs_thermal
 allow xiaomiparts_app sysfs_thermal:dir { getattr read open search };
 allow xiaomiparts_app sysfs_thermal:file { getattr read open write create append lock map };
+
+# Allow XiaomiParts to set lcd prop
+set_prop(xiaomiparts_app, persist_lcd_prop)

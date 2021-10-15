@@ -34,14 +34,15 @@ import com.xiaomi.parts.speaker.ClearSpeakerActivity;
 import com.xiaomi.parts.preferences.CustomSeekBarPreference;
 import com.xiaomi.parts.preferences.SecureSettingListPreference;
 import com.xiaomi.parts.preferences.SecureSettingSwitchPreference;
+import com.xiaomi.parts.display.LcdFeaturesPreferenceActivity;
 
-public class DeviceSettings extends PreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+public class DeviceSettings extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "XiaomiParts";
 
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
+    public static final String PREF_LCD_FEATURES = "lcd_features_settings";
 
     public static final String PREF_KEY_FPS_INFO = "fps_info";
 
@@ -50,6 +51,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private Preference mKcal;
     private Preference mClearSpeakerPref;
     private Preference mAmbientPref;
+    private Preference mLcdFeaturesPref;
     private static SwitchPreference mFpsInfo;
 
     private static Context mContext;
@@ -67,8 +69,13 @@ public class DeviceSettings extends PreferenceFragment implements
         mKcal = findPreference(PREF_DEVICE_KCAL);
 
         mKcal.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class));
+            return true;
+        });
+
+        mLcdFeaturesPref = findPreference(PREF_LCD_FEATURES);
+        mLcdFeaturesPref.setOnPreferenceClickListener(preference -> {
+            startActivity(new Intent(getActivity().getApplicationContext(), LcdFeaturesPreferenceActivity.class));
             return true;
         });
 
@@ -76,16 +83,14 @@ public class DeviceSettings extends PreferenceFragment implements
         mAmbientPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                Intent intent = new Intent(getContext(), AmbientGesturePreferenceActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getContext(), AmbientGesturePreferenceActivity.class));
                 return true;
             }
         });
 
         mClearSpeakerPref = (Preference) findPreference(PREF_CLEAR_SPEAKER);
         mClearSpeakerPref.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity().getApplicationContext(), ClearSpeakerActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(getActivity().getApplicationContext(), ClearSpeakerActivity.class));
             return true;
         });
 

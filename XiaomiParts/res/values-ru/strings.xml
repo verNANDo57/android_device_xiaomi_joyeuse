@@ -69,6 +69,22 @@
     <string name="preset_obsanity">Obsanity</string>
     <string name="preset_obsanity_ips">Obsanity IPS</string>
 
+    <!-- LCD Features -->
+    <string name="lcd_features_title">Функции LCD</string>
+    <string name="lcd_features_summary">Режим максимальной яркости, CABC</string>
+    <string name="lcd_hbm_title">Режим максимальной яркости (HBM)</string>
+    <string name="lcd_hbm_tile_title">HBM</string>
+    <string name="lcd_cabc_title">Режим CABC</string>
+    <string name="lcd_features_info">Режим высокой яркости (HBM) увеличивает максимальную яркость дисплея для улучшения видимости при солнечном свете. Увеличивает энергопотребление. \n\nCABC (Content Adaptive Backlight Control) регулирует яркость дисплея и подсветки на основе отображаемого в данный момент контента, чтобы снизить энергопотребление без ухудшения качества.</string>
+    <string name="lcd_hbm_mode_off">Отключить</string>
+    <string name="lcd_hbm_mode_low">Низкий</string>
+    <string name="lcd_hbm_mode_medium">Средний</string>
+    <string name="lcd_hbm_mode_high">Высокий</string>
+    <string name="lcd_cabc_mode_off">Отключить</string>
+    <string name="lcd_cabc_mode_low">Низкий (Интерфейс)</string>
+    <string name="lcd_cabc_mode_medium">Средний (Видео)</string>
+    <string name="lcd_cabc_mode_high">Высокий (Изображения)</string>
+
     <!-- SuperUser -->
     <string name="cannot_get_su">Не удалось получить права суперпользователя</string>
 
