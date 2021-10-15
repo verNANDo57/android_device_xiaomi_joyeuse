@@ -288,43 +288,32 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    disable_configstore \
-    gralloc.atoll \
-    hwcomposer.atoll \
-    libdisplayconfig.qti \
-    libqdMetaData \
-    libqdMetaData.system \
-    libqdMetaData.vendor \
-    libtinyxml \
-    memtrack.atoll
-
-PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.4-impl \
     android.hardware.graphics.composer@2.4-service \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.mapper@2.0.vendor
-
-PRODUCT_PACKAGES += \
-    vendor.display.config@1.0 \
-    vendor.display.config@1.1 \
-    vendor.display.config@1.2 \
-    vendor.display.config@1.3 \
-    vendor.display.config@1.4 \
+    disable_configstore \
+    gralloc.atoll \
+    hwcomposer.atoll \
+    libdisplayconfig.qti \
+    libdisplayconfig.qti.vendor \
+    libqdMetaData \
+    libsdmcore \
+    libsdmutils \
+    libtinyxml \
+    libvulkan \
+    memtrack.atoll \
     vendor.display.config@1.5 \
-    vendor.display.config@1.0.vendor \
-    vendor.display.config@1.1.vendor \
-    vendor.display.config@1.2.vendor \
-    vendor.display.config@1.3.vendor \
-    vendor.display.config@1.4.vendor \
-    vendor.display.config@1.5.vendor \
-    vendor.display.config@1.6.vendor \
-    vendor.display.config@1.7.vendor \
-    vendor.display.config@1.8.vendor \
-    vendor.display.config@1.9.vendor
+    vendor.display.config@1.11.vendor \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.mapper@1.1.vendor \
+    vendor.qti.hardware.display.mapper@2.0.vendor \
+    vendor.qti.hardware.display.mapper@3.0.vendor \
+    vendor.qti.hardware.display.mapper@4.0.vendor
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/display/configs/hdr_config.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_config.cfg \
