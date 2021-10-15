@@ -67,7 +67,7 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
 
 # Charger Mode
-# We don't need this, cuz we already have defined ro.charger.enable_suspend=true in product,prop, but ok
+# We don't need this, cuz we already have defined ro.charger.enable_suspend=true in system.prop, but ok
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # ConfigStore
@@ -339,9 +339,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 PRODUCT_FULL_TREBLE := true
 BOARD_VNDK_VERSION := current
 PRODUCT_VENDOR_MOVE_ENABLED := true
-
-# Enable real time lockscreen charging current values
-BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := atoll
