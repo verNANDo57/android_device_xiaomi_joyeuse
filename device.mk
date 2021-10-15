@@ -6,6 +6,7 @@
 
 DEVICE_PATH := device/xiaomi/joyeuse
 
+# Inherit base
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
@@ -534,8 +535,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.0-service.multihal \
-    vendor.qti.hardware.display.mapper@1.1.vendor
+    android.hardware.sensors@2.1-service.multihal
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -593,15 +593,7 @@ PRODUCT_COPY_FILES += \
 
 # VNDK
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-vendorcompat \
-    libprotobuf-cpp-lite-vendorcompat
-
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libhidlcache.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhidlcache.so
-
-PRODUCT_EXTRA_VNDK_VERSIONS := 29
-
-PRODUCT_PACKAGES += vndk_package
+    libprotobuf-cpp-full
 
 # Vulkan
 PRODUCT_COPY_FILES += \
