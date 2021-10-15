@@ -192,6 +192,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/device_info.json:$(TARGET_COPY_OUT_VENDOR)/etc/device_info.json
 
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
+
 # Dummpy qti-perfd client
 PRODUCT_PACKAGES += \
     libqti-perfd-client
