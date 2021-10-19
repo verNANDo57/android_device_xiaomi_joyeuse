@@ -1,8 +1,8 @@
 # MLIPAY
-hal_attribute_custom(mlipay)
+hal_attribute(mlipay)
 
 # MISYS
-hal_attribute_custom(misys)
+hal_attribute(misys)
 
 # MTDSERVICE
-hal_attribute_custom(mtdservice)
+hal_attribute(mtdservice)

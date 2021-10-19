@@ -2,6 +2,6 @@ dontaudit untrusted_app_25 net_dns_prop:file { read };
 dontaudit untrusted_app_25 proc_stat:file { read };
 dontaudit untrusted_app_25 proc_vmstat:file { read };
 dontaudit untrusted_app_25 proc_uptime:file { read };
-dontaudit untrusted_app_25 proc_zoneinfo:file { read };;
-allow untrusted_app_25 self:udp_socket { ioctl };
+dontaudit untrusted_app_25 proc_zoneinfo:file { read };
+dontaudit untrusted_app_25 self:udp_socket { ioctl };
 dontaudit untrusted_app_25 proc_net:file { read };

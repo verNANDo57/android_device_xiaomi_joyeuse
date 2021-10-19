@@ -17,6 +17,5 @@ allow system_server media_rw_data_file:dir { setattr };
 dontaudit system_server sysfs:file { read open getattr };
 
 allow system_server userspace_reboot_config_prop:file { getattr map open read };
-get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, userspace_reboot_exported_prop)
 get_prop(system_server, vendor_display_notch_prop)
