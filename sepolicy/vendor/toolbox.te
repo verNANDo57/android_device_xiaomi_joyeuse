@@ -1,3 +1,2 @@
-allow toolbox toolbox:capability { kill };
 allow toolbox per_boot_file:dir create_dir_perms;
 allow toolbox per_boot_file:file create_file_perms;

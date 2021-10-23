@@ -1,2 +1,0 @@
-allow mediaswcodec sysfs_msm_subsys:dir { search };
-allow mediaswcodec gpu_device:chr_file { read write };

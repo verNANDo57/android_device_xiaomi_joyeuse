@@ -23,18 +23,13 @@ allow system_app vendor_sysfs_battery_supply:dir search;
 allow system_app vendor_sysfs_battery_supply:file { getattr open read lock append write };
 
 allow system_app blkio_dev:dir search;
-
-allow system_app wificond:binder call;
 allow system_app sysfs_leds:dir search;
-allow system_app sysfs_graphics:dir search;
-allow system_app sysfs_graphics:file rw_file_perms;
 allow system_app vendor_sysfs_graphics:dir search;
 allow system_app vendor_sysfs_graphics:file { getattr open read };
 allow system_app sysfs_vibrator:file { getattr open read };
 allow system_app sysfs_vibrator:dir search;
 allow system_app hal_mlipay_default:binder { call };
 allow system_app hal_vibrator_default:binder { call };
-allow system_app sysfs_msm_subsys:dir search;
 allow system_app vendor_default_prop:file { getattr open read };
 allow system_app vendor_default_prop:file { map };
 allow system_app apk_data_file:dir { write };

@@ -7,7 +7,7 @@ genfscon sysfs /camera_sensorid/sensorid                        u:object_r:sysfs
 # LED
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/white u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm8953@0:qcom,leds@a100                       u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0045/leds/                                                                         u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0045/leds/                       u:object_r:sysfs_leds:s0
 
 # Power
 genfscon sysfs   /devices/soc/78b7000.i2c/i2c-3/3-0020/power_supply   u:object_r:sysfs_battery_supply:s0
@@ -22,24 +22,6 @@ genfscon sysfs   /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000
 genfscon sysfs   /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:vadc@3400                          u:object_r:sysfs_battery_supply:s0
 genfscon sysfs   /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:bcl@4200                           u:object_r:sysfs_battery_supply:s0
 genfscon sysfs   /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pm8953@0:qcom,pm8953_rtc                     u:object_r:sysfs_rtc:s0
-
-# Power HAL
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp                                                                    u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/5000000.qcom,kgsl-3d0                                                                    u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,gpubw                                                                           u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,gpubw/devfreq                                                                   u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw                                                                 u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cpu-llcc-ddr-bw                                                                 u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-l3-lat                                                                 u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cpu6-cpu-l3-lat                                                                 u:object_r:sysfs_msm_subsys:s0
-genfscon proc /sys/kernel/sched_energy_aware                                                                                  u:object_r:proc_sched_energy_aware:s0
-genfscon sysfs /bus/iio/devices                                                                                               u:object_r:sysfs_iio_devices:s0
-genfscon sysfs /kernel/wlan                                                                                                   u:object_r:sysfs_msm_wlan:s0
-genfscon sysfs /power/system_sleep/stats                                                                                      u:object_r:sysfs_power_stats:s0
-genfscon sysfs /power/rpmh_stats/master_stats                                                                                 u:object_r:sysfs_power_stats:s0
-genfscon sysfs /kernel/wlan/power_stats                                                                                       u:object_r:sysfs_power_stats:s0
-genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-0010/iio:device2                                                      u:object_r:sysfs_power_stats:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-04/c440000.qcom,spmi:qcom,pm6150l@4:vadc@3100/iio:device1 u:object_r:sysfs_power_stats_ignore:s0
 
 # WakeUp Enteries
 genfscon sysfs /devices/platform/goodix_ts.0/wakeup                                                                                                                                  u:object_r:sysfs_wakeup:s0
@@ -140,9 +122,6 @@ genfscon sysfs /devices/virtual/misc/msm_wmapro/wakeup                          
 
 # ProcFS
 genfscon proc /sys/vm/swappiness                                      u:object_r:proc_swap:s0
-
-# Touchpanel
-genfscon sysfs /touchpanel                                      u:object_r:sysfs_touchpanel:s0
 
 # USB force fastcharge
 genfscon sysfs /kernel/fast_charge/force_fast_charge                                     u:object_r:sysfs_fcharge:s0

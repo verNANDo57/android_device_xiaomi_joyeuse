@@ -1,9 +1,1 @@
-allow untrusted_app_29 hal_memtrack_default:binder { call };
-
-# allow apps to read battery status
-r_dir_file(untrusted_app_29, sysfs_battery_supply)
-r_dir_file(untrusted_app_29, sysfs_usb_supply)
-
-allow untrusted_app_29 sysfs_msm_subsys:dir { search };
-
-allow untrusted_app_29 self:udp_socket { ioctl };
+dontaudit untrusted_app_29 self:udp_socket { ioctl };

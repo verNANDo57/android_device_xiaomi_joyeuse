@@ -1,4 +1,2 @@
-allow vendor_cnd vendor_wifi_prop:file { read open getattr };
-
 add_hwservice(vendor_cnd,vendor_hal_slmadapter_hwservice)
 allow vendor_cnd vendor_hal_slmadapter_hwservice:hwservice_manager find;

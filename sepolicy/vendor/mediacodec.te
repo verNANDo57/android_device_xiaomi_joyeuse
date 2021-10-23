@@ -1,2 +1,0 @@
-allow mediacodec sysfs_msm_subsys:dir { getattr open read search };
-allow mediacodec sysfs_msm_subsys:file { getattr open read map };

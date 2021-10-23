@@ -1,5 +1,0 @@
-# debugfs access
-userdebug_or_eng(`
-  allow vendor_rmt_storage debugfs_rmt:dir search;
-  allow vendor_rmt_storage debugfs_rmt:file rw_file_perms;
-')

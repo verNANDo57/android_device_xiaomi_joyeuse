@@ -1,3 +1,0 @@
-dontaudit fsck self:capability kill;
-
-r_dir_file(fsck, sysfs_dm)

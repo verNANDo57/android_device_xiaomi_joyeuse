@@ -1,1 +1,0 @@
-allow ppp vendor_file:dir { getattr open read lock };

@@ -1,3 +1,1 @@
-allow mediaserver sysfs_msm_subsys:dir { getattr open read search };
-allow mediaserver sysfs_msm_subsys:file { getattr open read map };
 get_prop(mediaserver, vendor_sys_video_prop)

@@ -1,8 +1,5 @@
 typeattribute xiaomiparts_app domain;
 
-allow xiaomiparts_app sysfs_msm_subsys:file { getattr open read map };
-allow xiaomiparts_app sysfs_msm_subsys:dir { getattr open read map search };
-
 # Clear Speaker
 allow xiaomiparts_app audioserver_service:service_manager { find };
 allow xiaomiparts_app mediaserver_service:service_manager { find };

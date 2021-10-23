@@ -1,3 +1,0 @@
-allow hal_drm_default hal_codec2_server:fd { use };
-allow hal_drm_default hal_omx_server:fd { use };
-allow hal_drm_default vndbinder_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };

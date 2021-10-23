@@ -1,0 +1,5 @@
+allow vendor_hal_perf_default property_socket:sock_file write;
+
+allow vendor_hal_perf_default init:unix_stream_socket connectto;
+
+allow vendor_hal_perf_default proc_meminfo:file { getattr open read };

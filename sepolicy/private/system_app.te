@@ -7,10 +7,6 @@ hal_client_domain(system_app, hal_misys)
 # LCD
 set_prop(system_app, persist_lcd_prop)
 
-allow system_app sysfs_zram:file { open read getattr };
-allow system_app storaged:binder { call };
-allow system_app selinuxfs:file open;
-allow system_app selinuxfs:file read;
-allow system_app system_suspend:binder call;
 
+allow system_app sysfs_zram:file { open read getattr };
 dontaudit system_app system_suspend_control_service:service_manager { find };

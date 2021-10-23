@@ -3,7 +3,6 @@ allow platform_app sysfs_fps:file { getattr open read };
 
 # DisplayFeature
 get_prop(platform_app, vendor_displayfeature_prop);
-allow platform_app default_android_service:service_manager { find };
 
 # System
 allow platform_app vendor_sysfs_battery_supply:dir search;
@@ -14,16 +13,5 @@ allow platform_app vendor_audio_prop:file { getattr open read map };
 allow platform_app cgroup:file { getattr open read };
 allow platform_app vendor_xdsp_device:chr_file { read };
 allow platform_app adsprpcd_file:dir { getattr search };
-allow platform_app vendor_sysfs_graphics:dir search;
-allow platform_app vendor_sysfs_graphics:file { read open getattr };
-allow platform_app sysfs_batteryinfo:dir { search };
-allow platform_app adbd_prop:file { getattr map open read };
-allow platform_app apexd_prop:file { getattr map open read };
-allow platform_app blkio_dev:dir search;
-allow platform_app exported_camera_prop:file { getattr open read };
-allow platform_app privapp_data_file:file { getattr open read map execute };
-allow platform_app sysfs_msm_subsys:file { getattr open read map };
-allow platform_app sysfs_msm_subsys:dir { getattr open read map search };
-allow platform_app system_app_data_file:dir getattr;
-allow platform_app app_data_file:file { getattr open read lock execute execute_no_trans };
 
+allow platform_app blkio_dev:dir search;

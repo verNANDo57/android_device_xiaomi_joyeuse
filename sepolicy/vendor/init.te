@@ -1,22 +1,13 @@
 # USB Fastcharge
 allow init sysfs_fcharge:file { write open };
 
-allow init vendor_configs_file:file { mounton };
-allow init hwservicemanager:binder { call transfer };
-allow init self:qipcrtr_socket create;
 allow init vendor_sysfs_battery_supply:file setattr;
 
 allow init blkio_dev:file { create open read write };
 
-allow init property_socket:sock_file write;
 
-allow init sysfs:file setattr;
 
-# Allow init to bind mount loader config for media swcodec
-allow init system_file:file mounton;
-
-# adsprpcd
-allow init adsprpcd_file:filesystem { getattr mount relabelfrom relabelto };
+# Adsprpcd
 allow init adsprpcd_file:file { mounton };
 
 # Firmware

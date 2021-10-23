@@ -1,2 +1,0 @@
-allow vendor_sysfs_battery_supply vendor_sysfs_battery_supply:dir { read getattr lock open watch watch_reads search };
-allow vendor_sysfs_battery_supply vendor_sysfs_battery_supply:file { read getattr lock map open watch watch_reads };

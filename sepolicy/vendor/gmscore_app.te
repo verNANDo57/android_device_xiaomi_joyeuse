@@ -1,4 +1,1 @@
-binder_call(gmscore_app, hal_memtrack_default);
-binder_call(gmscore_app, hal_memtrack_hwservice);
 allow gmscore_app blkio_dev:dir search;
-allow gmscore_app hal_memtrack_hwservice:hwservice_manager find;

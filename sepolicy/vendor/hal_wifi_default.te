@@ -1,2 +1,0 @@
-allow hal_wifi_default proc_net:file { getattr open read lock append write };
-allow hal_wifi_default self:capability sys_module;
