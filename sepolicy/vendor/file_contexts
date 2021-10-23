@@ -62,12 +62,21 @@
 /sys/devices(/platform)?/soc/78b6000\.i2c/i2c-2/2-[0-9a-f]+/leds(/.*)?                        u:object_r:sysfs_leds:s0
 /sys/devices(/platform)?/soc/leds-qpnp-[0-9]+/leds(/.*)?                        u:object_r:sysfs_leds:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm6150@0:qcom,power-on@800/kpdpwr_reset	                        u:object_r:sysfs_leds:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:switch_0/brightness                        u:object_r:sysfs_leds:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_0/brightness                        u:object_r:sysfs_leds:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/red/brightness                        u:object_r:sysfs_leds:s0
+/sys/bus/iio/devices                        u:object_r:vendor_sysfs_iio:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm6150@0:vadc@3100/iio:device0(/.*)?                        u:object_r:vendor_sysfs_iio:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-04/c440000.qcom,spmi:qcom,pm6150l@4:vadc@3100/iio:device1(/.*)?                        u:object_r:vendor_sysfs_iio:s0
 /sys/class/leds/led:switch_0/brightness                        u:object_r:sysfs_leds:s0
 /sys/class/leds/led:switch_1/brightness                        u:object_r:sysfs_leds:s0
 /sys/class/leds/led:torch_0/brightness                        u:object_r:sysfs_leds:s0
 /sys/class/leds/led:torch_1/brightness                        u:object_r:sysfs_leds:s0
 /sys/class/leds/led:torch_2/brightness                        u:object_r:sysfs_leds:s0
 /sys/devices/virtual/diag/diag/wakeup[0-99]+(/.*)?                        u:object_r:sysfs_wakeup:s0
+/sys/devices/soc/soc:fpc1020.*/hw_rese                        u:object_r:sysfs_fpc_dev:s0
+/sys/devices/soc/soc:fpc1020.*/irq                        u:object_r:sysfs_fpc_dev:s0
+/sys/devices/soc/soc:fpc1020.*/wakeup_enable                        u:object_r:sysfs_fpc_dev:s0
 
 # FPS Info
 /sys/class/drm/sde-crtc-0/measured_fps                        u:object_r:sysfs_fps:s0

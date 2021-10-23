@@ -33,5 +33,8 @@ allow hal_power_default media_rw_data_file:file { getattr open read lock };
 # Rule for hal_power_default to access graphics composer process
 unix_socket_connect(hal_power_default, vendor_pps, hal_graphics_composer_default);
 
+# To get/set powerhal state property
+set_prop(hal_power_default, power_prop)
+
 # The following folder is incidentally accessed by hal_power_default and is not needed.
 dontaudit hal_power_default cgroup:file read;
