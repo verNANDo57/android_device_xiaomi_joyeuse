@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2020 The LineageOS Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -125,19 +124,15 @@
 
     <!-- Power Management: Specifies whether to decouple the interactive state of the
          device from the display on/off state.
-
          When false, setInteractive(..., true) will be called before the display is turned on
          and setInteractive(..., false) will be called after the display is turned off.
          This mode provides best compatibility for devices that expect the interactive
          state to be tied to the display state.
-
          When true, setInteractive(...) will be called independently of whether the display
          is being turned on or off.  This mode enables the power manager to reduce
          clocks and disable the touch controller while the display is on.
-
          This resource should be set to "true" when a doze component has been specified
          to maximize power savings but not all devices support it.
-
          Refer to power.h for details.
     -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
@@ -313,12 +308,10 @@
          in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
          config_screenBrightnessMaximumNits, the display brightness is defined as the measured
          brightness of an all-white image.
-
          If this is defined then:
             - config_autoBrightnessLcdBacklightValues should not be defined
             - config_screenBrightnessNits must be defined
             - config_screenBrightnessBacklight must be defined
-
          This array should have size one greater than the size of the config_autoBrightnessLevels
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
@@ -509,7 +502,6 @@
          constraint value is the n-th element of config_screenBrighteningThresholds, and the new
          darkening hysteresis constraint value is the n-th element of
          config_screenDarkeningThresholds.
-
          The (zero-based) index is calculated as follows: (MAX is the largest index of the array)
          condition                       calculated index
          value < level[0]                0
