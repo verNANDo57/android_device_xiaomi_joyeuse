@@ -37,9 +37,6 @@ $(call inherit-product, $(DEVICE_PATH)/vibrator/setup-vibrator.mk)
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
-    vendor/nxp/opensource/pn5xx \
-    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
-    vendor/qcom/opensource/interfaces \
     hardware/xiaomi \
     kernel/xiaomi/sm6250
 
