@@ -446,7 +446,9 @@ PRODUCT_PACKAGES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    com.dsi.ant@1.0.vendor
+    com.dsi.ant@1.0.vendor \
+    com.dsi.ant@1.0 \
+    com.dsi.ant@1.0-impl
 
 # Media
 PRODUCT_PACKAGES += \
