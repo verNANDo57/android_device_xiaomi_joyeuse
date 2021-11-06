@@ -69,22 +69,6 @@
     <string name="preset_obsanity">Obsanity</string>
     <string name="preset_obsanity_ips">Obsanity IPS</string>
 
-    <!-- LCD Features -->
-    <string name="lcd_features_title">LCD features</string>
-    <string name="lcd_features_summary">High Brightness Mode, CABC</string>
-    <string name="lcd_hbm_title">High Brightness Mode (HBM)</string>
-    <string name="lcd_hbm_tile_title">HBM</string>
-    <string name="lcd_cabc_title">CABC Mode</string>
-    <string name="lcd_features_info">High Brightness Mode (HBM) increases the maximum brightness of the display to improve visibility under sunlight. Increases power consumption.\n\nCABC (Content Adaptive Backlight Control) adjusts display and backlight brightness based on currently shown content, to reduce power consumption without degradation.</string>
-    <string name="lcd_hbm_mode_off">Off</string>
-    <string name="lcd_hbm_mode_low">Low</string>
-    <string name="lcd_hbm_mode_medium">Medium</string>
-    <string name="lcd_hbm_mode_high">High</string>
-    <string name="lcd_cabc_mode_off">Off</string>
-    <string name="lcd_cabc_mode_low">Low (UI)</string>
-    <string name="lcd_cabc_mode_medium">Medium (Videos)</string>
-    <string name="lcd_cabc_mode_high">High (Images)</string>
-
     <!-- SuperUser -->
     <string name="cannot_get_su">Action failed because of missing superuser access</string>
 

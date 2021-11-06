@@ -34,7 +34,6 @@ import com.xiaomi.parts.speaker.ClearSpeakerActivity;
 import com.xiaomi.parts.preferences.CustomSeekBarPreference;
 import com.xiaomi.parts.preferences.SecureSettingListPreference;
 import com.xiaomi.parts.preferences.SecureSettingSwitchPreference;
-import com.xiaomi.parts.display.LcdFeaturesPreferenceActivity;
 
 public class DeviceSettings extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
 
@@ -42,16 +41,12 @@ public class DeviceSettings extends PreferenceFragment implements Preference.OnP
 
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
-    public static final String PREF_LCD_FEATURES = "lcd_features_settings";
-
     public static final String PREF_KEY_FPS_INFO = "fps_info";
-
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
 
     private Preference mKcal;
     private Preference mClearSpeakerPref;
     private Preference mAmbientPref;
-    private Preference mLcdFeaturesPref;
     private static SwitchPreference mFpsInfo;
 
     private static Context mContext;
@@ -70,12 +65,6 @@ public class DeviceSettings extends PreferenceFragment implements Preference.OnP
 
         mKcal.setOnPreferenceClickListener(preference -> {
             startActivity(new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class));
-            return true;
-        });
-
-        mLcdFeaturesPref = findPreference(PREF_LCD_FEATURES);
-        mLcdFeaturesPref.setOnPreferenceClickListener(preference -> {
-            startActivity(new Intent(getActivity().getApplicationContext(), LcdFeaturesPreferenceActivity.class));
             return true;
         });
 
