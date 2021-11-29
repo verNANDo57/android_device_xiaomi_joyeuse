@@ -116,7 +116,6 @@
     <ctl name="WSA_CDC_DMA_RX_0 Audio Mixer MultiMedia13" value="0" />
     <ctl name="WSA_CDC_DMA_RX_0 Audio Mixer MultiMedia14" value="0" />
     <ctl name="WSA_CDC_DMA_RX_0 Audio Mixer MultiMedia15" value="0" />
-    <!-- TAS25XX_ENABLED start -->
     <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia2" value="0" />
     <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia3" value="0" />
@@ -131,7 +130,6 @@
     <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia14" value="0" />
     <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia15" value="0" />
     <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia16" value="0" />
-    <!-- TAS25XX_ENABLED end -->
     <ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia16" value="0" />
     <ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia1" value="0" />
     <ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia2" value="0" />
@@ -282,6 +280,9 @@
     <!-- Incall Music -->
     <ctl name="Incall_Music Audio Mixer MultiMedia2" value="0" />
     <ctl name="Incall_Music Audio Mixer MultiMedia9" value="0" />
+    <ctl name="Incall_Music Audio Mixer MultiMedia1" value="0" />
+    <ctl name="Incall_Music_2 Audio Mixer MultiMedia2" value="0" />
+    <ctl name="Incall_Music_2 Audio Mixer MultiMedia1" value="0" />
     <!-- Incall Music End -->
 
     <!-- compress-voip-call start -->
@@ -812,7 +813,6 @@
     <path name="audio-ull-playback speaker-protected">
         <path name="audio-ull-playback" />
     </path>
-
     <path name="audio-ull-playback handset">
         <ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia8" value="1" />
     </path>
@@ -2181,6 +2181,86 @@
         <ctl name="MultiMedia9 Mixer VOC_REC_UL" value="1" />
     </path>
 
+    <path name="incall_music_uplink speaker-protected">
+        <path name="incall_music_uplink" />
+    </path>
+
+    <path name="incall_music_uplink receiver">
+        <path name="incall_music_uplink" />
+    </path>
+
+    <path name="incall_music_uplink voice-handset">
+        <path name="incall_music_uplink" />
+    </path>
+
+    <path name="incall_music_uplink speaker-and-bt-sco-wb">
+        <path name="incall_music_uplink" />
+    </path>
+
+    <path name="incall_music_uplink2">
+        <ctl name="Incall_Music_2 Audio Mixer MultiMedia2" value="1" />
+    </path>
+
+    <path name="incall_music_uplink2 speaker">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 speaker-protected">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 receiver">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 voice-handset">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 handset">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 bt-sco">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 bt-sco-wb">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 speaker-and-bt-sco">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 speaker-and-bt-sco-wb">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 afe-proxy">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 usb-headphones">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 usb-headset">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 speaker-and-usb-headphones">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 headphones">
+        <path name="incall_music_uplink2" />
+    </path>
+
+    <path name="incall_music_uplink2 speaker-and-headphones">
+        <path name="incall_music_uplink2" />
+    </path>
+
     <path name="incall-rec-uplink bt-sco">
         <path name="incall-rec-uplink" />
     </path>
@@ -2557,7 +2637,7 @@
 
     <path name="voicemmode2-call display-port1-and-usb-headset-mic">
         <ctl name="DISPLAY_PORT1_RX_Voice Mixer VoiceMMode2" value="1" />
-        <ctl name="VoiceMMode2_Tx Mixer USB_AUDIO_TX_MMode2" value="1" />
+        <ctl name="VoiceMMode2_Tx Mixer TX_CDC_DMA_TX_3_MMode2" value="1" />
     </path>
 
     <path name="voicemmode2-call display-port">
@@ -2567,7 +2647,7 @@
 
     <path name="voicemmode2-call display-port1">
         <ctl name="DISPLAY_PORT1_RX_Voice Mixer VoiceMMode2" value="1" />
-        <ctl name="VoiceMMode2_Tx Mixer TX_CDC_DMA_TX_3_MMode2" value="1" />
+        <ctl name="VoiceMMode2_Tx Mixer USB_AUDIO_TX_MMode2" value="1" />
    </path>
 
     <path name="voicemmode2-call call-proxy">
@@ -2685,6 +2765,7 @@
         <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
         <ctl name="ADC1_MIXER Switch" value="1" />
     </path>
+
     <path name="amic2">
         <ctl name="TX DEC0 MUX" value="SWR_MIC" />
         <ctl name="TX SMIC MUX0" value="ADC2" />
@@ -2694,6 +2775,7 @@
         <ctl name="ADC2_MIXER Switch" value="1" />
         <ctl name="ADC2 MUX" value="INP2" />
     </path>
+
     <path name="amic3">
         <ctl name="TX DEC0 MUX" value="SWR_MIC" />
         <ctl name="TX SMIC MUX0" value="ADC2" />
@@ -2877,7 +2959,7 @@
     <path name="tas-iv-capture">
         <ctl name="TERT_MI2S_TX Channels" value="Two" />
     </path>
-   <!--lct modify for no hanset voice-->
+
     <path name="handset">
         <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
         <ctl name="RX_CDC_DMA_RX_0 Channels" value="One" />
@@ -2888,7 +2970,6 @@
         <ctl name="RX_EAR Mode" value="ON" />
     </path>
 
-    <!-- 2019.12.16 longcheer lixiaona add for HTH-74171 use dmic to recording during wechar short audio message start-->
     <path name="handset-mic">
         <ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
         <ctl name="TX DEC0 MUX" value="SWR_MIC" />
@@ -2902,12 +2983,12 @@
         <ctl name="ADC2 MUX" value="INP3" />
         <ctl name="IIR0 INP0 MUX" value="DEC0" />
     </path>
-    <!-- 2019.12.16 longcheer lixiaona add for HTH-74171 use dmic to recording during wechar short audio message end-->
+
     <path name="handset-mic-factory">
         <ctl name="TX_DEC0 Volume" value="84" />
-        <path name="amic1" /> <!-- modify for using amic1 to factory test-->
+        <path name="amic1" />
     </path>
-    <!--Add for add secondary-mic -->
+
     <path name="secondary-mic-factory">
         <ctl name="TX_DEC0 Volume" value="84" />
         <path name="amic3" />
@@ -2923,13 +3004,12 @@
         <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
         <ctl name="RX_COMP1 Switch" value="0" />
         <ctl name="RX_COMP2 Switch" value="0" />
-        <ctl name="HPHL_COMP Switch" value="1" />
-        <ctl name="HPHR_COMP Switch" value="1" />
+        <ctl name="HPHL_COMP Switch" value="0" />
+        <ctl name="HPHR_COMP Switch" value="0" />
         <ctl name="HPHL_RDAC Switch" value="1" />
         <ctl name="HPHR_RDAC Switch" value="1" />
     </path>
 
-    <!--  2019.12.17 longcheer chenqiang add for ce mode start-->
     <path name="headphones-ce">
         <path name="headphones" />
         <ctl name="RX_RX0 Digital Volume" value="76" />
@@ -2941,7 +3021,6 @@
         <ctl name="RX_RX0 Digital Volume" value="84" />
         <ctl name="RX_RX1 Digital Volume" value="84" />
     </path>
-    <!--  2019.12.17 longcheer chenqiang add for ce mode end-->
 
     <path name="headphones-44.1">
         <path name="headphones" />
@@ -3212,11 +3291,9 @@
         <path name="dmic-endfire" />
     </path>
 
-    <!--  2019.12.16 longcheer puqirui add for vcamcorder dual mic path start-->
     <path name="camcorder-dmic">
         <path name="dmic-endfire" />
     </path>
-    <!--  2019.12.16 longcheer puqirui add for vcamcorder dual mic path end-->
 
     <path name="voice-speaker-dmic-ef">
         <path name="speaker-dmic-endfire" />
@@ -3892,7 +3969,6 @@
     <path name="incall_music_uplink bt-a2dp">
         <path name="incall_music_uplink" />
     </path>
-
     <path name="incall_music_uplink afe-proxy">
         <path name="incall_music_uplink" />
     </path>
