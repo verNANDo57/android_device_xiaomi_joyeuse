@@ -63,9 +63,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.nfc.port=I2C
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/android.hardware.nfc.hce.xml \
@@ -313,11 +310,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     mkfs.exfat \
     fsck.exfat
-
-# Atrace
-PRODUCT_PACKAGES += \
-    android.hardware.atrace@1.0 \
-    android.hardware.atrace@1.0-service
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -606,12 +598,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
-
-# Suspend
-PRODUCT_PACKAGES += \
-    android.system.suspend@1.0 \
-    android.system.suspend@1.0-service \
-    android.system.suspend@1.0-impl
 
 # Doze
 PRODUCT_PACKAGES += \
