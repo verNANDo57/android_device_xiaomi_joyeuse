@@ -30,4 +30,7 @@ android_app {
     defaults: [
         "SettingsLibDefaults",
     ],
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
 }
