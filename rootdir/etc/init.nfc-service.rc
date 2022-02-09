@@ -10,4 +10,4 @@ on init && property:ro.boot.hwname=joyeuse
     start vendor.nfc_hal_service
     
 on post-fs-data && property:ro.boot.product.hardware.sku=joyeuse
-    mkdir /data/vendor/nfc 0770 joyeuse joyeuse
+    mkdir /data/vendor/nfc 0770 nfc nfc
