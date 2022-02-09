@@ -130,6 +130,10 @@ BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
 BOARD_RAMDISK_USE_LZ4 := true
 
 # HIDL
+ODM_MANIFEST_SKUS += \
+    joyeuse
+
+ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/configs/manifests/manifest_joyeuse.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifests/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/manifests/compatibility_matrix.xml
 
@@ -214,10 +218,6 @@ include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-
-# We have to enable this flag, cuz we are not able to fix system_suspend related issues WITHOUT this flag.
-# I WANT TO BELIEVE system_suspend will be fixed in SDK 31
-# All neverallows are here ----> /sepolicy/private/system_suspend.te
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Verified Boot
@@ -262,13 +262,7 @@ TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2021-10-01
-
-# HIDL
-ODM_MANIFEST_SKUS += \
-    joyeuse
-
-ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/configs/manifests/manifest_joyeuse.xml
+VENDOR_SECURITY_PATCH := 2021-11-01
 
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := joyeuse
