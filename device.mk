@@ -385,7 +385,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc \
     $(DEVICE_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
     $(DEVICE_PATH)/rootdir/etc/init.xiaomiparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomiparts.rc \
-    $(DEVICE_PATH)/rootdir/etc/init.logger.service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.logger.service.rc \
     $(DEVICE_PATH)/rootdir/etc/init.thermal-engine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.thermal-engine.rc \
     $(DEVICE_PATH)/rootdir/etc/init.nfc-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nfc-service.rc \
     $(DEVICE_PATH)/rootdir/etc/init.device.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.device.rc
