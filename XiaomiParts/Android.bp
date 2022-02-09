@@ -27,10 +27,21 @@ android_app {
         "androidx.preference_preference",
         "org.lineageos.settings.resources",
     ],
+    required: [
+        "com_xiaomi_parts_whitelist",
+    ],
     defaults: [
         "SettingsLibDefaults",
     ],
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
+}
+
+prebuilt_etc {
+    name: "com_xiaomi_parts_whitelist",
+    sub_dir: "sysconfig",
+    src: "whitelist_com_xiaomi_parts.xml",
+    system_ext_specific: true,
+    filename_from_src: true,
 }
