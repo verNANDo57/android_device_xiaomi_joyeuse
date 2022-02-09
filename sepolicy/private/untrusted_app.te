@@ -1,7 +1,0 @@
-dontaudit untrusted_app net_dns_prop:file { read };
-dontaudit untrusted_app proc_stat:file { read };
-dontaudit untrusted_app proc_vmstat:file { read };
-dontaudit untrusted_app proc_uptime:file { read };
-dontaudit untrusted_app proc_zoneinfo:file { read };
-dontaudit untrusted_app self:udp_socket { ioctl };
-dontaudit untrusted_app proc_net:file { read };

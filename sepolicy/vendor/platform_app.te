@@ -1,14 +1,5 @@
 # FPS Info
 allow platform_app sysfs_fps:file { getattr open read };
 
-# System
-allow platform_app vendor_sysfs_battery_supply:dir search;
-allow platform_app vendor_sysfs_battery_supply:file { getattr open read }; 
-allow platform_app vendor_sysfs_kgsl:dir search;
-allow platform_app vendor_sysfs_kgsl:file { getattr open read };
-allow platform_app vendor_audio_prop:file { getattr open read map };
-allow platform_app cgroup:file { getattr open read };
-allow platform_app vendor_xdsp_device:chr_file { read };
-allow platform_app adsprpcd_file:dir { getattr search };
-
+# Blkio
 allow platform_app blkio_dev:dir search;

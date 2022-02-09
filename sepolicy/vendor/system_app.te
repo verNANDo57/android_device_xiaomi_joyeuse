@@ -1,15 +1,8 @@
 # Battery Health
-r_dir_file(system_app, sysfs_battery_supply);
+r_dir_file(system_app, vendor_sysfs_battery_supply)
 
 # WifiCond
 binder_call(system_app, wificond)
-
-# FPS Info
-allow system_app sysfs_fps:file { getattr open read lock append write };
-
-# KCAL
-allow system_app kcal_dev:file { getattr open read lock append write };
-allow system_app kcal_dev:dir search;
 
 # Zram
 allow system_app sysfs_zram:dir { open getattr read search };
@@ -23,9 +16,6 @@ allow system_app vendor_thermal_data_file:file { ioctl read write create getattr
 
 # USB Fastcharge
 allow system_app sysfs_fcharge:file { open read getattr write };
-
-allow system_app vendor_sysfs_battery_supply:dir search;
-allow system_app vendor_sysfs_battery_supply:file { getattr open read lock append write };
 
 allow system_app blkio_dev:dir search;
 allow system_app sysfs_leds:dir search;

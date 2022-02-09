@@ -1,4 +1,0 @@
-userdebug_or_eng(`
-  diag_use(vendor_qti)
-')
-allow vendor_qti vendor_diag_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };

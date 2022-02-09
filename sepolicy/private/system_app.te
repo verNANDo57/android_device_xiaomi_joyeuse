@@ -6,6 +6,3 @@ hal_client_domain(system_app, hal_misys)
 
 # StorageD
 binder_call(system_app, storaged)
-
-allow system_app sysfs_zram:file { open read getattr };
-dontaudit system_app system_suspend_control_service:service_manager { find };

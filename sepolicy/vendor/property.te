@@ -1,10 +1,11 @@
-type hal_fingerprint_prop, property_type;
-type mlipay_prop, property_type;
-type thermal_engine_prop, property_type;
-type lirc_prop, property_type;
-type camera_prop, property_type;
-type vendor_ro_camera_prop, property_type;
-vendor_internal_prop(vendor_thermal_prop)
-
-# Power HAL
 type power_prop, property_type;
+
+type vendor_device_prop, property_type;
+
+type vendor_fp_prop, property_type;
+
+type vendor_thermal_prop, property_type;
+
+type ifaa_prop, property_type;
+
+type lirc_prop, property_type;

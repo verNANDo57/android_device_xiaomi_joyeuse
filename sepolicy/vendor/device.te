@@ -1,5 +1,7 @@
-type blkio_dev, dev_type;
 type fingerprint_device, dev_type;
-type spidev_device, dev_type;
+
 type lirc_device, dev_type;
-type gx_fpd_device, dev_type;
+
+type sound_device, dev_type;
+
+type blkio_dev, dev_type;
