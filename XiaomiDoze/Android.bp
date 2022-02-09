@@ -27,7 +27,18 @@ android_app {
         "androidx.core_core",
         "org.lineageos.settings.resources",
     ],
+    required: [
+        "org_lineageos_settings_doze_whitelist",
+    ],
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
+}
+
+prebuilt_etc {
+    name: "org_lineageos_settings_doze_whitelist",
+    sub_dir: "sysconfig",
+    src: "whitelist_org_lineageos_settings_doze.xml",
+    system_ext_specific: true,
+    filename_from_src: true,
 }
