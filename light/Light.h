@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The Android Open Source Project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,46 +14,55 @@
  * limitations under the License.
  */
 
-#pragma once
+#ifndef ANDROID_HARDWARE_LIGHT_V2_0_LIGHT_H
+#define ANDROID_HARDWARE_LIGHT_V2_0_LIGHT_H
 
-#include <aidl/android/hardware/light/BnLights.h>
+#include <android/hardware/light/2.0/ILight.h>
+#include <hardware/lights.h>
+#include <hidl/Status.h>
+#include <map>
+#include <mutex>
+#include <vector>
 
-namespace aidl {
+using ::android::hardware::Return;
+using ::android::hardware::Void;
+using ::android::hardware::light::V2_0::Flash;
+using ::android::hardware::light::V2_0::ILight;
+using ::android::hardware::light::V2_0::LightState;
+using ::android::hardware::light::V2_0::Status;
+using ::android::hardware::light::V2_0::Type;
+
+typedef void (*LightStateHandler)(const LightState&);
+
+struct LightBackend {
+    Type type;
+    LightState state;
+    LightStateHandler handler;
+
+    LightBackend(Type type, LightStateHandler handler) : type(type), handler(handler) {
+        this->state.color = 0xff000000;
+    }
+};
+
 namespace android {
 namespace hardware {
 namespace light {
+namespace V2_0 {
+namespace implementation {
 
-enum led_type {
-    RED,
-    GREEN,
-    BLUE,
-    WHITE,
+class Light : public ILight {
+  public:
+    Return<Status> setLight(Type type, const LightState& state) override;
+    Return<void> getSupportedTypes(getSupportedTypes_cb _hidl_cb) override;
+
+  private:
+    std::mutex globalLock;
 };
 
-class Lights : public BnLights {
-public:
-    Lights();
-
-    ndk::ScopedAStatus setLightState(int id, const HwLightState& state) override;
-    ndk::ScopedAStatus getLights(std::vector<HwLight>* types) override;
-
-private:
-    void setSpeakerLightLocked(const HwLightState& state);
-    void handleSpeakerBatteryLocked();
-
-    bool setLedBreath(led_type led, uint32_t value);
-    bool setLedBrightness(led_type led, uint32_t value);
-
-    bool IsLit(uint32_t color);
-    uint32_t RgbaToBrightness(uint32_t color);
-    bool WriteToFile(const std::string& path, uint32_t content);
-
-    bool mWhiteLed;
-    HwLightState mNotification;
-    HwLightState mBattery;
-};
-
+}  // namespace implementation
+}  // namespace V2_0
 }  // namespace light
 }  // namespace hardware
 }  // namespace android
-}  // namespace aidl
+
+#endif  // ANDROID_HARDWARE_LIGHT_V2_0_LIGHT_H

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The Android Open Source Project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,37 @@
  * limitations under the License.
  */
 
-#include "Lights.h"
+#define LOG_TAG "android.hardware.light@2.0-service.xiaomi_sm6250"
 
-#include <android-base/logging.h>
-#include <android/binder_manager.h>
-#include <android/binder_process.h>
+#include <hidl/HidlTransportSupport.h>
 
-using ::aidl::android::hardware::light::Lights;
+#include "Light.h"
+
+using android::hardware::configureRpcThreadpool;
+using android::hardware::joinRpcThreadpool;
+
+using android::hardware::light::V2_0::ILight;
+using android::hardware::light::V2_0::implementation::Light;
+
+using android::OK;
+using android::sp;
+using android::status_t;
 
 int main() {
-    ABinderProcess_setThreadPoolMaxThreadCount(0);
-    std::shared_ptr<Lights> lights = ndk::SharedRefBase::make<Lights>();
+    sp<ILight> service = new Light();
 
-    const std::string instance = std::string() + Lights::descriptor + "/default";
-    binder_status_t status = AServiceManager_addService(lights->asBinder().get(), instance.c_str());
-    CHECK(status == STATUS_OK);
+    configureRpcThreadpool(1, true);
 
-    ABinderProcess_joinThreadPool();
-    return EXIT_FAILURE;  // should not reached
+    status_t status = service->registerAsService();
+    if (status != OK) {
+        ALOGE("Cannot register Light HAL service.");
+        return 1;
+    }
+
+    ALOGI("Light HAL service ready.");
+
+    joinRpcThreadpool();
+
+    ALOGI("Light HAL service failed to join thread pool.");
+    return 1;
 }
