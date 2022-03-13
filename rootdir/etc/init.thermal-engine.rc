@@ -1,10 +1,3 @@
-# There is no need for this:
-#
-# on boot && property:ro.product.vendor.device=*
-# mount none /vendor/etc/thermal-engine-map-${ro.product.vendor.device}.conf /vendor/etc/thermal-engine-map.conf bind
-# start thermal-engine
-#
-
 service thermal-engine /vendor/bin/thermal-engine
     class main
     user root

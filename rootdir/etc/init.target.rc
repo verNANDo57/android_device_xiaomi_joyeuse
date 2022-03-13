@@ -242,9 +242,6 @@ service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    group system wifi inet sdcard_rw media_rw diag
    disabled
 
-#on property:vold.decrypt=trigger_restart_framework
-#  start vendor.cnss_diag
-
 service ppd /vendor/bin/mm-pp-dpps
     class late_start
     user system
@@ -286,6 +283,3 @@ on property:sys.boot_completed=1
 
     # Start vibrator_calibration
     start vibrator_calibration
-
-    # Restrict permissions to socket file to hide Magisk & co.
-    chmod 440 /proc/net/unix
