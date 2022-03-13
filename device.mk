@@ -23,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/joyeuse/joyeuse-vendor.mk)
 
 # Inherit props.mk
-$(call inherit-product, $(DEVICE_PATH)/props.mk)
+# $(call inherit-product, $(DEVICE_PATH)/props.mk)
 
 # Inherit fingerprint.mk
 $(call inherit-product, $(DEVICE_PATH)/fingerprint.mk)
