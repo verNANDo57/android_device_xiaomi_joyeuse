@@ -139,9 +139,9 @@ vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
 vendor.display.svi.config=1
 vendor.display.svi.config_path=/vendor/etc/SVIConfig.xml
-ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
-ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
-ro.vendor.display.ad=1
+# ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
+# ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
+# ro.vendor.display.ad=1
 
 # White Point Calibration
 ro.vendor.whitepoint_calibration_enable=true
