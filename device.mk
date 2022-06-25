@@ -521,8 +521,8 @@ PRODUCT_COPY_FILES += \
 
 # Minijail
 PRODUCT_PACKAGES += \
+    libminijail \
     libavservices_minijail \
-    libavservices_minijail_vendor \
     libavservices_minijail.vendor
 
 # QTI
