@@ -28,8 +28,6 @@ $(call inherit-product-if-exists, vendor/xiaomi/joyeuse/joyeuse-vendor.mk)
 # Inherit fingerprint.mk
 $(call inherit-product, $(DEVICE_PATH)/fingerprint.mk)
 
-# Inherit color-management.mk
-$(call inherit-product, $(DEVICE_PATH)/display/color-management/color-management.mk)
 
 # Inherit setup-vibrator.mk
 $(call inherit-product, $(DEVICE_PATH)/vibrator/setup-vibrator.mk)
@@ -310,6 +308,10 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/display/sdr_config.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/sdr_config.cfg \
     $(DEVICE_PATH)/configs/display/dsi_ft8756_huaxing_vid_display_mi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dsi_ft8756_huaxing_vid_display_mi.xml \
     $(DEVICE_PATH)/configs/display/dsi_nt36675_tianma_vid_display_mi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dsi_nt36675_tianma_vid_display_mi.xml
+
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sdm
 
 # External exFat tools
 PRODUCT_PACKAGES += \
