@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,12 +29,14 @@
 using android::base::GetProperty;
 
 std::vector<std::string> ro_props_default_source_order = {
-    "",
     "odm.",
+    "odm_dlkm.",
     "product.",
     "system.",
-    "vendor.",
     "system_ext.",
+    "vendor.",
+    "vendor_dlkm.",
+    "",
 };
 
 void set_ro_build_prop(const std::string &source, const std::string &prop,
