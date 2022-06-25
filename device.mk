@@ -350,6 +350,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom \
     $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom
+# DSP
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.dsp@1.0
+
 # GNSS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor \
