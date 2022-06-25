@@ -37,7 +37,6 @@ $(call inherit-product, $(DEVICE_PATH)/vibrator/setup-vibrator.mk)
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
-    hardware/xiaomi \
     kernel/xiaomi/sm6250
 
 # Overlays

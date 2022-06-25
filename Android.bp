@@ -4,6 +4,5 @@ soong_namespace {
         "vendor/qcom/opensource/commonsys/packages/apps/Bluetooth",
         "vendor/qcom/opensource/interfaces",
         "kernel/xiaomi/sm6250",
-        "hardware/xiaomi",
     ]
 }
