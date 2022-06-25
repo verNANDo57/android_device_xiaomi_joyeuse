@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015 The CyanogenMod Project
- *               2017-2018 The LineageOS Project
+ *               2017-2018,2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,30 +15,35 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.doze;
+package com.xiaomi.doze;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.PowerManager;
+import android.os.SystemClock;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.UserHandle;
-import androidx.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
+
+import androidx.preference.PreferenceManager;
 
 import static android.provider.Settings.Secure.DOZE_ENABLED;
 
 public final class Utils {
 
-    private static final String TAG = "DozeUtils";
-    private static final boolean DEBUG = false;
-
-    private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
-
+    protected static final String WAKE_ON_GESTURE_KEY = "wake_on_gesture";
     protected static final String CATEG_PROX_SENSOR = "proximity_sensor";
-
     protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
+    private static final String TAG = "DozeUtils";
+    private static final boolean DEBUG = false;
+    private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
+
+    protected static final String DOZE_ENABLE = "doze_enable";
 
     protected static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
@@ -81,20 +86,25 @@ public final class Utils {
                 DOZE_ENABLED, enable ? 1 : 0);
     }
 
-    protected static void launchDozePulse(Context context) {
-        if (DEBUG) Log.d(TAG, "Launch doze pulse");
-        context.sendBroadcastAsUser(new Intent(DOZE_INTENT),
-                new UserHandle(UserHandle.USER_CURRENT));
-    }
-
-    protected static void enableGesture(Context context, String gesture, boolean enable) {
-        PreferenceManager.getDefaultSharedPreferences(context).edit()
-                .putBoolean(gesture, enable).apply();
+    protected static void wakeOrLaunchDozePulse(Context context) {
+        if (isWakeOnGestureEnabled(context)) {
+            if (DEBUG) Log.d(TAG, "Wake up display");
+            PowerManager powerManager = context.getSystemService(PowerManager.class);
+            powerManager.wakeUp(SystemClock.uptimeMillis(), PowerManager.WAKE_REASON_GESTURE, TAG);
+        } else {
+            if (DEBUG) Log.d(TAG, "Launch doze pulse");
+            context.sendBroadcastAsUser(
+                    new Intent(DOZE_INTENT), new UserHandle(UserHandle.USER_CURRENT));
+        }
     }
 
     protected static boolean isGestureEnabled(Context context, String gesture) {
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(gesture, false);
+    }
+
+    protected static boolean isWakeOnGestureEnabled(Context context) {
+        return isGestureEnabled(context, WAKE_ON_GESTURE_KEY);
     }
 
     protected static boolean isPickUpEnabled(Context context) {
@@ -112,5 +122,14 @@ public final class Utils {
     protected static boolean sensorsEnabled(Context context) {
         return isPickUpEnabled(context) || isHandwaveGestureEnabled(context)
                 || isPocketGestureEnabled(context);
+    }
+
+    protected static Sensor getSensor(SensorManager sm, String type) {
+        for (Sensor sensor : sm.getSensorList(Sensor.TYPE_ALL)) {
+            if (type.equals(sensor.getStringType())) {
+                return sensor;
+            }
+        }
+        return null;
     }
 }
