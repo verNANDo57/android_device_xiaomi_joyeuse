@@ -47,7 +47,6 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
-    NoNotchBarOverlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
