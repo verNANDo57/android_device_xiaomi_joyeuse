@@ -13,6 +13,9 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 #Sign with private key
 PRODUCT_DEFAULT_DEV_CERTIFICATE := device/xiaomi/joyeuse/keys/releasekey
 
+# Bootanimation Resolution
+TARGET_BOOT_ANIMATION_RES := 1080
+
 PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := joyeuse
 PRODUCT_MANUFACTURER := Xiaomi
