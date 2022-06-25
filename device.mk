@@ -39,6 +39,9 @@ PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
     kernel/xiaomi/sm6250 \
     vendor/qcom/opensource/usb/etc \
+    vendor/nxp/opensource/pn5xx \
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
+    vendor/qcom/opensource/interfaces
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
