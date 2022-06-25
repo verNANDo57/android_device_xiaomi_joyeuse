@@ -5,15 +5,14 @@ aaudio.mmap_policy=2
 persist.vendor.audio.avs.afe_api_version=2
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.tmic.enabled=false
-persist.vendor.audio.fluence.audiorec=true
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicecomm=true
-persist.vendor.audio.fluence.voicerec=true
+persist.vendor.audio.fluence.voicerec=false
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 persist.vendor.audio.ras.enabled=false
 persist.vendor.audio.spv3.enable=true
 persist.vendor.audio.voicecall.speaker.stereo=false
-ro.vendor.audio.sdk.fluencetype=fluence
+ro.vendor.audio.sdk.fluencetype=none
 ro.vendor.audio.sdk.ssr=false
 vendor.audio.adm.buffering.ms=2
 vendor.audio.capture.enforce_legacy_copp_sr=true
@@ -54,7 +53,7 @@ vendor.audio.feature.multi_voice_session.enable=true
 vendor.audio.feature.ras.enable=true
 vendor.audio.feature.record_play_concurency.enable=false
 vendor.audio.feature.snd_mon.enable=true
-vendor.audio.feature.spkr_prot.enable=false
+vendor.audio.feature.spkr_prot.enable=true
 vendor.audio.feature.src_trkn.enable=true
 vendor.audio.feature.ssrec.enable=true
 vendor.audio.feature.usb_offload.enable=true
@@ -70,7 +69,7 @@ vendor.audio.offload.gapless.enabled=true
 vendor.audio.offload.multiaac.enable=true
 vendor.audio.offload.multiple.enabled=false
 vendor.audio.offload.passthrough=false
-vendor.audio.offload.track.enable=false
+vendor.audio.offload.track.enable=true
 vendor.audio.parser.ip.buffer.size=262144
 vendor.audio.safx.pbe.enabled=false
 vendor.audio.tunnel.encode=false
@@ -117,10 +116,12 @@ dalvik.vm.dex2oat64.enabled=true
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.has_HDR_display=true
+ro.surface_flinger.protected_contents=true
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 ro.surface_flinger.max_virtual_display_dimension=4096
 ro.surface_flinger.use_color_management=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
+ro.surface_flinger.protected_contents=true
 ro.vendor.display.sensortype=2
 ro.vendor.display.svi=1
 vendor.display.comp_mask=0
@@ -171,11 +172,14 @@ ro.vendor.vibrator.hal.steady.shape=1
 ro.vendor.vibrator.hal.lptrigger=0
 
 # Graphics
+debug.sdm.support_writeback=0
 debug.egl.hw=0
 debug.mdpcomp.logs=0
-debug.sf.hw=0
+debug.sf.hw=1
+debug.gralloc.enable_fb_ubwc=1
+debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
-persist.sys.sf.color_mode=9
+persist.sys.sf.color_mode=0
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=2
 ro.hardware.egl=adreno
@@ -223,9 +227,6 @@ persist.vendor.sensors.support_direct_channel=false
 persist.vendor.sensors.allow_non_default_discovery=true
 persist.vendor.sensors.enable.mag_filter=true
 
-# Shutdown
-sys.vendor.shutdown.waittime=500
-
 # fastbootd
 ro.fastbootd.available=true
 
@@ -238,11 +239,6 @@ ro.config.vc_call_vol_steps=11
 
 # WiFi
 wifi.aware.interface=wifi-aware0
-
-# ZRAM
-ro.zram.first_wb_delay_mins=180
-ro.zram.mark_idle_delay_mins=60
-ro.zram.periodic_wb_delay_hours=24
 
 # Incremental FS
 ro.incremental.enable=1
