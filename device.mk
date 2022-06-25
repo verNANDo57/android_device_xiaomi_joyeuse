@@ -72,10 +72,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/android.hardware.nfc.uicc.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/com.nxp.mifare.xml
 
-# Secure element
-PRODUCT_PACKAGES += \
-    SecureElement
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-impl \
@@ -326,6 +322,11 @@ PRODUCT_PACKAGES += \
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
+
+# SecureElement
+PRODUCT_PACKAGES += \
+    SecureElement \
+    android.hardware.secure_element@1.2.vendor
 
 # Fingerprint
 PRODUCT_PACKAGES += \
