@@ -29,9 +29,6 @@ $(call inherit-product-if-exists, vendor/xiaomi/joyeuse/joyeuse-vendor.mk)
 $(call inherit-product, $(DEVICE_PATH)/fingerprint.mk)
 
 
-# Inherit setup-vibrator.mk
-$(call inherit-product, $(DEVICE_PATH)/vibrator/setup-vibrator.mk)
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
@@ -384,6 +381,13 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder \
     libhwbinder.vendor
+    
+# Vibrator
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service.xiaomi_joyeuse
+    
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
 # Init scripts
 PRODUCT_COPY_FILES += \
