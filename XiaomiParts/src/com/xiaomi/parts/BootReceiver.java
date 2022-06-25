@@ -22,7 +22,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 import android.provider.Settings;
-import com.xiaomi.parts.R;
 
 import com.xiaomi.parts.kcal.Utils;
 import com.xiaomi.parts.ambient.SensorsDozeService;
@@ -65,8 +64,7 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
        // Thermal
         ThermalUtils.initialize(context);
 
-        boolean enabled = sharedPrefs.getBoolean(DeviceSettings.PREF_KEY_FPS_INFO, false);
-        if (enabled) {
+        if (sharedPrefs.getBoolean(DeviceSettings.PREF_KEY_FPS_INFO, false)) {
             context.startService(new Intent(context, FPSInfoService.class));
         }
     }
