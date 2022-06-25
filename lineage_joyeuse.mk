@@ -10,7 +10,7 @@ $(call inherit-product, device/xiaomi/joyeuse/device.mk)
 # Inherit some common Lineage OS stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-#Sign with private key
+# Sign with private key
 PRODUCT_DEFAULT_DEV_CERTIFICATE := device/xiaomi/joyeuse/keys/releasekey
 
 # Quick Tap
