@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2018 The Android Open Source Project
+// Copyright (C) 2022 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 // limitations under the License.
 
 cc_binary {
-    name: "android.hardware.power@1.3-service.xiaomi_sm6250",
-    init_rc: ["android.hardware.power@1.3-service.xiaomi_sm6250.rc"],
+    name: "android.hardware.power@1.3-service.xiaomi_joyeuse",
+    init_rc: ["android.hardware.power@1.3-service.xiaomi_joyeuse.rc"],
     relative_install_path: "hw",
     proprietary: true,
     srcs: [

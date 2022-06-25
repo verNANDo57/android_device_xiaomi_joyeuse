@@ -486,8 +486,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.xiaomi_sm6250 \
-    vendor.qti.hardware.perf@2.2.vendor
+    android.hardware.power@1.3-service.xiaomi_joyeuse \
+    vendor.qti.hardware.perf@2.2.vendor \
+    vendor.qti.hardware.perf@2.2
 
 # Recovery
 PRODUCT_COPY_FILES += \
