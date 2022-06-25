@@ -515,6 +515,9 @@ PRODUCT_COPY_FILES += \
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+# Neural networks
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.3.vendor
 
 # Power
 PRODUCT_PACKAGES += \
