@@ -1,12 +1,15 @@
-# Battery Health
+allow system_app vendor_sysfs_battery_supply:dir { search };
+allow system_app vendor_sysfs_battery_supply:file { read };
+allow system_app vendor_sysfs_battery_supply:file { open };
+allow system_app vendor_sysfs_battery_supply:file { getattr };
+allow system_app sysfs_kgsl:dir { read getattr search open };
+
 r_dir_file(system_app, vendor_sysfs_battery_supply)
 
-# WifiCond
-binder_call(system_app, wificond)
+allow system_app sysfs_zram:dir search;
+allow system_app sysfs_zram:file r_file_perms;
 
-# Zram
-allow system_app sysfs_zram:dir { open getattr read search };
-allow system_app sysfs_zram:{ file lnk_file } { getattr open read lock };
+allow system_app vendor_sysfs_graphics:file { getattr open read };
 
 # Thermal Profiles
 allow system_app sysfs_thermal:dir { getattr read open search };
@@ -17,10 +20,14 @@ allow system_app vendor_thermal_data_file:file { ioctl read write create getattr
 # USB Fastcharge
 allow system_app sysfs_fcharge:file { open read getattr write };
 
-allow system_app blkio_dev:dir search;
+allow system_app apk_data_file:file { ioctl };
 allow system_app sysfs_leds:dir search;
 allow system_app vendor_sysfs_graphics:dir search;
 allow system_app vendor_sysfs_graphics:file { getattr open read };
+allow system_app incremental_prop:file { read open };
+allow system_app sysfs_msm_subsys:dir { search };
+allow system_app sysfs_fps:file rw_file_perms;
+allow system_app blkio_dev:dir search;
 allow system_app sysfs_vibrator:file { getattr open read };
 allow system_app sysfs_vibrator:dir search;
 allow system_app hal_mlipay_default:binder { call };
@@ -28,6 +35,5 @@ allow system_app hal_vibrator_default:binder { call };
 allow system_app vendor_sysfs_msm_perf:dir { search };
 allow system_app vendor_default_prop:file { getattr open read };
 allow system_app vendor_default_prop:file { map };
-allow system_app apk_data_file:dir { write };
 
 dontaudit system_app system_suspend_control_service:service_manager { find };

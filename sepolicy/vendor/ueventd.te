@@ -1,4 +1,4 @@
-allow ueventd self:capability sys_nice;
+allow ueventd self:capability { kill sys_nice };
 
 # KCAL
 allow ueventd kcal_dev:dir { open getattr read search };

@@ -1,5 +1,6 @@
 allow hal_fingerprint_default fingerprint_data_file:dir rw_dir_perms;
 allow hal_fingerprint_default fingerprint_data_file:file create_file_perms;
+binder_call(hal_fingerprint_default, vendor_hal_perf_default)
 
 allow hal_fingerprint_default {
   fingerprint_device
@@ -31,3 +32,7 @@ set_prop(hal_fingerprint_default, vendor_fp_prop)
 
 allow hal_fingerprint_default vendor_sysfs_spss:dir { search };
 allow hal_fingerprint_default vendor_sysfs_spss:file { open read };
+
+allow hal_fingerprint_default default_prop:file { getattr  map  open  read };
+allow hal_fingerprint_default vendor_hal_perf_hwservice:hwservice_manager find;
+

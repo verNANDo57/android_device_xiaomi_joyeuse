@@ -3,6 +3,3 @@ hal_client_domain(system_app, hal_mlipay)
 
 # MISYS
 hal_client_domain(system_app, hal_misys)
-
-# StorageD
-binder_call(system_app, storaged)

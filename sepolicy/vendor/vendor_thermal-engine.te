@@ -8,7 +8,7 @@ allow vendor_thermal-engine vendor_sysfs_devfreq:file rw_file_perms;
 # Rule for vendor_thermal-engine to access init process
 unix_socket_connect(vendor_thermal-engine, property, init);
 
-set_prop(vendor_thermal-engine, vendor_thermal_prop)
+set_prop(vendor_thermal-engine, vendor_thermal_normal_prop)
 
 # to read /sys/devices
 allow vendor_thermal-engine sysfs:dir { open getattr read search lock };
@@ -17,3 +17,7 @@ allow vendor_thermal-engine vendor_data_file:dir { read };
 
 allow vendor_thermal-engine vendor_thermal_data_file:dir { read write add_name remove_name search };
 allow vendor_thermal-engine vendor_thermal_data_file:file { read write create getattr setattr unlink rename open };
+
+allow vendor_thermal-engine system_prop:file { getattr  map  open  read };
+
+allow vendor_thermal-engine system_prop:property_service { set };
