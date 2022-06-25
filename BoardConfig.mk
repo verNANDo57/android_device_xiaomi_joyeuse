@@ -73,9 +73,6 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# DPM
-BOARD_USES_DPM := true
-
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
