@@ -218,18 +218,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstdc++.vendor
 
-# Codec2 modules
-PRODUCT_PACKAGES += \
-    com.android.media.swcodec \
-    libsfplugin_ccodec
-
-PRODUCT_PACKAGES += \
-    libqcodec2 \
-    vendor.qti.media.c2@1.0-service \
-    media_codecs_c2.xml \
-    codec2.vendor.ext.policy \
-    codec2.vendor.base.policy
-
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbthost_if \
@@ -491,6 +479,22 @@ PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor \
     com.dsi.ant@1.0 \
     com.dsi.ant@1.0-impl
+
+# Codec2 modules
+PRODUCT_PACKAGES += \
+    com.android.media.swcodec \
+    libsfplugin_ccodec
+
+PRODUCT_PACKAGES += \
+    libqcodec2 \
+    vendor.qti.media.c2@1.0-service \
+    media_codecs_c2.xml \
+    codec2.vendor.ext.policy \
+    codec2.vendor.base.policy \
+    libcodec2_hidl@1.0 \
+    libcodec2_hidl@1.0.vendor \
+    libcodec2_vndk.vendor \
+    libcodec2_vndk
 
 # Media
 PRODUCT_PACKAGES += \
