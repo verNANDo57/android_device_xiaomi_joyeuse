@@ -28,6 +28,9 @@ $(call inherit-product-if-exists, vendor/xiaomi/joyeuse/joyeuse-vendor.mk)
 # Inherit fingerprint.mk
 $(call inherit-product, $(DEVICE_PATH)/fingerprint.mk)
 
+# Skip some checks
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+RELAX_USES_LIBRARY_CHECK := true
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
