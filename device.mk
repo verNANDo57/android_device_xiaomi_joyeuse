@@ -655,6 +655,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
+# Include vndk/vndk-sp/ll-ndk modules
+PRODUCT_PACKAGES += \
+    vndk_package
+
 PRODUCT_PACKAGES += \
     com.android.vndk.current.on_vendor
 
