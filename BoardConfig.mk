@@ -118,9 +118,6 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=1
 BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
 
-# Allow LZ4 compression
-BOARD_RAMDISK_USE_LZ4 := true
-
 # HIDL
 ODM_MANIFEST_SKUS += \
     joyeuse
