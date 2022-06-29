@@ -5,6 +5,12 @@ type hal_misys_default_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(hal_misys_default)
 
+# HwBinder IPC from client to server
+binder_call(hal_misys_client, hal_misys_server)
+
+add_hwservice(hal_misys_server, hal_misys_hwservice)
+allow hal_misys_client hal_misys_hwservice:hwservice_manager find;
+
 allow hal_misys_default camera_persist_file:file rw_file_perms;
 allow hal_misys_default camera_persist_file:dir rw_dir_perms;
 allow hal_misys_default camera_persist_file:file { create unlink setattr };
