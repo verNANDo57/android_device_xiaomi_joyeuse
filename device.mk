@@ -530,10 +530,10 @@ PRODUCT_COPY_FILES += \
 
 # Minijail
 PRODUCT_PACKAGES += \
-    libminijail \
     libavservices_minijail \
-    libavservices_minijail.vendor
-
+    libavservices_minijail.vendor \
+    libavservices_minijail_vendor
+    
 # QTI
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.systemhelper@1.0.vendor
