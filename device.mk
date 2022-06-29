@@ -649,6 +649,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
+$(foreach target, $(shell cat $(LOCAL_PATH)/configs/vndk.list), $(eval PRODUCT_PACKAGES += $(target).vendor))
 # Vulkan
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
