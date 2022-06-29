@@ -655,6 +655,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
+PRODUCT_PACKAGES += \
+    com.android.vndk.current.on_vendor
+
 $(foreach target, $(shell cat $(LOCAL_PATH)/configs/vndk.list), $(eval PRODUCT_PACKAGES += $(target).vendor))
 # Vulkan
 PRODUCT_COPY_FILES += \
