@@ -19,6 +19,10 @@ TARGET_SUPPORTS_QUICK_TAP := true
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
 
+# Recovery
+TARGET_USES_AOSP_RECOVERY := true
+
+# Device info
 PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := joyeuse
 PRODUCT_MANUFACTURER := Xiaomi
