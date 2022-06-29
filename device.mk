@@ -663,6 +663,10 @@ PRODUCT_PACKAGES += \
     com.android.vndk.current.on_vendor
 
 $(foreach target, $(shell cat $(LOCAL_PATH)/configs/vndk.list), $(eval PRODUCT_PACKAGES += $(target).vendor))
+
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libhidlcache.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhidlcache.so
+
 # Vulkan
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
