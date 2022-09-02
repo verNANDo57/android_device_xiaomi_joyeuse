@@ -5,7 +5,7 @@
 #
 
 # Fingerprint
-BUILD_FINGERPRINT := Redmi/joyeuse_global/joyeuse:11/RKQ1.200826.002/V12.5.7.0.RJZMIXM:user/release-keys
+BUILD_FINGERPRINT := Redmi/joyeuse_global/joyeuse:12/RKQ1.211019.001/V13.0.1.0.SJZMIXM:user/release-keys
 
 # Description
-PRIVATE_BUILD_DESC="joyeuse_global-user 11 RKQ1.200826.002 V12.5.7.0.RJZMIXM release-keys"
+PRIVATE_BUILD_DESC="joyeuse_global-user 12 RKQ1.211019.001 V13.0.1.0.SJZMIXM release-keys"

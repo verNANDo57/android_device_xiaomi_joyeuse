@@ -68,12 +68,12 @@ void set_device_props(const std::string fingerprint, const std::string descripti
 void load_device_properties() {
 
     set_device_props(
-                    "Redmi/joyeuse_global/joyeuse:11/RKQ1.200826.002/V12.5.7.0.RJZMIXM:user/release-keys",
-                    "joyeuse_global-user 11 RKQ1.200826.002 V12.5.7.0.RJZMIXM release-keys",
+                    "Redmi/joyeuse_global/joyeuse:12/RKQ1.211019.001/V13.0.1.0.SJZMIXM:user/release-keys",
+                    "joyeuse_global-user 12 RKQ1.211019.001 V13.0.1.0.SJZMIXM release-keys",
                     "Redmi", "joyeuse", "Redmi Note 9 Pro");
 
-    property_override("ro.build.version.security_patch", "2022-04-01");
-    property_override("ro.vendor.build.security_patch", "2022-04-01");
+    property_override("ro.build.version.security_patch", "2022-06-05");
+    property_override("ro.vendor.build.security_patch", "2022-06-05");
 }
 
 void vendor_load_properties() {
