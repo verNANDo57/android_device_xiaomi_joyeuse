@@ -559,9 +559,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.xiaomi_joyeuse \
-    vendor.qti.hardware.perf@2.2.vendor \
-    vendor.qti.hardware.perf@2.2
+    android.hardware.power@1.3-service.xiaomi_joyeuse
 
 # RCS
 PRODUCT_PACKAGES += \
