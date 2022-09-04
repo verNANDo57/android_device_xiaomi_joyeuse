@@ -1,1 +1,6 @@
-# Dummy system_ext prop file
+# Display
+ro.launcher.blur.appLaunch=0
+ro.sf.blurs_are_expensive=1
+
+# fastbootd
+ro.fastbootd.available=true
